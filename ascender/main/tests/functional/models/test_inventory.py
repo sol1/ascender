@@ -12,7 +12,7 @@ from django.db import connection, transaction
 
 # Ascender
 from ascender.main.models import Host, Inventory, InventorySource, InventoryUpdate, CredentialType, Credential, Job, Organization
-from ascender.main.constants import CLOUD_PROVIDERS
+from ascender.main.constants import CLOUD_PROVIDERS, NATIVE_INVENTORY_SOURCES
 from ascender.main.utils.filters import SmartFilter
 
 
@@ -224,7 +224,18 @@ class TestInventorySourceInjectors:
         defined within the injectors
         """
         # slight exception case for constructed, because it has a FQCN but is not a cloud source
-        assert set(CLOUD_PROVIDERS) | set(['constructed']) == set(InventorySource.injectors.keys())
+        # Native sources are the other exception: they fetch from the control plane
+        # and never run an inventory plugin, so having no injector is the point of them.
+        expected = (set(CLOUD_PROVIDERS) - set(NATIVE_INVENTORY_SOURCES)) | set(['constructed'])
+        assert expected == set(InventorySource.injectors.keys())
+
+    def test_native_sources_have_no_injector(self):
+        """The absence is load bearing. An injector would send the source to an
+        execution environment, which is exactly what a native source avoids.
+        """
+        for source in NATIVE_INVENTORY_SOURCES:
+            assert source in CLOUD_PROVIDERS, 'a native source still needs its credential handling'
+            assert source not in InventorySource.injectors
 
     @pytest.mark.parametrize('source,filename', [('ec2', 'aws_ec2.yml'), ('openstack', 'openstack.yml'), ('gce', 'gcp_compute.yml')])
     def test_plugin_filenames(self, source, filename):

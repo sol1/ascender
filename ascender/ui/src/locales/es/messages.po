@@ -261,7 +261,7 @@ msgstr "Desplazarse hasta el anterior"
 msgid "Failed to copy project."
 msgstr "No se pudo copiar el proyecto."
 
-#: components/LaunchPrompt/LaunchPrompt.tsx:157
+#: components/LaunchPrompt/LaunchPrompt.tsx:158
 #: components/Schedule/shared/SchedulePromptableFields.tsx:129
 msgid "Hide description"
 msgstr "Ocultar descripción"
@@ -422,7 +422,7 @@ msgid "Timed out"
 msgstr "Tiempo de espera agotado"
 
 #. placeholder {0}: header || t`Items`
-#: components/Lookup/Lookup.tsx:237
+#: components/Lookup/Lookup.tsx:270
 msgid "Select {0}"
 msgstr "Seleccionar {0}"
 
@@ -530,7 +530,7 @@ msgstr "Evento"
 msgid "Repeat Frequency"
 msgstr "Frecuencia de repetición"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:180
+#: screens/Inventory/shared/Inventory.helptext.tsx:264
 msgid "Variables used to configure the constructed inventory plugin. For a detailed description of how to configure this plugin, see"
 msgstr "Variables utilizadas para configurar el plugin de inventario construido. Para obtener una descripción detallada de cómo configurar este complemento, consulte"
 
@@ -711,7 +711,7 @@ msgstr "No se pudo alternar la instancia."
 msgid "Failed to delete one or more instance groups."
 msgstr "No se pudo eliminar uno o más grupos de instancias."
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:49
+#: screens/Inventory/shared/Inventory.helptext.tsx:53
 msgid "JSON:"
 msgstr "JSON:"
 
@@ -731,8 +731,8 @@ msgstr "Métricas"
 msgid "Create new credential Type"
 msgstr "Crear un nuevo tipo de credencial"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:107
-#: screens/Inventory/shared/Inventory.helptext.tsx:126
+#: screens/Inventory/shared/Inventory.helptext.tsx:111
+#: screens/Inventory/shared/Inventory.helptext.tsx:130
 msgid "If you want the Inventory Source to update on launch, click on Update on Launch, and also go to "
 msgstr "Si desea que la fuente de inventario se actualice al ejecutar, haga clic en Actualizar al ejecutar y también vaya a "
 
@@ -749,8 +749,8 @@ msgstr "Pestaña JSON"
 msgid "Start Time"
 msgstr "Hora de inicio"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:46
-#: screens/Inventory/shared/Inventory.helptext.tsx:193
+#: screens/Inventory/shared/Inventory.helptext.tsx:50
+#: screens/Inventory/shared/Inventory.helptext.tsx:277
 msgid "Variables must be in JSON or YAML syntax. Use the radio button to toggle between the two."
 msgstr "Ingrese variables con sintaxis JSON o YAML. Use el botón de selección para alternar entre los dos."
 
@@ -883,7 +883,7 @@ msgid "LDAP 5"
 msgstr "LDAP 5"
 
 #: components/Lookup/HostFilterLookup.tsx:386
-#: components/Lookup/Lookup.tsx:238
+#: components/Lookup/Lookup.tsx:271
 msgid "Lookup modal"
 msgstr "Modal de búsqueda"
 
@@ -962,6 +962,10 @@ msgstr "No se encontró el entorno de ejecución."
 msgid "Create New Organization"
 msgstr "Crear nueva organización"
 
+#: screens/Inventory/shared/Inventory.helptext.tsx:164
+msgid "use_fqdn: name each host after its primary IP's DNS name when NetBox has one."
+msgstr ""
+
 #: screens/Setting/SettingList.tsx:108
 msgid "View and edit debug options"
 msgstr "Ver y editar opciones de depuración"
@@ -992,7 +996,7 @@ msgstr "{interval, plural, one {# año} other {# años}}"
 msgid "Inventory Source Sync"
 msgstr "Sincronización de fuentes de inventario"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:155
+#: screens/Inventory/shared/Inventory.helptext.tsx:239
 msgid "Inventory Plugins"
 msgstr "Complementos de inventario"
 
@@ -1066,7 +1070,7 @@ msgstr "1 (Información)"
 msgid "Set the instance enabled or disabled. If disabled, jobs will not be assigned to this instance."
 msgstr "Establezca la instancia habilitada o deshabilitada. Si se desactiva, los trabajos no se asignarán a esta instancia."
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:109
+#: screens/Inventory/shared/Inventory.helptext.tsx:113
 msgid "and click on Update Revision on Launch."
 msgstr "y haga clic en Actualizar revisión en Launch."
 
@@ -1082,7 +1086,7 @@ msgstr "Elimine el repositorio local en su totalidad antes de realizar una actua
 msgid "Setting category"
 msgstr "Categoría de la configuración"
 
-#: screens/Credential/Credential.tsx:81
+#: screens/Credential/Credential.tsx:83
 msgid "Back to Credentials"
 msgstr "Volver a Credenciales"
 
@@ -1427,6 +1431,11 @@ msgstr "Correo electrónico"
 msgid "Job Type"
 msgstr "Tipo de trabajo"
 
+#: screens/Inventory/shared/Inventory.helptext.tsx:166
+msgid "oob_ip_as_primary_ip: connect to the out-of-band address, the iDRAC, iLO or\n"
+"        BMC, instead of the primary IP."
+msgstr ""
+
 #: screens/Job/JobOutput/JobOutputSearch.tsx:131
 msgid "No Hosts Matched"
 msgstr "Ningún servidor corresponde"
@@ -1569,8 +1578,8 @@ msgstr "No se pudo eliminar una o más tareas."
 msgid "Run Command"
 msgstr "Ejecutar comando"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:165
-#: screens/Inventory/shared/Inventory.helptext.tsx:188
+#: screens/Inventory/shared/Inventory.helptext.tsx:249
+#: screens/Inventory/shared/Inventory.helptext.tsx:272
 msgid "plugin configuration guide."
 msgstr "guía de configuración del plugin."
 
@@ -1681,8 +1690,8 @@ msgstr "Crear nuevo inventario federado"
 #: components/Lookup/InventoryLookup.tsx:201
 #: components/Lookup/InventoryLookup.tsx:249
 #: components/Lookup/InventoryLookup.tsx:264
-#: components/Lookup/JobTemplateLookup.tsx:122
-#: components/Lookup/JobTemplateLookup.tsx:132
+#: components/Lookup/JobTemplateLookup.tsx:131
+#: components/Lookup/JobTemplateLookup.tsx:141
 #: components/Lookup/MultiCredentialsLookup.tsx:221
 #: components/Lookup/MultiCredentialsLookup.tsx:236
 #: components/Lookup/OrganizationLookup.tsx:151
@@ -1812,7 +1821,7 @@ msgstr "Crear nuevo inventario federado"
 #: screens/Inventory/shared/FederatedInventoryForm.tsx:65
 #: screens/Inventory/shared/InventoryForm.tsx:56
 #: screens/Inventory/shared/InventoryGroupForm.tsx:54
-#: screens/Inventory/shared/InventorySourceForm.tsx:151
+#: screens/Inventory/shared/InventorySourceForm.tsx:152
 #: screens/Inventory/shared/SmartInventoryForm.tsx:55
 #: screens/Inventory/SmartInventoryDetail/SmartInventoryDetail.tsx:104
 #: screens/ManagementJob/ManagementJobList/ManagementJobList.tsx:97
@@ -2045,7 +2054,7 @@ msgstr "Clave"
 #: components/AddRole/AddResourceRole.tsx:65
 #: components/ResourceAccessList/ResourceAccessList.tsx:178
 #: components/ResourceAccessList/ResourceAccessList.tsx:231
-#: screens/Login/Login.tsx:350
+#: screens/Login/Login.tsx:363
 #: screens/NotificationTemplate/NotificationTemplateDetail/NotificationTemplateDetail.tsx:200
 #: screens/NotificationTemplate/NotificationTemplateDetail/NotificationTemplateDetail.tsx:336
 #: screens/NotificationTemplate/NotificationTemplateDetail/NotificationTemplateDetail.tsx:386
@@ -2158,9 +2167,9 @@ msgid "Parent node outcome required before the condition is evaluated."
 msgstr "Resultado del nodo primario necesario antes de evaluar la condición."
 
 #: components/JobList/JobListItem.tsx:248
-#: components/Lookup/JobTemplateLookup.tsx:103
-#: components/Lookup/JobTemplateLookup.tsx:108
-#: components/Lookup/JobTemplateLookup.tsx:138
+#: components/Lookup/JobTemplateLookup.tsx:111
+#: components/Lookup/JobTemplateLookup.tsx:116
+#: components/Lookup/JobTemplateLookup.tsx:147
 #: components/TemplateList/TemplateList.tsx:229
 #: components/TemplateList/TemplateListItem.tsx:170
 #: components/Workflow/WorkflowLegend.tsx:30
@@ -2226,7 +2235,7 @@ msgstr "El campo coincide con la expresión regular dada."
 msgid "{0, plural, one {This credential type is currently being used by some credentials and cannot be deleted.} other {Credential types that are being used by credentials cannot be deleted. Are you sure you want to delete anyway?}}"
 msgstr "{0, plural, one {This credential type is currently being used by some credentials and cannot be deleted.} other {Credential types that are being used by credentials cannot be deleted. Are you sure you want to delete anyway?}}"
 
-#: screens/Login/Login.tsx:348
+#: screens/Login/Login.tsx:361
 #: screens/NotificationTemplate/shared/TypeInputsSubForm.tsx:156
 #: screens/Template/Survey/SurveyQuestionForm.tsx:82
 #: screens/User/shared/UserForm.tsx:127
@@ -2426,7 +2435,7 @@ msgstr "Esta entrada de inventario construida \n"
 "            el límite (patrón de host) para devolver solo los hosts que \n"
 "            están en la intersección de esos dos grupos."
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:203
+#: screens/Inventory/shared/Inventory.helptext.tsx:287
 msgid "If enabled, hosts can be deleted from this inventory while jobs are running against it. By default those deletions are rejected until the running jobs finish."
 msgstr "Si está habilitado, se pueden eliminar hosts de este inventario mientras se ejecutan trabajos contra él. De forma predeterminada, esas eliminaciones se rechazan hasta que terminen los trabajos en ejecución."
 
@@ -2461,7 +2470,7 @@ msgid "Management job launch error"
 msgstr "Error de ejecución de la tarea de gestión"
 
 #: components/Lookup/HostFilterLookup.tsx:309
-#: components/Lookup/Lookup.tsx:183
+#: components/Lookup/Lookup.tsx:209
 msgid "Search"
 msgstr "Buscar"
 
@@ -2520,6 +2529,7 @@ msgid "Cancel Constructed Inventory Source Sync"
 msgstr "Cancelar sincronización de origen de inventario construido"
 
 #: screens/Application/ApplicationTokens/ApplicationTokenListItem.tsx:43
+#: screens/Inventory/shared/Inventory.helptext.tsx:150
 #: screens/User/shared/UserTokenForm.tsx:76
 #: screens/User/UserTokenDetail/UserTokenDetail.tsx:56
 #: screens/User/UserTokenList/UserTokenList.tsx:147
@@ -2537,7 +2547,7 @@ msgstr "{0} (eliminado)"
 msgid "The inventory that this host belongs to."
 msgstr "Seleccione el inventario al que pertenecerá este host."
 
-#: screens/Login/Login.tsx:333
+#: screens/Login/Login.tsx:346
 msgid "Log In"
 msgstr "Iniciar sesión"
 
@@ -2556,6 +2566,11 @@ msgstr "No tiene permiso para borrar {pluralizedItemName}: {itemsUnableToDelete}
 #: screens/NotificationTemplate/shared/TypeInputsSubForm.tsx:556
 msgid "Notification color"
 msgstr "Color de la notificación"
+
+#: screens/Inventory/shared/Inventory.helptext.tsx:188
+msgid "include_raw: attach the whole NetBox object as netbox_raw. Useful for working\n"
+"        out what is available, expensive for a routine sync."
+msgstr ""
 
 #: screens/Instances/InstanceDetail/InstanceDetail.tsx:212
 #: screens/Job/JobOutput/HostEventModal.tsx:161
@@ -2614,7 +2629,7 @@ msgstr "Habilitar eventos de seguimiento del sistema de registro de forma indivi
 msgid "Job Templates with credentials that prompt for passwords cannot be selected when creating or editing nodes"
 msgstr "Las plantillas de trabajo con credenciales que solicitan contraseñas no pueden seleccionarse al crear o modificar nodos"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:202
+#: screens/Inventory/shared/Inventory.helptext.tsx:286
 msgid "If enabled, the inventory will prevent adding any organization instance groups to the list of preferred instances groups to run associated job templates on. Note: If this setting is enabled and you provided an empty list, the global instance groups will be applied."
 msgstr "Si se activa, el inventario impedirá que se añadan grupos de instancias de la organización a la lista de grupos de instancias preferidos para ejecutar plantillas de trabajo asociadas. Nota: si esta opción está activada y ha proporcionado una lista vacía, se aplicarán los grupos de instancias globales."
 
@@ -2725,11 +2740,12 @@ msgstr "Copiar salida"
 msgid "No results found"
 msgstr "No se encontraron resultados"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:214
+#: screens/Inventory/shared/Inventory.helptext.tsx:298
 msgid "Allow Jobs While Syncing: If enabled, jobs against this inventory do not wait for a sync of it to finish."
 msgstr ""
 
 #: components/LaunchPrompt/steps/OtherPromptsStep.tsx:218
+#: components/LaunchPrompt/steps/OtherPromptsStep.tsx:220
 #: components/PromptDetail/PromptDetail.tsx:432
 #: components/PromptDetail/PromptJobTemplateDetail.tsx:164
 #: components/Schedule/ScheduleDetail/ScheduleDetail.tsx:523
@@ -2740,6 +2756,13 @@ msgstr ""
 #: screens/Template/shared/JobTemplateForm.tsx:606
 msgid "Off"
 msgstr "Off"
+
+#: screens/Inventory/shared/Inventory.helptext.tsx:197
+msgid "The inventory importer performs a full reconcile, so this skips whole runs\n"
+"        rather than applying deltas. The watch list covers every NetBox object type\n"
+"        that can change this inventory, including config contexts, tags, sites and\n"
+"        IP addresses, none of which record a change against the device they affect."
+msgstr ""
 
 #: screens/Inventory/Inventories.tsx:57
 msgid "Create new smart inventory"
@@ -2842,7 +2865,7 @@ msgstr "Elemento OK"
 msgid "Icon URL"
 msgstr "URL de icono"
 
-#: screens/Inventory/shared/InventorySourceForm.tsx:177
+#: screens/Inventory/shared/InventorySourceForm.tsx:178
 msgid "Select the Instance Groups this inventory source sync should run on. If unset, the sync runs on the instance groups of the inventory or its organization."
 msgstr "Seleccione los grupos de instancias en los que se debe ejecutar la sincronización de esta fuente de inventario. Si no se establece, la sincronización se ejecuta en los grupos de instancias del inventario o de su organización."
 
@@ -3042,12 +3065,12 @@ msgstr "{0, plural, one {Introduzca un número de teléfono válido.} other {Int
 msgid "Facts"
 msgstr "Eventos"
 
-#: screens/Login/Login.tsx:357
+#: screens/Login/Login.tsx:370
 msgid "or"
 msgstr "o"
 
 #: components/AssociateModal/AssociateModal.tsx:69
-#: components/Lookup/Lookup.tsx:237
+#: components/Lookup/Lookup.tsx:270
 #: components/PaginatedTable/PaginatedTable.tsx:77
 #: components/PaginatedTable/ToolbarDeleteButton.tsx:59
 #: screens/HostMetrics/HostMetricsDeleteButton.tsx:36
@@ -3227,7 +3250,7 @@ msgstr "El formato sugerido para los nombres de variables es minúsculas y\n"
 msgid "This job template is currently being used by other resources. Are you sure you want to delete it?"
 msgstr "Esta plantilla de trabajo está siendo utilizada por otros recursos. ¿Está seguro de que desea eliminarla?"
 
-#: screens/Credential/Credential.tsx:120
+#: screens/Credential/Credential.tsx:122
 msgid "View all Credentials."
 msgstr "Ver todas las credenciales."
 
@@ -3520,7 +3543,7 @@ msgstr "Orden de edición"
 msgid "Minimum"
 msgstr "Mínimo"
 
-#: screens/Setting/MiscAuthentication/MiscAuthenticationEdit/MiscAuthenticationEdit.tsx:96
+#: screens/Setting/MiscAuthentication/MiscAuthenticationEdit/MiscAuthenticationEdit.tsx:97
 msgid "Refresh Token Expiration"
 msgstr "Actualizar expiración del token"
 
@@ -3700,9 +3723,9 @@ msgstr "Esta acción disociará todos los roles de este usuario de los equipos s
 #: components/LaunchButton/WorkflowRelaunchForceSuccessModal.tsx:155
 #: components/LaunchButton/WorkflowRelaunchVariablesModal.tsx:133
 #: components/LaunchButton/WorkflowRelaunchVariablesModal.tsx:137
-#: components/LaunchPrompt/LaunchPrompt.tsx:181
+#: components/LaunchPrompt/LaunchPrompt.tsx:182
 #: components/Lookup/HostFilterLookup.tsx:407
-#: components/Lookup/Lookup.tsx:260
+#: components/Lookup/Lookup.tsx:293
 #: components/PaginatedTable/ToolbarDeleteButton.tsx:248
 #: components/ResourceAccessList/DeleteRoleConfirmationModal.tsx:47
 #: components/Schedule/shared/ScheduleForm.tsx:624
@@ -4082,7 +4105,7 @@ msgstr "Vista de topología"
 msgid "Syncing"
 msgstr "Sincronización"
 
-#: screens/Inventory/shared/InventorySourceForm.tsx:210
+#: screens/Inventory/shared/InventorySourceForm.tsx:211
 msgid "Source details"
 msgstr "Detalles de la fuente"
 
@@ -4093,6 +4116,10 @@ msgstr "Extraído de un proyecto"
 #: screens/NotificationTemplate/NotificationTemplateDetail/NotificationTemplateDetail.tsx:408
 msgid "Destination Channels"
 msgstr "Canales destinatarios"
+
+#: screens/Inventory/shared/Inventory.helptext.tsx:192
+msgid "Incremental sync"
+msgstr ""
 
 #: screens/Template/WorkflowJobTemplateDetail/WorkflowJobTemplateDetail.tsx:298
 msgid "Failed to delete workflow job template."
@@ -4198,8 +4225,8 @@ msgstr "Eliminar credencial"
 #: screens/Setting/Logging/LoggingDetail/LoggingDetail.tsx:112
 #: screens/Setting/MiscAuthentication/MiscAuthenticationDetail/MiscAuthenticationDetail.tsx:85
 #: screens/Setting/MiscAuthentication/MiscAuthenticationDetail/MiscAuthenticationDetail.tsx:89
-#: screens/Setting/MiscSystem/MiscSystemDetail/MiscSystemDetail.tsx:122
-#: screens/Setting/MiscSystem/MiscSystemDetail/MiscSystemDetail.tsx:126
+#: screens/Setting/MiscSystem/MiscSystemDetail/MiscSystemDetail.tsx:124
+#: screens/Setting/MiscSystem/MiscSystemDetail/MiscSystemDetail.tsx:128
 #: screens/Setting/OIDC/OIDCDetail/OIDCDetail.tsx:85
 #: screens/Setting/OIDC/OIDCDetail/OIDCDetail.tsx:89
 #: screens/Setting/RADIUS/RADIUSDetail/RADIUSDetail.tsx:96
@@ -4240,7 +4267,7 @@ msgstr "Establece el papel que desempeñará esta instancia dentro de la topolog
 msgid "Installed"
 msgstr "Instalado"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:55
+#: screens/Inventory/shared/Inventory.helptext.tsx:59
 msgid "View JSON examples at"
 msgstr "Ver ejemplos de JSON en"
 
@@ -4256,7 +4283,7 @@ msgstr "No se ha especificado el tiempo de espera"
 msgid "On Timeout"
 msgstr "En el tiempo de espera"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:208
+#: screens/Inventory/shared/Inventory.helptext.tsx:292
 msgid "Prevent Instance Group Fallback: If enabled, the inventory will prevent adding any organization instance groups to the list of preferred instances groups to run associated job templates on."
 msgstr "Impedir la retroalimentación del grupo de instancias: Si se habilita, el inventario impedirá añadir cualquier grupo de instancias de la organización a la lista de grupos de instancias preferidos para ejecutar las plantillas de trabajo asociadas."
 
@@ -4588,7 +4615,7 @@ msgstr "¿Eliminar compañeros?"
 msgid "Search text input"
 msgstr "Entrada de texto de búsqueda"
 
-#: components/Lookup/Lookup.tsx:100
+#: components/Lookup/Lookup.tsx:118
 msgid "That value was not found. Please enter or select a valid value."
 msgstr "No se encontró ese valor. Ingrese o seleccione un valor válido."
 
@@ -4596,7 +4623,7 @@ msgstr "No se encontró ese valor. Ingrese o seleccione un valor válido."
 msgid "Weekend day"
 msgstr "Día del fin de semana"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:28
+#: screens/Inventory/shared/Inventory.helptext.tsx:32
 msgid "Optional labels that describe this inventory,\n"
 "          such as 'dev' or 'test'. Labels can be used to group and filter\n"
 "          inventories and completed jobs."
@@ -4624,7 +4651,7 @@ msgstr "Ver detalles de la organización"
 #: components/JobList/JobList.tsx:335
 #: components/JobList/JobList.tsx:346
 #: components/LaunchButton/LaunchButton.tsx:305
-#: components/LaunchPrompt/LaunchPrompt.tsx:118
+#: components/LaunchPrompt/LaunchPrompt.tsx:119
 #: components/NotificationList/NotificationList.tsx:293
 #: components/PaginatedTable/ToolbarDeleteButton.tsx:172
 #: components/RelatedTemplateList/RelatedTemplateList.tsx:268
@@ -4831,7 +4858,7 @@ msgstr "Plantillas de notificación"
 msgid "Start message body"
 msgstr "Iniciar cuerpo del mensaje"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:136
+#: screens/Inventory/shared/Inventory.helptext.tsx:140
 msgid "Branch to use on inventory sync. Project default used if blank. Only allowed if project allow_override field is set to true."
 msgstr "Rama para usar en la sincronización del inventario. Se utiliza el valor predeterminado del proyecto si está en blanco. Solo se permite si el campo allow_override del proyecto está establecido en true."
 
@@ -5036,6 +5063,11 @@ msgstr "Agregar roles de equipo"
 msgid "Jobs settings"
 msgstr "Configuración de las tareas"
 
+#: screens/Inventory/shared/Inventory.helptext.tsx:194
+msgid "incremental: ask NetBox's changelog whether anything relevant has changed\n"
+"        before fetching, and skip the fetch when nothing has. Off by default."
+msgstr ""
+
 #: screens/Credential/shared/CredentialPlugins/CredentialPluginSelected.tsx:33
 #: screens/Credential/shared/CredentialPlugins/CredentialPluginSelected.tsx:39
 msgid "Edit Credential Plugin Configuration"
@@ -5133,7 +5165,7 @@ msgstr "Crear nuevo equipo"
 msgid "Sign in with Microsoft Entra ID"
 msgstr "Iniciar sesión con Microsoft Entra ID"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:157
+#: screens/Inventory/shared/Inventory.helptext.tsx:241
 msgid "in the documentation and the"
 msgstr "en la documentación y la"
 
@@ -5218,7 +5250,7 @@ msgstr "Contraer"
 
 #: components/JobList/JobListItem.tsx:341
 #: components/LabelLists/LabelLists.tsx:56
-#: components/LaunchPrompt/steps/OtherPromptsStep.tsx:258
+#: components/LaunchPrompt/steps/OtherPromptsStep.tsx:257
 #: components/PromptDetail/PromptDetail.tsx:393
 #: components/PromptDetail/PromptJobTemplateDetail.tsx:217
 #: components/PromptDetail/PromptWFJobTemplateDetail.tsx:129
@@ -5479,7 +5511,7 @@ msgid "Preferred Theme"
 msgstr "Tema preferido"
 
 #: screens/Instances/Shared/InstanceForm.tsx:38
-#: screens/Inventory/shared/InventorySourceForm.tsx:110
+#: screens/Inventory/shared/InventorySourceForm.tsx:111
 #: screens/Project/shared/ProjectForm.tsx:168
 msgid "Set a value for this field"
 msgstr "Establecer un valor para este campo"
@@ -5569,7 +5601,7 @@ msgstr "Información sobre la frecuencia"
 #: components/AdHocCommands/useAdHocDetailsStep.tsx:47
 #: components/AdHocCommands/useAdHocExecutionEnvironmentStep.tsx:26
 #: components/AdHocCommands/useAdHocInstanceGroupsStep.tsx:27
-#: components/LaunchPrompt/LaunchPrompt.tsx:182
+#: components/LaunchPrompt/LaunchPrompt.tsx:183
 #: components/Schedule/shared/SchedulePromptableFields.tsx:154
 #: screens/Credential/shared/CredentialPlugins/CredentialPluginPrompt/CredentialPluginPrompt.tsx:73
 #: screens/Template/WorkflowJobTemplateVisualizer/Modals/NodeModals/NodeModal.tsx:234
@@ -5577,7 +5609,7 @@ msgid "Next"
 msgstr "Siguiente"
 
 #: components/LabelSelect/LabelSelect.tsx:204
-#: components/LaunchPrompt/steps/OtherPromptsStep.tsx:264
+#: components/LaunchPrompt/steps/OtherPromptsStep.tsx:263
 #: components/MultiSelect/TagMultiSelect.tsx:134
 #: screens/Credential/shared/CredentialFormFields/BecomeMethodField.tsx:149
 #: screens/Inventory/shared/InventoryForm.tsx:97
@@ -5670,7 +5702,7 @@ msgstr "Automatización"
 msgid "Node Type"
 msgstr "Tipo de nodo"
 
-#: screens/Credential/Credential.tsx:171
+#: screens/Credential/Credential.tsx:173
 msgid "View Credential Details"
 msgstr "Ver detalles de la credencial"
 
@@ -5734,7 +5766,7 @@ msgstr "Últimas dos semanas"
 
 #: components/AddRole/AddResourceRole.tsx:300
 #: components/AdHocCommands/AdHocCommandsWizard.tsx:68
-#: components/LaunchPrompt/LaunchPrompt.tsx:180
+#: components/LaunchPrompt/LaunchPrompt.tsx:181
 #: components/Schedule/shared/SchedulePromptableFields.tsx:152
 #: screens/Credential/shared/CredentialPlugins/CredentialPluginPrompt/CredentialPluginPrompt.tsx:97
 #: screens/Template/WorkflowJobTemplateVisualizer/Modals/NodeModals/NodeModal.tsx:91
@@ -5932,6 +5964,13 @@ msgstr "Este paso contiene errores"
 #: screens/Template/shared/WorkflowJobTemplateForm.tsx:239
 msgid "source control branch"
 msgstr "rama de fuente de control"
+
+#: screens/Inventory/shared/Inventory.helptext.tsx:180
+msgid "merge_config_context: also place each config context key at the top level as a\n"
+"        host variable. On by default. The raw mapping is always available as\n"
+"        netbox_config_context, and anything set on the object itself as\n"
+"        netbox_local_context_data."
+msgstr ""
 
 #: components/AdHocCommands/AdHocPreviewStep.tsx:68
 #: components/AdHocCommands/useAdHocInstanceGroupsStep.tsx:22
@@ -6292,7 +6331,7 @@ msgstr "El entorno de ejecución que se utilizará al iniciar esta plantilla de 
 msgid "Label Name"
 msgstr "Nombre de la etiqueta"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:64
+#: screens/Inventory/shared/Inventory.helptext.tsx:68
 msgid "View YAML examples at"
 msgstr "Ver ejemplos de YAML en"
 
@@ -6309,8 +6348,8 @@ msgstr "Los nodos marcados aquí no se vuelven a ejecutar: el flujo de trabajo l
 msgid "Resource deleted"
 msgstr "Recurso eliminado"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:52
-#: screens/Inventory/shared/Inventory.helptext.tsx:196
+#: screens/Inventory/shared/Inventory.helptext.tsx:56
+#: screens/Inventory/shared/Inventory.helptext.tsx:280
 msgid "YAML:"
 msgstr "YAML:"
 
@@ -6378,7 +6417,7 @@ msgstr "Habilite el inicio de sesión simplificado para sus aplicaciones {brandN
 msgid "Thursday"
 msgstr "Jueves"
 
-#: screens/Credential/Credential.tsx:100
+#: screens/Credential/Credential.tsx:102
 #: screens/Credential/Credentials.tsx:33
 #: screens/Inventory/ConstructedInventory.tsx:85
 #: screens/Inventory/FederatedInventory.tsx:81
@@ -6396,6 +6435,12 @@ msgstr "Plantillas de trabajo"
 #: screens/HostMetrics/HostMetricsListItem.tsx:30
 msgid "First automation"
 msgstr "Primera automatización"
+
+#: screens/Inventory/shared/Inventory.helptext.tsx:216
+msgid "group_by_status and group_by_tag: both on by default. Groups for site, region,\n"
+"        site group, location, rack, tenant, platform, cluster, device type, role and\n"
+"        manufacturer are always built."
+msgstr ""
 
 #: screens/ActivityStream/ActivityStreamListItem.tsx:51
 msgid "Initiated By"
@@ -6470,7 +6515,7 @@ msgstr "Alternar instancia"
 msgid "Back to Inventories"
 msgstr "Volver a Inventarios"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:121
+#: screens/Inventory/shared/Inventory.helptext.tsx:125
 msgid "After every project update where the SCM revision changes, refresh the inventory from the selected source before executing job tasks. This is intended for static content, like the Ansible inventory .ini file format."
 msgstr "Después de cada actualización del proyecto en la que cambie la revisión de SCM, actualice el inventario de la fuente seleccionada antes de ejecutar las tareas del trabajo. Esto está destinado a contenido estático, como el formato de archivo .ini de inventario de Ansible."
 
@@ -6577,7 +6622,7 @@ msgstr "Instancia"
 msgid "Including File"
 msgstr "Incluyendo fichero"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:80
+#: screens/Inventory/shared/Inventory.helptext.tsx:84
 msgid "If checked, any hosts and groups that were previously present on the external source but are now removed will be removed from the inventory. Hosts and groups that were not managed by the inventory source will be promoted to the next manually created group or if there is no manually created group to promote them into, they will be left in the \"all\" default group for the inventory."
 msgstr "Si se marca, todos los hosts y grupos que estaban presentes anteriormente en la fuente externa pero que ahora se han eliminado se eliminarán del inventario. Los hosts y grupos que no eran gestionados por la fuente de inventario se promoverán al siguiente grupo creado manualmente o, si no hay ningún grupo creado manualmente al que promoverlos, se dejarán en el grupo predeterminado \"all\" del inventario."
 
@@ -6623,6 +6668,7 @@ msgstr "Reordenar {label}"
 #: screens/Inventory/shared/InventorySourceSubForms/ControllerSubForm.tsx:47
 #: screens/Inventory/shared/InventorySourceSubForms/EC2SubForm.tsx:40
 #: screens/Inventory/shared/InventorySourceSubForms/GCESubForm.tsx:45
+#: screens/Inventory/shared/InventorySourceSubForms/NetBoxSubForm.tsx:41
 #: screens/Inventory/shared/InventorySourceSubForms/OpenStackSubForm.tsx:47
 #: screens/Inventory/shared/InventorySourceSubForms/SatelliteSubForm.tsx:49
 #: screens/Inventory/shared/InventorySourceSubForms/SCMSubForm.tsx:124
@@ -6688,6 +6734,10 @@ msgstr "Entrada de búsqueda de fecha"
 #: screens/NotificationTemplate/NotificationTemplateDetail/NotificationTemplateDetail.tsx:309
 msgid "Destination Rooms"
 msgstr "Salas de destino"
+
+#: screens/Inventory/shared/Inventory.helptext.tsx:174
+msgid "Host variables"
+msgstr ""
 
 #: screens/Host/HostDetail/HostDetail.tsx:123
 #: screens/Inventory/InventoryHostDetail/InventoryHostDetail.tsx:116
@@ -6820,7 +6870,7 @@ msgid "Minimum number of instances that will be automatically assigned to this g
 msgstr "Número mínimo de instancias que se asignarán automáticamente a este grupo cuando se conecten nuevas instancias."
 
 #. placeholder {0}: resource.name
-#: components/LaunchPrompt/LaunchPrompt.tsx:152
+#: components/LaunchPrompt/LaunchPrompt.tsx:153
 msgid "Launch | {0}"
 msgstr "Ejecutar | {0}"
 
@@ -6856,7 +6906,7 @@ msgstr "Más información para {label}"
 
 #: routeConfig.tsx:128
 #: screens/ActivityStream/ActivityStream.tsx:190
-#: screens/Credential/Credential.tsx:90
+#: screens/Credential/Credential.tsx:92
 #: screens/Credential/Credentials.tsx:32
 #: screens/Inventory/ConstructedInventory.tsx:76
 #: screens/Inventory/FederatedInventory.tsx:76
@@ -7001,7 +7051,7 @@ msgstr "Intente otra búsqueda con el filtro de arriba"
 msgid "Are you sure you want to edit login redirect override URL?  Doing so could impact users' ability to log in to the system once local authentication is also disabled."
 msgstr "¿Está seguro de que quiere editar la URL de redirección de inicio de sesión? Hacerlo podría afectar a la capacidad de los usuarios para iniciar sesión en el sistema una vez que la autenticación local también esté desactivada."
 
-#: screens/Credential/Credential.tsx:119
+#: screens/Credential/Credential.tsx:121
 msgid "Credential not found."
 msgstr "No se encontró la credencial."
 
@@ -7021,7 +7071,7 @@ msgstr "Contraseña del servidor IRC"
 msgid "API Token"
 msgstr "Token API"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:75
+#: screens/Inventory/shared/Inventory.helptext.tsx:79
 msgid "Control the level of output Ansible will produce for inventory source update jobs."
 msgstr "Controlar el nivel de salida que Ansible producirá para los trabajos de actualización de la fuente de inventario."
 
@@ -7291,7 +7341,7 @@ msgstr "Valor con el que se compara el artefacto. Se interpreta como JSON cuando
 msgid "Failed to delete one or more groups."
 msgstr "No se pudo eliminar uno o varios grupos."
 
-#: screens/Setting/MiscAuthentication/MiscAuthenticationEdit/MiscAuthenticationEdit.tsx:211
+#: screens/Setting/MiscAuthentication/MiscAuthenticationEdit/MiscAuthenticationEdit.tsx:212
 msgid "Confirm Disable Local Authorization"
 msgstr "Confirmar deshabilitación de la autorización local"
 
@@ -7327,7 +7377,7 @@ msgstr "Este campo debe ser un número y tener un valor mayor que {min}"
 msgid "All"
 msgstr "Todos"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:186
+#: screens/Inventory/shared/Inventory.helptext.tsx:270
 msgid "constructed inventory"
 msgstr "inventario construido"
 
@@ -7650,7 +7700,7 @@ msgstr "Sincronizar"
 #: screens/Inventory/shared/FederatedInventoryForm.tsx:73
 #: screens/Inventory/shared/InventoryForm.tsx:64
 #: screens/Inventory/shared/InventoryGroupForm.tsx:62
-#: screens/Inventory/shared/InventorySourceForm.tsx:159
+#: screens/Inventory/shared/InventorySourceForm.tsx:160
 #: screens/Inventory/shared/SmartInventoryForm.tsx:63
 #: screens/Inventory/SmartInventoryDetail/SmartInventoryDetail.tsx:110
 #: screens/Job/JobOutput/HostEventModal.tsx:163
@@ -7788,6 +7838,7 @@ msgstr "Iniciar sesión con GitHub Enterprise"
 #: screens/Inventory/shared/InventorySourceSubForms/AzureSubForm.tsx:54
 #: screens/Inventory/shared/InventorySourceSubForms/ControllerSubForm.tsx:55
 #: screens/Inventory/shared/InventorySourceSubForms/GCESubForm.tsx:53
+#: screens/Inventory/shared/InventorySourceSubForms/NetBoxSubForm.tsx:49
 #: screens/Inventory/shared/InventorySourceSubForms/OpenStackSubForm.tsx:55
 #: screens/Inventory/shared/InventorySourceSubForms/SatelliteSubForm.tsx:57
 #: screens/Inventory/shared/InventorySourceSubForms/SCMSubForm.tsx:56
@@ -8080,6 +8131,10 @@ msgstr "Borrar todos los filtros"
 msgid "{0, plural, one {This instance is currently being used by other resources. Are you sure you want to delete it?} other {Deprovisioning these instances could impact other resources that rely on them. Are you sure you want to delete anyway?}}"
 msgstr "{0, plural, one {Esta instancia está siendo utilizada actualmente por otros recursos. ¿Está seguro de que desea eliminarla?} other {Desaprovisionar estas instancias podría afectar a otros recursos que dependen de ellas. ¿Está seguro de que desea eliminarlas de todos modos?}}"
 
+#: screens/Inventory/shared/Inventory.helptext.tsx:162
+msgid "Host names and addresses"
+msgstr ""
+
 #: screens/Setting/AzureAD/AzureADDetail/AzureADDetail.tsx:61
 #: screens/Setting/GitHub/GitHubDetail/GitHubDetail.tsx:76
 #: screens/Setting/GoogleOAuth2/GoogleOAuth2Detail/GoogleOAuth2Detail.tsx:44
@@ -8087,7 +8142,7 @@ msgstr "{0, plural, one {Esta instancia está siendo utilizada actualmente por o
 #: screens/Setting/LDAP/LDAPDetail/LDAPDetail.tsx:105
 #: screens/Setting/Logging/LoggingDetail/LoggingDetail.tsx:70
 #: screens/Setting/MiscAuthentication/MiscAuthenticationDetail/MiscAuthenticationDetail.tsx:44
-#: screens/Setting/MiscSystem/MiscSystemDetail/MiscSystemDetail.tsx:84
+#: screens/Setting/MiscSystem/MiscSystemDetail/MiscSystemDetail.tsx:86
 #: screens/Setting/OIDC/OIDCDetail/OIDCDetail.tsx:44
 #: screens/Setting/RADIUS/RADIUSDetail/RADIUSDetail.tsx:45
 #: screens/Setting/SAML/SAMLDetail/SAMLDetail.tsx:54
@@ -8171,6 +8226,12 @@ msgstr "Volver a ejecutar desde el primer nodo"
 #: screens/Template/WorkflowJobTemplate.tsx:123
 msgid "Back to Templates"
 msgstr "Volver a Plantillas"
+
+#: screens/Inventory/shared/Inventory.helptext.tsx:206
+msgid "incremental_max_skips: force a full fetch after this many skipped runs in a\n"
+"        row, 24 by default. This bounds how stale the inventory can get from a change\n"
+"        the changelog never recorded, such as a direct database write or a restore."
+msgstr ""
 
 #: screens/Project/shared/Project.helptext.tsx:81
 msgid "The first fetches all references. The second fetches the Github pull request number 62, in this example the branch needs to be \"pull/62/head\"."
@@ -8382,7 +8443,7 @@ msgstr "Errores de sincronización del proyecto"
 msgid "Run on"
 msgstr "Ejecutar el"
 
-#: components/LaunchPrompt/LaunchPrompt.tsx:157
+#: components/LaunchPrompt/LaunchPrompt.tsx:158
 #: components/Schedule/shared/SchedulePromptableFields.tsx:129
 msgid "Show description"
 msgstr "Mostrar descripción"
@@ -8508,7 +8569,7 @@ msgstr "No más servidores"
 msgid "ID of the dashboard (optional)"
 msgstr "ID del panel de control (opcional)"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:135
+#: screens/Inventory/shared/Inventory.helptext.tsx:139
 msgid "Retrieve the enabled state from the given dict of host variables. The enabled variable may be specified using dot notation, e.g: 'foo.bar'"
 msgstr "Recupere el estado habilitado del dictado dado de las variables del host. La variable habilitada se puede especificar usando notación de puntos, por ejemplo: 'foo.bar'"
 
@@ -8707,7 +8768,7 @@ msgstr "LDAP 2"
 msgid "Examples include:"
 msgstr "Los ejemplos incluyen:"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:91
+#: screens/Inventory/shared/Inventory.helptext.tsx:95
 msgid "Inventory variables this source added on an earlier sync are removed once the source no longer provides them, unless they were edited since or another source of this inventory still provides them."
 msgstr "Las variables de inventario que esta fuente agregó en una sincronización anterior se eliminan cuando la fuente deja de proporcionarlas, a menos que se hayan editado desde entonces u otra fuente de este inventario todavía las proporcione."
 
@@ -8865,7 +8926,7 @@ msgstr "Nombre de la variable de respuesta"
 
 #: components/JobList/JobListItem.tsx:114
 #: components/Lookup/HostFilterLookup.tsx:399
-#: components/Lookup/Lookup.tsx:251
+#: components/Lookup/Lookup.tsx:284
 #: components/Pagination/Pagination.tsx:36
 msgid "Select"
 msgstr "Seleccionar"
@@ -8900,7 +8961,7 @@ msgstr "Alias en IRC"
 #~ msgid "Expires on"
 #~ msgstr "Fecha de expiración"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:102
+#: screens/Inventory/shared/Inventory.helptext.tsx:106
 msgid "Each time a job runs using this inventory, refresh the inventory from the selected source before executing job tasks."
 msgstr "Cada vez que se ejecute un trabajo utilizando este inventario, actualice el inventario de la fuente seleccionada antes de ejecutar las tareas del trabajo."
 
@@ -9046,7 +9107,7 @@ msgstr "Autenticación diversa"
 msgid "Download bundle"
 msgstr "Descargar el paquete"
 
-#: components/LaunchPrompt/LaunchPrompt.tsx:175
+#: components/LaunchPrompt/LaunchPrompt.tsx:176
 #: components/Schedule/shared/SchedulePromptableFields.tsx:147
 msgid "Content Loading"
 msgstr "Carga de contenido"
@@ -9184,7 +9245,7 @@ msgstr "No se pudo eliminar uno o más usuarios."
 msgid "On Success"
 msgstr "Con éxito"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:201
+#: screens/Inventory/shared/Inventory.helptext.tsx:285
 msgid "The inventory file to be synced by this source. You can select from the dropdown or enter a file within the input."
 msgstr "El archivo de inventario a sincronizar por esta fuente. Puede seleccionar desde el menú desplegable o introducir un archivo dentro de la entrada."
 
@@ -9336,6 +9397,12 @@ msgstr "Documentación."
 msgid "Credential Name"
 msgstr "Nombre de la credencial"
 
+#: screens/Inventory/shared/Inventory.helptext.tsx:202
+msgid "changelog_watch_all: fetch on any change at all rather than trusting the\n"
+"        watch list. Skips far less often, and cannot miss anything the changelog\n"
+"        recorded."
+msgstr ""
+
 #: components/JobList/JobList.tsx:225
 #: components/JobList/JobListItem.tsx:75
 #: screens/Job/JobOutput/HostEventModal.tsx:177
@@ -9427,6 +9494,12 @@ msgstr "Obsoleto"
 msgid "Update revision on job launch"
 msgstr "Revisión de la actualización en el lanzamiento del trabajo"
 
+#: screens/Inventory/shared/Inventory.helptext.tsx:169
+msgid "ansible_host is resolved in this order: a value merged from config context,\n"
+"        then the out-of-band address when oob_ip_as_primary_ip is set, then primary\n"
+"        IPv4, any primary IP, and IPv6."
+msgstr ""
+
 #: screens/WorkflowApproval/WorkflowApprovalList/WorkflowApprovalListDenyButton.tsx:27
 msgid "Select a row to deny"
 msgstr "Selecciona una fila para rechazar"
@@ -9488,7 +9561,7 @@ msgstr "Cuerpo del mensaje de flujo de trabajo denegado"
 msgid "Generic OIDC settings"
 msgstr "Ajustes genéricos de OIDC"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:211
+#: screens/Inventory/shared/Inventory.helptext.tsx:295
 msgid "Allow Deletes While In Use: If enabled, hosts can be deleted from this inventory while jobs are running against it."
 msgstr "Permitir eliminaciones mientras está en uso: si está habilitado, se pueden eliminar hosts de este inventario mientras se ejecutan trabajos contra él."
 
@@ -9585,7 +9658,7 @@ msgstr "Ejecución"
 msgid "The"
 msgstr "El"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:70
+#: screens/Inventory/shared/Inventory.helptext.tsx:74
 msgid "docs.ansible.com"
 msgstr "docs.ansible.com"
 
@@ -9689,7 +9762,7 @@ msgstr "Guardar"
 msgid "Click to create a new link to this node."
 msgstr "Haga clic para crear un nuevo enlace a este nodo."
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:76
+#: screens/Inventory/shared/Inventory.helptext.tsx:80
 msgid "Select the Ansible collection providing the inventory plugin used to sync from vCenter. The community.vmware collection is deprecated in favor of the newer vmware.vmware collection. The selection is applied via the \"plugin\" key in the source variables; when the key is absent, the default collection is used."
 msgstr "Seleccione la colección de Ansible que proporciona el plugin de inventario utilizado para sincronizar desde vCenter. La colección community.vmware está obsoleta en favor de la colección más reciente vmware.vmware. La selección se aplica mediante la clave \"plugin\" en las variables de fuente; cuando la clave está ausente, se utiliza la colección predeterminada."
 
@@ -9848,6 +9921,14 @@ msgstr "Tipo de usuario"
 msgid "{0, plural, one {This template is currently being used by some workflow nodes. Are you sure you want to delete it?} other {Deleting these templates could impact some workflow nodes that rely on them. Are you sure you want to delete anyway?}}"
 msgstr "{0, plural, one {This template is currently being used by some workflow nodes. Are you sure you want to delete it?} other {Deleting these templates could impact some workflow nodes that rely on them. Are you sure you want to delete anyway?}}"
 
+#: screens/Inventory/shared/Inventory.helptext.tsx:152
+msgid "filters: NetBox query filters applied to both devices and virtual machines.\n"
+"        device_filters and vm_filters add to it for one object type only, which is\n"
+"        needed because the two endpoints do not accept the same filters. Filter\n"
+"        names are checked against the NetBox API schema before anything is fetched,\n"
+"        and the sync fails on one NetBox would ignore."
+msgstr ""
+
 #: screens/Credential/CredentialDetail/CredentialDetail.tsx:309
 msgid "Failed to delete credential."
 msgstr "No se pudo eliminar la credencial."
@@ -9958,7 +10039,7 @@ msgstr "La cantidad de procesos paralelos o simultáneos para utilizar durante l
 msgid "View all Workflow Approvals."
 msgstr "Ver todas las aprobaciones del flujo de trabajo."
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:94
+#: screens/Inventory/shared/Inventory.helptext.tsx:98
 msgid "When not checked, a merge will be performed, combining local variables with those found on the external source."
 msgstr "Si no se marca, se realizará una fusión, combinando las variables locales con las que se encuentran en la fuente externa."
 
@@ -9971,7 +10052,7 @@ msgstr "Si no se marca, se realizará una fusión, combinando las variables loca
 msgid "Job Cancel Error"
 msgstr "Error en la cancelación de tarea"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:61
+#: screens/Inventory/shared/Inventory.helptext.tsx:65
 msgid "www.json.org"
 msgstr "www.json.org"
 
@@ -10077,7 +10158,7 @@ msgstr "Alternar herramientas"
 msgid "Organization"
 msgstr "Organización"
 
-#: screens/Login/Login.tsx:311
+#: screens/Login/Login.tsx:315
 msgid "Your session has expired. Please log in to continue where you left off."
 msgstr "Su sesión ha expirado. Inicie sesión para continuar."
 
@@ -10140,7 +10221,7 @@ msgstr "Iniciar sesión con Azure AD Tenant"
 msgid "Case-insensitive version of endswith."
 msgstr "Versión de endswith que no distingue mayúsculas de minúsculas."
 
-#: components/Lookup/Lookup.tsx:258
+#: components/Lookup/Lookup.tsx:291
 msgid "Cancel lookup"
 msgstr "Cancelar búsqueda"
 
@@ -10149,7 +10230,7 @@ msgstr "Cancelar búsqueda"
 #: components/Schedule/Schedule.tsx:93
 #: screens/Application/Application/Application.tsx:85
 #: screens/Application/Applications.tsx:38
-#: screens/Credential/Credential.tsx:88
+#: screens/Credential/Credential.tsx:90
 #: screens/Credential/Credentials.tsx:31
 #: screens/CredentialType/CredentialType.tsx:70
 #: screens/CredentialType/CredentialTypes.tsx:29
@@ -10188,7 +10269,7 @@ msgstr "Cancelar búsqueda"
 #: screens/Setting/Jobs/JobsDetail/JobsDetail.tsx:65
 #: screens/Setting/Logging/LoggingDetail/LoggingDetail.tsx:77
 #: screens/Setting/MiscAuthentication/MiscAuthenticationDetail/MiscAuthenticationDetail.tsx:51
-#: screens/Setting/MiscSystem/MiscSystemDetail/MiscSystemDetail.tsx:91
+#: screens/Setting/MiscSystem/MiscSystemDetail/MiscSystemDetail.tsx:93
 #: screens/Setting/OIDC/OIDCDetail/OIDCDetail.tsx:51
 #: screens/Setting/RADIUS/RADIUSDetail/RADIUSDetail.tsx:52
 #: screens/Setting/SAML/SAMLDetail/SAMLDetail.tsx:61
@@ -10297,7 +10378,7 @@ msgstr "Navegación"
 msgid "If enabled, control nodes will peer to this instance automatically. If disabled, instance will be connected only to associated peers."
 msgstr "Si está habilitado, los nodos de control examinarán esta instancia automáticamente. Si se desactiva, la instancia se conectará solo a los compañeros asociados."
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:128
+#: screens/Inventory/shared/Inventory.helptext.tsx:132
 msgid "and click on Update Revision on Launch"
 msgstr "y haga clic en Actualizar revisión al ejecutar"
 
@@ -10509,7 +10590,7 @@ msgstr "Modificar detalles"
 msgid "Deleted"
 msgstr "Eliminado"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:137
+#: screens/Inventory/shared/Inventory.helptext.tsx:141
 msgid "This field is ignored unless an Enabled Variable is set. If the enabled variable matches this value, the host will be enabled on import."
 msgstr "Este campo se ignora a menos que se establezca una variable habilitada. Si la variable habilitada coincide con este valor, el host se habilitará en la importación."
 
@@ -10620,7 +10701,7 @@ msgstr "Módulo"
 msgid "Confirm revert all"
 msgstr "Confirmar la reversión de todo"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:88
+#: screens/Inventory/shared/Inventory.helptext.tsx:92
 msgid "If checked, all variables for child groups and hosts will be removed and replaced by those found on the external source."
 msgstr "Si está marcada, todas las variables para grupos secundarios y hosts se eliminarán y reemplazarán por las que se encuentran en la fuente externa."
 
@@ -10797,7 +10878,7 @@ msgstr "Este campo debe tener al menos {0} caracteres"
 #: components/JobList/JobListItem.tsx:224
 #: components/PromptDetail/PromptInventorySourceDetail.tsx:81
 #: screens/Inventory/InventorySourceDetail/InventorySourceDetail.tsx:233
-#: screens/Inventory/shared/InventorySourceForm.tsx:180
+#: screens/Inventory/shared/InventorySourceForm.tsx:181
 #: screens/Job/JobDetail/JobDetail.tsx:183
 #: screens/Job/JobDetail/JobDetail.tsx:335
 #: screens/Template/WorkflowJobTemplateVisualizer/Modals/NodeModals/NodeTypeStep/InventorySourcesList.tsx:99
@@ -10812,7 +10893,7 @@ msgstr "Agregar inventario"
 msgid "Inventory ID"
 msgstr "ID de inventario"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:204
+#: screens/Inventory/shared/Inventory.helptext.tsx:288
 msgid "If enabled, jobs and ad hoc commands against this inventory start while it is being synced, using the hosts it had before the sync. By default they wait for the sync to finish. With update on launch, a job still waits for a sync started for it, and for a running one when that source has never synced successfully."
 msgstr ""
 
@@ -10875,6 +10956,12 @@ msgstr "Condición"
 msgid "LDAP2"
 msgstr "LDAP2"
 
+#: screens/Inventory/shared/Inventory.helptext.tsx:176
+msgid "config_context: fetch NetBox config context at all. On by default. Turning it\n"
+"        off makes the fetch noticeably cheaper on a large NetBox, because rendering\n"
+"        config context is the expensive part of listing devices."
+msgstr ""
+
 #: components/Search/LookupTypeInput.tsx:50
 msgid "Field contains value."
 msgstr "El campo contiene un valor."
@@ -10887,7 +10974,7 @@ msgstr "Seleccionar clave"
 msgid "Pass extra command line changes. There are two ansible command line parameters: "
 msgstr "Transfiera cambios adicionales de línea de comandos. Hay dos parámetros de línea de comandos de ansible: "
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:83
+#: screens/Inventory/shared/Inventory.helptext.tsx:87
 msgid "When not checked, local child hosts and groups not found on the external source will remain untouched by the inventory update process."
 msgstr "Si no se marca, los anfitriones secundarios locales y los grupos que no se encuentren en la fuente externa no se verán afectados por el proceso de actualización del inventario."
 
@@ -11003,6 +11090,12 @@ msgstr "No se pudo eliminar la organización."
 #: screens/Setting/Subscription/SubscriptionDetail/SubscriptionDetail.tsx:154
 #~ msgid "Hosts available"
 #~ msgstr "Hosts disponibles"
+
+#: screens/Inventory/shared/Inventory.helptext.tsx:145
+msgid "Variables that configure what this source pulls from NetBox and how it\n"
+"        is shaped. NetBox is a native integration, so these are Ascender's own\n"
+"        options rather than an Ansible inventory plugin's."
+msgstr ""
 
 #: screens/Setting/Settings.tsx:105
 msgid "Logging"
@@ -11328,7 +11421,7 @@ msgstr "Cada trabajo recibe un token de corta duración firmado para él, sin gu
 msgid "Preconditions for running this node when there are multiple parents. Refer to the"
 msgstr "Condiciones previas para ejecutar este nodo cuando hay varios elementos primarios. Consulte"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:149
+#: screens/Inventory/shared/Inventory.helptext.tsx:233
 msgid "Variables used to configure the inventory source. For a detailed description of how to configure this plugin, see"
 msgstr "Variables utilizadas para configurar el origen del inventario. Para obtener una descripción detallada de cómo configurar este complemento, consulte"
 
@@ -11350,6 +11443,11 @@ msgstr "FINALIZADO:"
 msgid "Prompt | {0}"
 msgstr "Aviso | {0}"
 
+#: screens/Inventory/shared/Inventory.helptext.tsx:185
+msgid "flatten_custom_fields: place custom fields at the top level as well as in\n"
+"        netbox_custom_fields."
+msgstr ""
+
 #: screens/Dashboard/DashboardGraph.tsx:39
 #: screens/Dashboard/DashboardGraph.tsx:154
 msgid "All job types"
@@ -11360,7 +11458,7 @@ msgstr "Todos los tipos de tarea"
 msgid "GitHub Enterprise Organization"
 msgstr "Organización de GitHub Enterprise"
 
-#: screens/Inventory/shared/InventorySourceForm.tsx:188
+#: screens/Inventory/shared/InventorySourceForm.tsx:189
 msgid "Choose a source"
 msgstr "Elegir una fuente"
 
@@ -11394,7 +11492,7 @@ msgstr "Selección de clave simple"
 #~ msgid "You have automated against more hosts than your subscription allows."
 #~ msgstr "Has automatizado contra más hosts de los que permite tu suscripción."
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:138
+#: screens/Inventory/shared/Inventory.helptext.tsx:142
 msgid "Regular expression where only matching host names will be imported. The filter is applied as a post-processing step after any inventory plugin filters are applied."
 msgstr "Expresión regular en la que solo se importarán los nombres de host que coincidan. El filtro se aplica como un paso posterior al procesamiento después de que se aplique cualquier filtro de complemento de inventario."
 
@@ -11431,6 +11529,11 @@ msgstr "{0, plural, one {¿Está seguro de que desea eliminar el grupo siguiente
 #: components/AssociateModal/AssociateModal.tsx:70
 msgid "Select Items"
 msgstr "Seleccionar elementos"
+
+#: screens/Inventory/shared/Inventory.helptext.tsx:210
+msgid "A full fetch also happens whenever the position is missing or has been\n"
+"        pruned, the NetBox URL changed, or the previous run did not succeed."
+msgstr ""
 
 #: components/JobList/JobListCancelButton.tsx:100
 msgid "{numJobsToCancel, plural, one {Cancel selected job} other {Cancel selected jobs}}"
@@ -11494,7 +11597,7 @@ msgstr "Denegado con éxito"
 msgid "Not configured for inventory sync."
 msgstr "No configurado para la sincronización de inventario."
 
-#: components/Lookup/JobTemplateLookup.tsx:124
+#: components/Lookup/JobTemplateLookup.tsx:133
 #: components/RelatedTemplateList/RelatedTemplateList.tsx:201
 #: components/TemplateList/TemplateList.tsx:234
 #: components/UserAndTeamAccessAdd/UserAndTeamAccessAdd.tsx:96
@@ -11694,7 +11797,7 @@ msgstr "Fallo de aprovisionamiento"
 msgid "Whether the approval node is automatically approved or denied when the timeout expires."
 msgstr "Determina si el nodo de aprobación se aprueba o se deniega automáticamente cuando expira el tiempo de espera."
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:133
+#: screens/Inventory/shared/Inventory.helptext.tsx:137
 msgid "Time in seconds to consider an inventory sync to be current. During job runs and callbacks the task system will evaluate the timestamp of the latest sync. If it is older than Cache Timeout, it is not considered current, and a new inventory sync will be performed."
 msgstr "Tiempo en segundos para considerar que una sincronización de inventario es actual. Durante las ejecuciones de trabajos y las devoluciones de llamada, el sistema de tareas evaluará la marca de tiempo de la última sincronización. Si es anterior al tiempo de espera de la caché, no se considera actual y se realizará una nueva sincronización del inventario."
 
@@ -11702,7 +11805,7 @@ msgstr "Tiempo en segundos para considerar que una sincronización de inventario
 #~ msgid "Automation controller version"
 #~ msgstr "Versión del controlador de automatización"
 
-#: screens/Setting/MiscAuthentication/MiscAuthenticationEdit/MiscAuthenticationEdit.tsx:90
+#: screens/Setting/MiscAuthentication/MiscAuthenticationEdit/MiscAuthenticationEdit.tsx:91
 msgid "Access Token Expiration"
 msgstr "Expiración del token de acceso"
 
@@ -11856,7 +11959,7 @@ msgstr "Nodo cancelado, nuevas variables"
 #~ msgid "Insights system ID"
 #~ msgstr "ID del sistema de Insights"
 
-#: screens/Setting/MiscAuthentication/MiscAuthenticationEdit/MiscAuthenticationEdit.tsx:103
+#: screens/Setting/MiscAuthentication/MiscAuthenticationEdit/MiscAuthenticationEdit.tsx:104
 msgid "Authorization Code Expiration"
 msgstr "Expiración del código de autorización"
 
@@ -12091,6 +12194,7 @@ msgstr "No se pudo asociar."
 #: screens/Inventory/InventoryHostGroups/InventoryHostGroupsList.tsx:245
 #: screens/Inventory/InventoryList/InventoryListItem.tsx:147
 #: screens/Inventory/InventoryRelatedGroups/InventoryRelatedGroupList.tsx:265
+#: screens/Inventory/shared/Inventory.helptext.tsx:214
 #: util/getRelatedResourceDeleteDetails.ts:150
 msgid "Groups"
 msgstr "Grupos"
@@ -12140,7 +12244,7 @@ msgstr "No se pudo eliminar el host."
 #: components/Lookup/CredentialLookup.tsx:225
 #: components/Lookup/InventoryLookup.tsx:191
 #: components/Lookup/InventoryLookup.tsx:254
-#: components/Lookup/JobTemplateLookup.tsx:128
+#: components/Lookup/JobTemplateLookup.tsx:137
 #: components/Lookup/MultiCredentialsLookup.tsx:226
 #: components/Lookup/OrganizationLookup.tsx:156
 #: components/Lookup/ProjectLookup.tsx:177
@@ -12225,6 +12329,11 @@ msgstr "Cuenta SID"
 #: screens/Setting/Subscription/SubscriptionEdit/AnalyticsStep.tsx:85
 #~ msgid "Provide your Red Hat or Red Hat Satellite credentials to enable Automation Analytics."
 #~ msgstr "Proporcione sus credenciales de Red Hat o Red Hat Satellite para habilitar Automation Analytics."
+
+#: screens/Inventory/shared/Inventory.helptext.tsx:158
+msgid "exclude_offline: fetch only objects whose status is active. Off by default,\n"
+"        because non-active objects are imported disabled rather than dropped."
+msgstr ""
 
 #: screens/Template/shared/PlaybookSelect.tsx:134
 #: screens/Template/shared/PlaybookSelect.tsx:135

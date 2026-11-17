@@ -2075,6 +2075,30 @@ export interface paths {
     patch?: never;
     trace?: never;
   };
+  '/api/v2/inventory_sources/{id}/netbox/': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
+    /**
+     * @description Receive a NetBox event rule's webhook for one inventory source.
+     *
+     *     NetBox signs the raw body with HMAC-SHA512 and sends the hex digest in
+     *     X-Hook-Signature. The secret is optional on NetBox's side, so a request
+     *     without one is refused rather than trusted: this endpoint is unauthenticated
+     *     apart from that signature.
+     */
+    post: operations['inventory_sources_netbox_create'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
   '/api/v2/inventory_sources/{id}/notification_templates_error/': {
     parameters: {
       query?: never;
@@ -2149,6 +2173,22 @@ export interface paths {
     get: operations['inventory_sources_update_retrieve'];
     put?: never;
     post: operations['inventory_sources_update_create'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  '/api/v2/inventory_sources/{id}/webhook_key/': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get: operations['inventory_sources_webhook_key_retrieve'];
+    put?: never;
+    post: operations['inventory_sources_webhook_key_create'];
     delete?: never;
     options?: never;
     head?: never;
@@ -8020,6 +8060,18 @@ export interface components {
       update_cache_timeout: number;
       /** @description Project containing inventory file used as source. */
       source_project?: number | null;
+      /**
+       * @description Service that webhook requests will be accepted from
+       *
+       *     * `netbox` - NetBox
+       */
+      webhook_service?:
+        | (
+            | components['schemas']['InventorySourceWebhookServiceEnum']
+            | components['schemas']['BlankEnum']
+            | components['schemas']['NullEnum']
+          )
+        | null;
       readonly last_update_failed: boolean;
       /** Format: date-time */
       readonly last_updated: string;
@@ -8094,6 +8146,20 @@ export interface components {
       update_cache_timeout: number;
       /** @description Project containing inventory file used as source. */
       source_project?: number | null;
+      /**
+       * @description Service that webhook requests will be accepted from
+       *
+       *     * `netbox` - NetBox
+       */
+      webhook_service?:
+        | (
+            | components['schemas']['InventorySourceWebhookServiceEnum']
+            | components['schemas']['BlankEnum']
+            | components['schemas']['NullEnum']
+          )
+        | null;
+      /** @description Shared secret the webhook service signs its requests with. Leave blank to generate one when the webhook service is set. */
+      webhook_key?: string;
     };
     /**
      * @description * `new` - New
@@ -8122,6 +8188,11 @@ export interface components {
     InventorySourceUpdate: {
       readonly can_update: boolean;
     };
+    /**
+     * @description * `netbox` - NetBox
+     * @enum {string}
+     */
+    InventorySourceWebhookServiceEnum: 'netbox';
     InventoryUpdateCancel: {
       readonly can_cancel: boolean;
     };
@@ -8538,7 +8609,7 @@ export interface components {
        */
       webhook_service?:
         | (
-            | components['schemas']['WebhookServiceEnum']
+            | components['schemas']['WebhookServiceEeeEnum']
             | components['schemas']['BlankEnum']
             | components['schemas']['NullEnum']
           )
@@ -8781,7 +8852,7 @@ export interface components {
        */
       webhook_service?:
         | (
-            | components['schemas']['WebhookServiceEnum']
+            | components['schemas']['WebhookServiceEeeEnum']
             | components['schemas']['BlankEnum']
             | components['schemas']['NullEnum']
           )
@@ -8933,7 +9004,7 @@ export interface components {
        */
       webhook_service?:
         | (
-            | components['schemas']['WebhookServiceEnum']
+            | components['schemas']['WebhookServiceEeeEnum']
             | components['schemas']['BlankEnum']
             | components['schemas']['NullEnum']
           )
@@ -9064,7 +9135,7 @@ export interface components {
        */
       webhook_service?:
         | (
-            | components['schemas']['WebhookServiceEnum']
+            | components['schemas']['WebhookServiceEeeEnum']
             | components['schemas']['BlankEnum']
             | components['schemas']['NullEnum']
           )
@@ -10866,6 +10937,20 @@ export interface components {
       update_cache_timeout: number;
       /** @description Project containing inventory file used as source. */
       source_project?: number | null;
+      /**
+       * @description Service that webhook requests will be accepted from
+       *
+       *     * `netbox` - NetBox
+       */
+      webhook_service?:
+        | (
+            | components['schemas']['InventorySourceWebhookServiceEnum']
+            | components['schemas']['BlankEnum']
+            | components['schemas']['NullEnum']
+          )
+        | null;
+      /** @description Shared secret the webhook service signs its requests with. Leave blank to generate one when the webhook service is set. */
+      webhook_key?: string;
     };
     PatchedInventoryVariableDataRequest: {
       /**
@@ -10987,7 +11072,7 @@ export interface components {
        */
       webhook_service?:
         | (
-            | components['schemas']['WebhookServiceEnum']
+            | components['schemas']['WebhookServiceEeeEnum']
             | components['schemas']['BlankEnum']
             | components['schemas']['NullEnum']
           )
@@ -11190,7 +11275,7 @@ export interface components {
        */
       webhook_service?:
         | (
-            | components['schemas']['WebhookServiceEnum']
+            | components['schemas']['WebhookServiceEeeEnum']
             | components['schemas']['BlankEnum']
             | components['schemas']['NullEnum']
           )
@@ -13612,7 +13697,7 @@ export interface components {
        */
       webhook_service?:
         | (
-            | components['schemas']['WebhookServiceEnum']
+            | components['schemas']['WebhookServiceEeeEnum']
             | components['schemas']['BlankEnum']
             | components['schemas']['NullEnum']
           )
@@ -13738,7 +13823,7 @@ export interface components {
        */
       webhook_service?:
         | (
-            | components['schemas']['WebhookServiceEnum']
+            | components['schemas']['WebhookServiceEeeEnum']
             | components['schemas']['BlankEnum']
             | components['schemas']['NullEnum']
           )
@@ -13853,7 +13938,7 @@ export interface components {
        */
       webhook_service?:
         | (
-            | components['schemas']['WebhookServiceEnum']
+            | components['schemas']['WebhookServiceEeeEnum']
             | components['schemas']['BlankEnum']
             | components['schemas']['NullEnum']
           )
@@ -14023,7 +14108,7 @@ export interface components {
        */
       webhook_service?:
         | (
-            | components['schemas']['WebhookServiceEnum']
+            | components['schemas']['WebhookServiceEeeEnum']
             | components['schemas']['BlankEnum']
             | components['schemas']['NullEnum']
           )
@@ -14189,7 +14274,7 @@ export interface components {
        */
       webhook_service?:
         | (
-            | components['schemas']['WebhookServiceEnum']
+            | components['schemas']['WebhookServiceEeeEnum']
             | components['schemas']['BlankEnum']
             | components['schemas']['NullEnum']
           )
@@ -19561,7 +19646,7 @@ export interface components {
      *     * `bitbucket_dc` - BitBucket DataCenter
      * @enum {string}
      */
-    WebhookServiceEnum: 'github' | 'gitlab' | 'bitbucket_dc';
+    WebhookServiceEeeEnum: 'github' | 'gitlab' | 'bitbucket_dc';
     WorkflowApproval: {
       readonly id: number;
       readonly type: string;
@@ -19897,7 +19982,7 @@ export interface components {
        */
       webhook_service?:
         | (
-            | components['schemas']['WebhookServiceEnum']
+            | components['schemas']['WebhookServiceEeeEnum']
             | components['schemas']['BlankEnum']
             | components['schemas']['NullEnum']
           )
@@ -20007,7 +20092,7 @@ export interface components {
        */
       webhook_service?:
         | (
-            | components['schemas']['WebhookServiceEnum']
+            | components['schemas']['WebhookServiceEeeEnum']
             | components['schemas']['BlankEnum']
             | components['schemas']['NullEnum']
           )
@@ -20053,7 +20138,7 @@ export interface components {
        */
       webhook_service?:
         | (
-            | components['schemas']['WebhookServiceEnum']
+            | components['schemas']['WebhookServiceEeeEnum']
             | components['schemas']['BlankEnum']
             | components['schemas']['NullEnum']
           )
@@ -20288,7 +20373,7 @@ export interface components {
        */
       webhook_service?:
         | (
-            | components['schemas']['WebhookServiceEnum']
+            | components['schemas']['WebhookServiceEeeEnum']
             | components['schemas']['BlankEnum']
             | components['schemas']['NullEnum']
           )
@@ -20628,7 +20713,7 @@ export interface components {
        */
       webhook_service?:
         | (
-            | components['schemas']['WebhookServiceEnum']
+            | components['schemas']['WebhookServiceEeeEnum']
             | components['schemas']['BlankEnum']
             | components['schemas']['NullEnum']
           )
@@ -25947,6 +26032,26 @@ export interface operations {
       };
     };
   };
+  inventory_sources_netbox_create: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        id: number;
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      /** @description No response body */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
+      };
+    };
+  };
   inventory_sources_notification_templates_error_list: {
     parameters: {
       query?: {
@@ -26198,6 +26303,46 @@ export interface operations {
         content: {
           'application/json': components['schemas']['InventorySourceUpdate'];
         };
+      };
+    };
+  };
+  inventory_sources_webhook_key_retrieve: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        id: number;
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      /** @description No response body */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
+      };
+    };
+  };
+  inventory_sources_webhook_key_create: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        id: number;
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      /** @description No response body */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
       };
     };
   };

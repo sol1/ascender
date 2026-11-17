@@ -263,7 +263,7 @@ msgstr "पिछला स्क्रॉल करें"
 msgid "Failed to copy project."
 msgstr "प्रोजेक्ट कॉपी करने में विफल।"
 
-#: components/LaunchPrompt/LaunchPrompt.tsx:157
+#: components/LaunchPrompt/LaunchPrompt.tsx:158
 #: components/Schedule/shared/SchedulePromptableFields.tsx:129
 msgid "Hide description"
 msgstr "विवरण छिपाएं"
@@ -424,7 +424,7 @@ msgid "Timed out"
 msgstr "समय समाप्त"
 
 #. placeholder {0}: header || t`Items`
-#: components/Lookup/Lookup.tsx:237
+#: components/Lookup/Lookup.tsx:270
 msgid "Select {0}"
 msgstr "{0} चुनें"
 
@@ -532,7 +532,7 @@ msgstr "इवेंट"
 msgid "Repeat Frequency"
 msgstr "पुनरावृत्ति आवृत्ति"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:180
+#: screens/Inventory/shared/Inventory.helptext.tsx:264
 msgid "Variables used to configure the constructed inventory plugin. For a detailed description of how to configure this plugin, see"
 msgstr "निर्मित इन्वेंटरी प्लगइन को कॉन्फ़िगर करने के लिए उपयोग किए जाने वाले वेरिएबल्स। इस प्लगइन को कॉन्फ़िगर करने के तरीके के विस्तृत विवरण के लिए, देखें"
 
@@ -713,7 +713,7 @@ msgstr "इंस्टेंस टॉगल करने में विफ�
 msgid "Failed to delete one or more instance groups."
 msgstr "एक या अधिक इंस्टेंस समूह हटाने में विफल।"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:49
+#: screens/Inventory/shared/Inventory.helptext.tsx:53
 msgid "JSON:"
 msgstr "JSON:"
 
@@ -733,8 +733,8 @@ msgstr "होस्ट मेट्रिक्स"
 msgid "Create new credential Type"
 msgstr "नया क्रेडेंशियल प्रकार बनाएं"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:107
-#: screens/Inventory/shared/Inventory.helptext.tsx:126
+#: screens/Inventory/shared/Inventory.helptext.tsx:111
+#: screens/Inventory/shared/Inventory.helptext.tsx:130
 msgid "If you want the Inventory Source to update on launch, click on Update on Launch, and also go to "
 msgstr "यदि आप चाहते हैं कि इन्वेंटरी स्रोत लॉन्च पर अपडेट हो, तो लॉन्च पर अपडेट करें पर क्लिक करें, और इस पर भी जाएं "
 
@@ -751,8 +751,8 @@ msgstr "JSON टैब"
 msgid "Start Time"
 msgstr "प्रारंभ समय"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:46
-#: screens/Inventory/shared/Inventory.helptext.tsx:193
+#: screens/Inventory/shared/Inventory.helptext.tsx:50
+#: screens/Inventory/shared/Inventory.helptext.tsx:277
 msgid "Variables must be in JSON or YAML syntax. Use the radio button to toggle between the two."
 msgstr "वेरिएबल्स JSON या YAML सिंटैक्स में होने चाहिए। दोनों के बीच टॉगल करने के लिए रेडियो बटन का उपयोग करें।"
 
@@ -885,7 +885,7 @@ msgid "LDAP 5"
 msgstr "LDAP 5"
 
 #: components/Lookup/HostFilterLookup.tsx:386
-#: components/Lookup/Lookup.tsx:238
+#: components/Lookup/Lookup.tsx:271
 msgid "Lookup modal"
 msgstr "लुकअप मोडल"
 
@@ -964,6 +964,10 @@ msgstr "निष्पादन वातावरण नहीं मिला
 msgid "Create New Organization"
 msgstr "नया संगठन बनाएं"
 
+#: screens/Inventory/shared/Inventory.helptext.tsx:164
+msgid "use_fqdn: name each host after its primary IP's DNS name when NetBox has one."
+msgstr ""
+
 #: screens/Setting/SettingList.tsx:108
 msgid "View and edit debug options"
 msgstr "डिबग विकल्प देखें और संपादित करें"
@@ -994,7 +998,7 @@ msgstr "{interval, plural, one {# वर्ष} other {# वर्ष}}"
 msgid "Inventory Source Sync"
 msgstr "इन्वेंटरी स्रोत सिंक"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:155
+#: screens/Inventory/shared/Inventory.helptext.tsx:239
 msgid "Inventory Plugins"
 msgstr "इन्वेंटरी प्लगइन्स"
 
@@ -1068,7 +1072,7 @@ msgstr "1 (जानकारी)"
 msgid "Set the instance enabled or disabled. If disabled, jobs will not be assigned to this instance."
 msgstr "इंस्टेंस को सक्षम या अक्षम सेट करें। यदि अक्षम है, तो इस इंस्टेंस को जॉब्स असाइन नहीं की जाएंगी।"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:109
+#: screens/Inventory/shared/Inventory.helptext.tsx:113
 msgid "and click on Update Revision on Launch."
 msgstr "और लॉन्च पर रिवीज़न अपडेट करें पर क्लिक करें।"
 
@@ -1084,7 +1088,7 @@ msgstr "अपडेट करने से पहले स्थानीय �
 msgid "Setting category"
 msgstr "सेटिंग श्रेणी"
 
-#: screens/Credential/Credential.tsx:81
+#: screens/Credential/Credential.tsx:83
 msgid "Back to Credentials"
 msgstr "क्रेडेंशियल्स पर वापस"
 
@@ -1429,6 +1433,11 @@ msgstr "ई-मेल"
 msgid "Job Type"
 msgstr "जॉब प्रकार"
 
+#: screens/Inventory/shared/Inventory.helptext.tsx:166
+msgid "oob_ip_as_primary_ip: connect to the out-of-band address, the iDRAC, iLO or\n"
+"        BMC, instead of the primary IP."
+msgstr ""
+
 #: screens/Job/JobOutput/JobOutputSearch.tsx:131
 msgid "No Hosts Matched"
 msgstr "कोई होस्ट मेल नहीं खाया"
@@ -1571,8 +1580,8 @@ msgstr "एक या अधिक जॉब्स हटाने में व
 msgid "Run Command"
 msgstr "कमांड चलाएं"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:165
-#: screens/Inventory/shared/Inventory.helptext.tsx:188
+#: screens/Inventory/shared/Inventory.helptext.tsx:249
+#: screens/Inventory/shared/Inventory.helptext.tsx:272
 msgid "plugin configuration guide."
 msgstr "प्लगइन कॉन्फ़िगरेशन गाइड।"
 
@@ -1683,8 +1692,8 @@ msgstr "नई फ़ेडरेटेड इन्वेंटरी बना
 #: components/Lookup/InventoryLookup.tsx:201
 #: components/Lookup/InventoryLookup.tsx:249
 #: components/Lookup/InventoryLookup.tsx:264
-#: components/Lookup/JobTemplateLookup.tsx:122
-#: components/Lookup/JobTemplateLookup.tsx:132
+#: components/Lookup/JobTemplateLookup.tsx:131
+#: components/Lookup/JobTemplateLookup.tsx:141
 #: components/Lookup/MultiCredentialsLookup.tsx:221
 #: components/Lookup/MultiCredentialsLookup.tsx:236
 #: components/Lookup/OrganizationLookup.tsx:151
@@ -1814,7 +1823,7 @@ msgstr "नई फ़ेडरेटेड इन्वेंटरी बना
 #: screens/Inventory/shared/FederatedInventoryForm.tsx:65
 #: screens/Inventory/shared/InventoryForm.tsx:56
 #: screens/Inventory/shared/InventoryGroupForm.tsx:54
-#: screens/Inventory/shared/InventorySourceForm.tsx:151
+#: screens/Inventory/shared/InventorySourceForm.tsx:152
 #: screens/Inventory/shared/SmartInventoryForm.tsx:55
 #: screens/Inventory/SmartInventoryDetail/SmartInventoryDetail.tsx:104
 #: screens/ManagementJob/ManagementJobList/ManagementJobList.tsx:97
@@ -2047,7 +2056,7 @@ msgstr "कुंजी"
 #: components/AddRole/AddResourceRole.tsx:65
 #: components/ResourceAccessList/ResourceAccessList.tsx:178
 #: components/ResourceAccessList/ResourceAccessList.tsx:231
-#: screens/Login/Login.tsx:350
+#: screens/Login/Login.tsx:363
 #: screens/NotificationTemplate/NotificationTemplateDetail/NotificationTemplateDetail.tsx:200
 #: screens/NotificationTemplate/NotificationTemplateDetail/NotificationTemplateDetail.tsx:336
 #: screens/NotificationTemplate/NotificationTemplateDetail/NotificationTemplateDetail.tsx:386
@@ -2160,9 +2169,9 @@ msgid "Parent node outcome required before the condition is evaluated."
 msgstr "स्थिति का मूल्यांकन करने से पहले मूल नोड परिणाम आवश्यक है।"
 
 #: components/JobList/JobListItem.tsx:248
-#: components/Lookup/JobTemplateLookup.tsx:103
-#: components/Lookup/JobTemplateLookup.tsx:108
-#: components/Lookup/JobTemplateLookup.tsx:138
+#: components/Lookup/JobTemplateLookup.tsx:111
+#: components/Lookup/JobTemplateLookup.tsx:116
+#: components/Lookup/JobTemplateLookup.tsx:147
 #: components/TemplateList/TemplateList.tsx:229
 #: components/TemplateList/TemplateListItem.tsx:170
 #: components/Workflow/WorkflowLegend.tsx:30
@@ -2228,7 +2237,7 @@ msgstr "फ़ील्ड दिए गए नियमित एक्सप�
 msgid "{0, plural, one {This credential type is currently being used by some credentials and cannot be deleted.} other {Credential types that are being used by credentials cannot be deleted. Are you sure you want to delete anyway?}}"
 msgstr "{0, plural, one {यह क्रेडेंशियल प्रकार वर्तमान में कुछ क्रेडेंशियल्स द्वारा उपयोग किया जा रहा है और इसे हटाया नहीं जा सकता।} other {क्रेडेंशियल्स द्वारा उपयोग किए जा रहे क्रेडेंशियल प्रकार हटाए नहीं जा सकते। क्या आप फिर भी हटाना चाहते हैं?}}"
 
-#: screens/Login/Login.tsx:348
+#: screens/Login/Login.tsx:361
 #: screens/NotificationTemplate/shared/TypeInputsSubForm.tsx:156
 #: screens/Template/Survey/SurveyQuestionForm.tsx:82
 #: screens/User/shared/UserForm.tsx:127
@@ -2428,7 +2437,7 @@ msgstr "यह निर्मित इन्वेंटरी इनपुट
 "            लौटाने के लिए सीमा (होस्ट पैटर्न) का उपयोग करता है जो \n"
 "            उन दोनों समूहों के प्रतिच्छेदन में हैं।"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:203
+#: screens/Inventory/shared/Inventory.helptext.tsx:287
 msgid "If enabled, hosts can be deleted from this inventory while jobs are running against it. By default those deletions are rejected until the running jobs finish."
 msgstr "यदि सक्षम है, तो इस इन्वेंटरी पर जॉब चलते समय इससे होस्ट हटाए जा सकते हैं। डिफ़ॉल्ट रूप से, चल रहे जॉब समाप्त होने तक ऐसे हटाने अस्वीकार किए जाते हैं।"
 
@@ -2463,7 +2472,7 @@ msgid "Management job launch error"
 msgstr "प्रबंधन जॉब लॉन्च त्रुटि"
 
 #: components/Lookup/HostFilterLookup.tsx:309
-#: components/Lookup/Lookup.tsx:183
+#: components/Lookup/Lookup.tsx:209
 msgid "Search"
 msgstr "खोजें"
 
@@ -2521,6 +2530,7 @@ msgid "Cancel Constructed Inventory Source Sync"
 msgstr "निर्मित इन्वेंटरी स्रोत सिंक रद्द करें"
 
 #: screens/Application/ApplicationTokens/ApplicationTokenListItem.tsx:43
+#: screens/Inventory/shared/Inventory.helptext.tsx:150
 #: screens/User/shared/UserTokenForm.tsx:76
 #: screens/User/UserTokenDetail/UserTokenDetail.tsx:56
 #: screens/User/UserTokenList/UserTokenList.tsx:147
@@ -2538,7 +2548,7 @@ msgstr "{0} (हटाया गया)"
 msgid "The inventory that this host belongs to."
 msgstr "वह इन्वेंटरी जिससे यह होस्ट संबंधित है।"
 
-#: screens/Login/Login.tsx:333
+#: screens/Login/Login.tsx:346
 msgid "Log In"
 msgstr "लॉग इन करें"
 
@@ -2557,6 +2567,11 @@ msgstr "आपके पास {pluralizedItemName} हटाने की अ�
 #: screens/NotificationTemplate/shared/TypeInputsSubForm.tsx:556
 msgid "Notification color"
 msgstr "सूचना रंग"
+
+#: screens/Inventory/shared/Inventory.helptext.tsx:188
+msgid "include_raw: attach the whole NetBox object as netbox_raw. Useful for working\n"
+"        out what is available, expensive for a routine sync."
+msgstr ""
 
 #: screens/Instances/InstanceDetail/InstanceDetail.tsx:212
 #: screens/Job/JobOutput/HostEventModal.tsx:161
@@ -2615,7 +2630,7 @@ msgstr "लॉग सिस्टम को फ़ैक्ट्स को व�
 msgid "Job Templates with credentials that prompt for passwords cannot be selected when creating or editing nodes"
 msgstr "पासवर्ड के लिए संकेत देने वाले क्रेडेंशियल्स वाले जॉब टेम्पलेट नोड्स बनाते या संपादित करते समय नहीं चुने जा सकते"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:202
+#: screens/Inventory/shared/Inventory.helptext.tsx:286
 msgid "If enabled, the inventory will prevent adding any organization instance groups to the list of preferred instances groups to run associated job templates on. Note: If this setting is enabled and you provided an empty list, the global instance groups will be applied."
 msgstr "यदि सक्षम है, तो इन्वेंटरी संबद्ध जॉब टेम्पलेट चलाने के लिए पसंदीदा इंस्टेंस समूहों की सूची में किसी भी संगठन इंस्टेंस समूह को जोड़ने से रोकेगी। नोट: यदि यह सेटिंग सक्षम है और आपने एक खाली सूची प्रदान की है, तो वैश्विक इंस्टेंस समूह लागू किए जाएंगे।"
 
@@ -2726,11 +2741,12 @@ msgstr "आउटपुट कॉपी करें"
 msgid "No results found"
 msgstr "कोई परिणाम नहीं मिला"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:214
+#: screens/Inventory/shared/Inventory.helptext.tsx:298
 msgid "Allow Jobs While Syncing: If enabled, jobs against this inventory do not wait for a sync of it to finish."
 msgstr ""
 
 #: components/LaunchPrompt/steps/OtherPromptsStep.tsx:218
+#: components/LaunchPrompt/steps/OtherPromptsStep.tsx:220
 #: components/PromptDetail/PromptDetail.tsx:432
 #: components/PromptDetail/PromptJobTemplateDetail.tsx:164
 #: components/Schedule/ScheduleDetail/ScheduleDetail.tsx:523
@@ -2741,6 +2757,13 @@ msgstr ""
 #: screens/Template/shared/JobTemplateForm.tsx:606
 msgid "Off"
 msgstr "बंद"
+
+#: screens/Inventory/shared/Inventory.helptext.tsx:197
+msgid "The inventory importer performs a full reconcile, so this skips whole runs\n"
+"        rather than applying deltas. The watch list covers every NetBox object type\n"
+"        that can change this inventory, including config contexts, tags, sites and\n"
+"        IP addresses, none of which record a change against the device they affect."
+msgstr ""
 
 #: screens/Inventory/Inventories.tsx:57
 msgid "Create new smart inventory"
@@ -2843,7 +2866,7 @@ msgstr "आइटम ठीक है"
 msgid "Icon URL"
 msgstr "आइकन URL"
 
-#: screens/Inventory/shared/InventorySourceForm.tsx:177
+#: screens/Inventory/shared/InventorySourceForm.tsx:178
 msgid "Select the Instance Groups this inventory source sync should run on. If unset, the sync runs on the instance groups of the inventory or its organization."
 msgstr "उन इंस्टेंस समूहों का चयन करें जिन पर इस इन्वेंटरी स्रोत का समन्वयन चलना चाहिए। यदि सेट नहीं किया गया है, तो समन्वयन इन्वेंटरी या उसके संगठन के इंस्टेंस समूहों पर चलता है।"
 
@@ -3043,12 +3066,12 @@ msgstr "{0, plural, one {कृपया एक मान्य फ़ोन न
 msgid "Facts"
 msgstr "फ़ैक्ट्स"
 
-#: screens/Login/Login.tsx:357
+#: screens/Login/Login.tsx:370
 msgid "or"
 msgstr "या"
 
 #: components/AssociateModal/AssociateModal.tsx:69
-#: components/Lookup/Lookup.tsx:237
+#: components/Lookup/Lookup.tsx:270
 #: components/PaginatedTable/PaginatedTable.tsx:77
 #: components/PaginatedTable/ToolbarDeleteButton.tsx:59
 #: screens/HostMetrics/HostMetricsDeleteButton.tsx:36
@@ -3228,7 +3251,7 @@ msgstr "वेरिएबल नामों के लिए सुझाय�
 msgid "This job template is currently being used by other resources. Are you sure you want to delete it?"
 msgstr "यह जॉब टेम्पलेट वर्तमान में अन्य संसाधनों द्वारा उपयोग किया जा रहा है। क्या आप वाकई इसे हटाना चाहते हैं?"
 
-#: screens/Credential/Credential.tsx:120
+#: screens/Credential/Credential.tsx:122
 msgid "View all Credentials."
 msgstr "सभी क्रेडेंशियल देखें।"
 
@@ -3522,7 +3545,7 @@ msgstr "क्रम संपादित करें"
 msgid "Minimum"
 msgstr "न्यूनतम"
 
-#: screens/Setting/MiscAuthentication/MiscAuthenticationEdit/MiscAuthenticationEdit.tsx:96
+#: screens/Setting/MiscAuthentication/MiscAuthenticationEdit/MiscAuthenticationEdit.tsx:97
 msgid "Refresh Token Expiration"
 msgstr "रिफ़्रेश टोकन समाप्ति"
 
@@ -3702,9 +3725,9 @@ msgstr "यह क्रिया इस उपयोगकर्ता की �
 #: components/LaunchButton/WorkflowRelaunchForceSuccessModal.tsx:155
 #: components/LaunchButton/WorkflowRelaunchVariablesModal.tsx:133
 #: components/LaunchButton/WorkflowRelaunchVariablesModal.tsx:137
-#: components/LaunchPrompt/LaunchPrompt.tsx:181
+#: components/LaunchPrompt/LaunchPrompt.tsx:182
 #: components/Lookup/HostFilterLookup.tsx:407
-#: components/Lookup/Lookup.tsx:260
+#: components/Lookup/Lookup.tsx:293
 #: components/PaginatedTable/ToolbarDeleteButton.tsx:248
 #: components/ResourceAccessList/DeleteRoleConfirmationModal.tsx:47
 #: components/Schedule/shared/ScheduleForm.tsx:624
@@ -4084,7 +4107,7 @@ msgstr "टोपोलॉजी दृश्य"
 msgid "Syncing"
 msgstr "सिंक हो रहा है"
 
-#: screens/Inventory/shared/InventorySourceForm.tsx:210
+#: screens/Inventory/shared/InventorySourceForm.tsx:211
 msgid "Source details"
 msgstr "स्रोत विवरण"
 
@@ -4095,6 +4118,10 @@ msgstr "किसी प्रोजेक्ट से स्रोतित"
 #: screens/NotificationTemplate/NotificationTemplateDetail/NotificationTemplateDetail.tsx:408
 msgid "Destination Channels"
 msgstr "गंतव्य चैनल"
+
+#: screens/Inventory/shared/Inventory.helptext.tsx:192
+msgid "Incremental sync"
+msgstr ""
 
 #: screens/Template/WorkflowJobTemplateDetail/WorkflowJobTemplateDetail.tsx:298
 msgid "Failed to delete workflow job template."
@@ -4200,8 +4227,8 @@ msgstr "क्रेडेंशियल हटाएं"
 #: screens/Setting/Logging/LoggingDetail/LoggingDetail.tsx:112
 #: screens/Setting/MiscAuthentication/MiscAuthenticationDetail/MiscAuthenticationDetail.tsx:85
 #: screens/Setting/MiscAuthentication/MiscAuthenticationDetail/MiscAuthenticationDetail.tsx:89
-#: screens/Setting/MiscSystem/MiscSystemDetail/MiscSystemDetail.tsx:122
-#: screens/Setting/MiscSystem/MiscSystemDetail/MiscSystemDetail.tsx:126
+#: screens/Setting/MiscSystem/MiscSystemDetail/MiscSystemDetail.tsx:124
+#: screens/Setting/MiscSystem/MiscSystemDetail/MiscSystemDetail.tsx:128
 #: screens/Setting/OIDC/OIDCDetail/OIDCDetail.tsx:85
 #: screens/Setting/OIDC/OIDCDetail/OIDCDetail.tsx:89
 #: screens/Setting/RADIUS/RADIUSDetail/RADIUSDetail.tsx:96
@@ -4242,7 +4269,7 @@ msgstr "वह भूमिका सेट करता है जो यह �
 msgid "Installed"
 msgstr "इंस्टॉल किया गया"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:55
+#: screens/Inventory/shared/Inventory.helptext.tsx:59
 msgid "View JSON examples at"
 msgstr "JSON उदाहरण यहां देखें"
 
@@ -4258,7 +4285,7 @@ msgstr "कोई टाइमआउट निर्दिष्ट नहीं
 msgid "On Timeout"
 msgstr "टाइमआउट पर"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:208
+#: screens/Inventory/shared/Inventory.helptext.tsx:292
 msgid "Prevent Instance Group Fallback: If enabled, the inventory will prevent adding any organization instance groups to the list of preferred instances groups to run associated job templates on."
 msgstr "इंस्टेंस समूह फ़ॉलबैक रोकें: यदि सक्षम है, तो इन्वेंटरी संबद्ध जॉब टेम्पलेट चलाने के लिए पसंदीदा इंस्टेंस समूहों की सूची में किसी भी संगठन इंस्टेंस समूह को जोड़ने से रोकेगी।"
 
@@ -4590,7 +4617,7 @@ msgstr "पीयर हटाएं?"
 msgid "Search text input"
 msgstr "खोज टेक्स्ट इनपुट"
 
-#: components/Lookup/Lookup.tsx:100
+#: components/Lookup/Lookup.tsx:118
 msgid "That value was not found. Please enter or select a valid value."
 msgstr "वह मान नहीं मिला। कृपया एक मान्य मान दर्ज करें या चुनें।"
 
@@ -4598,7 +4625,7 @@ msgstr "वह मान नहीं मिला। कृपया एक म
 msgid "Weekend day"
 msgstr "सप्ताहांत दिन"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:28
+#: screens/Inventory/shared/Inventory.helptext.tsx:32
 msgid "Optional labels that describe this inventory,\n"
 "          such as 'dev' or 'test'. Labels can be used to group and filter\n"
 "          inventories and completed jobs."
@@ -4626,7 +4653,7 @@ msgstr "संगठन विवरण देखें"
 #: components/JobList/JobList.tsx:335
 #: components/JobList/JobList.tsx:346
 #: components/LaunchButton/LaunchButton.tsx:305
-#: components/LaunchPrompt/LaunchPrompt.tsx:118
+#: components/LaunchPrompt/LaunchPrompt.tsx:119
 #: components/NotificationList/NotificationList.tsx:293
 #: components/PaginatedTable/ToolbarDeleteButton.tsx:172
 #: components/RelatedTemplateList/RelatedTemplateList.tsx:268
@@ -4833,7 +4860,7 @@ msgstr "सूचना टेम्पलेट"
 msgid "Start message body"
 msgstr "प्रारंभ संदेश मुख्य भाग"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:136
+#: screens/Inventory/shared/Inventory.helptext.tsx:140
 msgid "Branch to use on inventory sync. Project default used if blank. Only allowed if project allow_override field is set to true."
 msgstr "इन्वेंटरी सिंक पर उपयोग करने के लिए ब्रांच। रिक्त होने पर प्रोजेक्ट डिफ़ॉल्ट उपयोग किया जाता है। केवल तभी अनुमति है जब प्रोजेक्ट allow_override फ़ील्ड true पर सेट हो।"
 
@@ -5038,6 +5065,11 @@ msgstr "टीम भूमिकाएं जोड़ें"
 msgid "Jobs settings"
 msgstr "जॉब्स सेटिंग्स"
 
+#: screens/Inventory/shared/Inventory.helptext.tsx:194
+msgid "incremental: ask NetBox's changelog whether anything relevant has changed\n"
+"        before fetching, and skip the fetch when nothing has. Off by default."
+msgstr ""
+
 #: screens/Credential/shared/CredentialPlugins/CredentialPluginSelected.tsx:33
 #: screens/Credential/shared/CredentialPlugins/CredentialPluginSelected.tsx:39
 msgid "Edit Credential Plugin Configuration"
@@ -5135,7 +5167,7 @@ msgstr "नई टीम बनाएं"
 msgid "Sign in with Microsoft Entra ID"
 msgstr "Microsoft Entra ID से साइन इन करें"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:157
+#: screens/Inventory/shared/Inventory.helptext.tsx:241
 msgid "in the documentation and the"
 msgstr "दस्तावेज़ीकरण में और"
 
@@ -5220,7 +5252,7 @@ msgstr "संक्षिप्त करें"
 
 #: components/JobList/JobListItem.tsx:341
 #: components/LabelLists/LabelLists.tsx:56
-#: components/LaunchPrompt/steps/OtherPromptsStep.tsx:258
+#: components/LaunchPrompt/steps/OtherPromptsStep.tsx:257
 #: components/PromptDetail/PromptDetail.tsx:393
 #: components/PromptDetail/PromptJobTemplateDetail.tsx:217
 #: components/PromptDetail/PromptWFJobTemplateDetail.tsx:129
@@ -5480,7 +5512,7 @@ msgid "Preferred Theme"
 msgstr "पसंदीदा थीम"
 
 #: screens/Instances/Shared/InstanceForm.tsx:38
-#: screens/Inventory/shared/InventorySourceForm.tsx:110
+#: screens/Inventory/shared/InventorySourceForm.tsx:111
 #: screens/Project/shared/ProjectForm.tsx:168
 msgid "Set a value for this field"
 msgstr "इस फ़ील्ड के लिए एक मान सेट करें"
@@ -5570,7 +5602,7 @@ msgstr "आवृत्ति विवरण"
 #: components/AdHocCommands/useAdHocDetailsStep.tsx:47
 #: components/AdHocCommands/useAdHocExecutionEnvironmentStep.tsx:26
 #: components/AdHocCommands/useAdHocInstanceGroupsStep.tsx:27
-#: components/LaunchPrompt/LaunchPrompt.tsx:182
+#: components/LaunchPrompt/LaunchPrompt.tsx:183
 #: components/Schedule/shared/SchedulePromptableFields.tsx:154
 #: screens/Credential/shared/CredentialPlugins/CredentialPluginPrompt/CredentialPluginPrompt.tsx:73
 #: screens/Template/WorkflowJobTemplateVisualizer/Modals/NodeModals/NodeModal.tsx:234
@@ -5578,7 +5610,7 @@ msgid "Next"
 msgstr "अगला"
 
 #: components/LabelSelect/LabelSelect.tsx:204
-#: components/LaunchPrompt/steps/OtherPromptsStep.tsx:264
+#: components/LaunchPrompt/steps/OtherPromptsStep.tsx:263
 #: components/MultiSelect/TagMultiSelect.tsx:134
 #: screens/Credential/shared/CredentialFormFields/BecomeMethodField.tsx:149
 #: screens/Inventory/shared/InventoryForm.tsx:97
@@ -5671,7 +5703,7 @@ msgstr "अंतिम स्वचालन"
 msgid "Node Type"
 msgstr "नोड प्रकार"
 
-#: screens/Credential/Credential.tsx:171
+#: screens/Credential/Credential.tsx:173
 msgid "View Credential Details"
 msgstr "क्रेडेंशियल विवरण देखें"
 
@@ -5735,7 +5767,7 @@ msgstr "पिछले दो सप्ताह"
 
 #: components/AddRole/AddResourceRole.tsx:300
 #: components/AdHocCommands/AdHocCommandsWizard.tsx:68
-#: components/LaunchPrompt/LaunchPrompt.tsx:180
+#: components/LaunchPrompt/LaunchPrompt.tsx:181
 #: components/Schedule/shared/SchedulePromptableFields.tsx:152
 #: screens/Credential/shared/CredentialPlugins/CredentialPluginPrompt/CredentialPluginPrompt.tsx:97
 #: screens/Template/WorkflowJobTemplateVisualizer/Modals/NodeModals/NodeModal.tsx:91
@@ -5933,6 +5965,13 @@ msgstr "इस चरण में त्रुटियां हैं"
 #: screens/Template/shared/WorkflowJobTemplateForm.tsx:239
 msgid "source control branch"
 msgstr "सोर्स कंट्रोल ब्रांच"
+
+#: screens/Inventory/shared/Inventory.helptext.tsx:180
+msgid "merge_config_context: also place each config context key at the top level as a\n"
+"        host variable. On by default. The raw mapping is always available as\n"
+"        netbox_config_context, and anything set on the object itself as\n"
+"        netbox_local_context_data."
+msgstr ""
 
 #: components/AdHocCommands/AdHocPreviewStep.tsx:68
 #: components/AdHocCommands/useAdHocInstanceGroupsStep.tsx:22
@@ -6293,7 +6332,7 @@ msgstr "इस जॉब टेम्पलेट को लॉन्च कर�
 msgid "Label Name"
 msgstr "लेबल नाम"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:64
+#: screens/Inventory/shared/Inventory.helptext.tsx:68
 msgid "View YAML examples at"
 msgstr "YAML उदाहरण यहां देखें"
 
@@ -6310,8 +6349,8 @@ msgstr "यहाँ चुने गए नोड फिर से नहीं
 msgid "Resource deleted"
 msgstr "संसाधन हटाया गया"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:52
-#: screens/Inventory/shared/Inventory.helptext.tsx:196
+#: screens/Inventory/shared/Inventory.helptext.tsx:56
+#: screens/Inventory/shared/Inventory.helptext.tsx:280
 msgid "YAML:"
 msgstr "YAML:"
 
@@ -6379,7 +6418,7 @@ msgstr "अपने {brandName} एप्लिकेशन के लिए �
 msgid "Thursday"
 msgstr "गुरुवार"
 
-#: screens/Credential/Credential.tsx:100
+#: screens/Credential/Credential.tsx:102
 #: screens/Credential/Credentials.tsx:33
 #: screens/Inventory/ConstructedInventory.tsx:85
 #: screens/Inventory/FederatedInventory.tsx:81
@@ -6397,6 +6436,12 @@ msgstr "जॉब टेम्पलेट"
 #: screens/HostMetrics/HostMetricsListItem.tsx:30
 msgid "First automation"
 msgstr "पहला स्वचालन"
+
+#: screens/Inventory/shared/Inventory.helptext.tsx:216
+msgid "group_by_status and group_by_tag: both on by default. Groups for site, region,\n"
+"        site group, location, rack, tenant, platform, cluster, device type, role and\n"
+"        manufacturer are always built."
+msgstr ""
 
 #: screens/ActivityStream/ActivityStreamListItem.tsx:51
 msgid "Initiated By"
@@ -6471,7 +6516,7 @@ msgstr "इंस्टेंस टॉगल करें"
 msgid "Back to Inventories"
 msgstr "इन्वेंटरी पर वापस"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:121
+#: screens/Inventory/shared/Inventory.helptext.tsx:125
 msgid "After every project update where the SCM revision changes, refresh the inventory from the selected source before executing job tasks. This is intended for static content, like the Ansible inventory .ini file format."
 msgstr "प्रत्येक प्रोजेक्ट अपडेट के बाद जहां SCM रिवीज़न बदलता है, जॉब कार्य निष्पादित करने से पहले चयनित स्रोत से इन्वेंटरी रीफ़्रेश करें। यह स्थिर सामग्री के लिए है, जैसे Ansible इन्वेंटरी .ini फ़ाइल प्रारूप।"
 
@@ -6578,7 +6623,7 @@ msgstr "इंस्टेंस"
 msgid "Including File"
 msgstr "फ़ाइल सहित"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:80
+#: screens/Inventory/shared/Inventory.helptext.tsx:84
 msgid "If checked, any hosts and groups that were previously present on the external source but are now removed will be removed from the inventory. Hosts and groups that were not managed by the inventory source will be promoted to the next manually created group or if there is no manually created group to promote them into, they will be left in the \"all\" default group for the inventory."
 msgstr "यदि चेक किया गया है, तो कोई भी होस्ट और समूह जो पहले बाहरी स्रोत पर मौजूद थे लेकिन अब हटा दिए गए हैं, इन्वेंटरी से हटा दिए जाएंगे। जो होस्ट और समूह इन्वेंटरी स्रोत द्वारा प्रबंधित नहीं थे, उन्हें अगले मैन्युअल रूप से बनाए गए समूह में प्रोत्साहित किया जाएगा या यदि उन्हें प्रोत्साहित करने के लिए कोई मैन्युअल रूप से बनाया गया समूह नहीं है, तो उन्हें इन्वेंटरी के लिए \"all\" डिफ़ॉल्ट समूह में छोड़ दिया जाएगा।"
 
@@ -6624,6 +6669,7 @@ msgstr "{label} को पुनः क्रमित करें"
 #: screens/Inventory/shared/InventorySourceSubForms/ControllerSubForm.tsx:47
 #: screens/Inventory/shared/InventorySourceSubForms/EC2SubForm.tsx:40
 #: screens/Inventory/shared/InventorySourceSubForms/GCESubForm.tsx:45
+#: screens/Inventory/shared/InventorySourceSubForms/NetBoxSubForm.tsx:41
 #: screens/Inventory/shared/InventorySourceSubForms/OpenStackSubForm.tsx:47
 #: screens/Inventory/shared/InventorySourceSubForms/SatelliteSubForm.tsx:49
 #: screens/Inventory/shared/InventorySourceSubForms/SCMSubForm.tsx:124
@@ -6689,6 +6735,10 @@ msgstr "तिथि खोज इनपुट"
 #: screens/NotificationTemplate/NotificationTemplateDetail/NotificationTemplateDetail.tsx:309
 msgid "Destination Rooms"
 msgstr "गंतव्य रूम"
+
+#: screens/Inventory/shared/Inventory.helptext.tsx:174
+msgid "Host variables"
+msgstr ""
 
 #: screens/Host/HostDetail/HostDetail.tsx:123
 #: screens/Inventory/InventoryHostDetail/InventoryHostDetail.tsx:116
@@ -6821,7 +6871,7 @@ msgid "Minimum number of instances that will be automatically assigned to this g
 msgstr "नए इंस्टेंस ऑनलाइन आने पर इस समूह को स्वचालित रूप से असाइन किए जाने वाले इंस्टेंसों की न्यूनतम संख्या।"
 
 #. placeholder {0}: resource.name
-#: components/LaunchPrompt/LaunchPrompt.tsx:152
+#: components/LaunchPrompt/LaunchPrompt.tsx:153
 msgid "Launch | {0}"
 msgstr "लॉन्च करें | {0}"
 
@@ -6857,7 +6907,7 @@ msgstr "{label} के लिए अधिक जानकारी"
 
 #: routeConfig.tsx:128
 #: screens/ActivityStream/ActivityStream.tsx:190
-#: screens/Credential/Credential.tsx:90
+#: screens/Credential/Credential.tsx:92
 #: screens/Credential/Credentials.tsx:32
 #: screens/Inventory/ConstructedInventory.tsx:76
 #: screens/Inventory/FederatedInventory.tsx:76
@@ -7002,7 +7052,7 @@ msgstr "कृपया ऊपर दिए गए फ़िल्टर का 
 msgid "Are you sure you want to edit login redirect override URL?  Doing so could impact users' ability to log in to the system once local authentication is also disabled."
 msgstr "क्या आप वाकई लॉगिन रीडायरेक्ट ओवरराइड URL संपादित करना चाहते हैं? ऐसा करने से स्थानीय प्रमाणीकरण भी अक्षम होने के बाद उपयोगकर्ताओं की सिस्टम में लॉग इन करने की क्षमता प्रभावित हो सकती है।"
 
-#: screens/Credential/Credential.tsx:119
+#: screens/Credential/Credential.tsx:121
 msgid "Credential not found."
 msgstr "क्रेडेंशियल नहीं मिला।"
 
@@ -7022,7 +7072,7 @@ msgstr "IRC सर्वर पासवर्ड"
 msgid "API Token"
 msgstr "API टोकन"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:75
+#: screens/Inventory/shared/Inventory.helptext.tsx:79
 msgid "Control the level of output Ansible will produce for inventory source update jobs."
 msgstr "इन्वेंटरी स्रोत अपडेट जॉब्स के लिए Ansible द्वारा उत्पादित आउटपुट के स्तर को नियंत्रित करें।"
 
@@ -7292,7 +7342,7 @@ msgstr "आर्टिफ़ैक्ट की तुलना करने �
 msgid "Failed to delete one or more groups."
 msgstr "एक या अधिक समूह हटाने में विफल।"
 
-#: screens/Setting/MiscAuthentication/MiscAuthenticationEdit/MiscAuthenticationEdit.tsx:211
+#: screens/Setting/MiscAuthentication/MiscAuthenticationEdit/MiscAuthenticationEdit.tsx:212
 msgid "Confirm Disable Local Authorization"
 msgstr "स्थानीय प्राधिकरण अक्षम करने की पुष्टि करें"
 
@@ -7328,7 +7378,7 @@ msgstr "इस फ़ील्ड में एक संख्या होन�
 msgid "All"
 msgstr "सभी"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:186
+#: screens/Inventory/shared/Inventory.helptext.tsx:270
 msgid "constructed inventory"
 msgstr "निर्मित इन्वेंटरी"
 
@@ -7651,7 +7701,7 @@ msgstr "सिंक करें"
 #: screens/Inventory/shared/FederatedInventoryForm.tsx:73
 #: screens/Inventory/shared/InventoryForm.tsx:64
 #: screens/Inventory/shared/InventoryGroupForm.tsx:62
-#: screens/Inventory/shared/InventorySourceForm.tsx:159
+#: screens/Inventory/shared/InventorySourceForm.tsx:160
 #: screens/Inventory/shared/SmartInventoryForm.tsx:63
 #: screens/Inventory/SmartInventoryDetail/SmartInventoryDetail.tsx:110
 #: screens/Job/JobOutput/HostEventModal.tsx:163
@@ -7789,6 +7839,7 @@ msgstr "GitHub Enterprise से साइन इन करें"
 #: screens/Inventory/shared/InventorySourceSubForms/AzureSubForm.tsx:54
 #: screens/Inventory/shared/InventorySourceSubForms/ControllerSubForm.tsx:55
 #: screens/Inventory/shared/InventorySourceSubForms/GCESubForm.tsx:53
+#: screens/Inventory/shared/InventorySourceSubForms/NetBoxSubForm.tsx:49
 #: screens/Inventory/shared/InventorySourceSubForms/OpenStackSubForm.tsx:55
 #: screens/Inventory/shared/InventorySourceSubForms/SatelliteSubForm.tsx:57
 #: screens/Inventory/shared/InventorySourceSubForms/SCMSubForm.tsx:56
@@ -8081,6 +8132,10 @@ msgstr "सभी फ़िल्टर साफ़ करें"
 msgid "{0, plural, one {This instance is currently being used by other resources. Are you sure you want to delete it?} other {Deprovisioning these instances could impact other resources that rely on them. Are you sure you want to delete anyway?}}"
 msgstr "{0, plural, one {यह इंस्टेंस वर्तमान में अन्य संसाधनों द्वारा उपयोग किया जा रहा है। क्या आप वाकई इसे हटाना चाहते हैं?} other {इन इंस्टेंस को डीप्रोविजन करने से उन पर निर्भर अन्य संसाधन प्रभावित हो सकते हैं। क्या आप वाकई इन्हें हटाना चाहते हैं?}}"
 
+#: screens/Inventory/shared/Inventory.helptext.tsx:162
+msgid "Host names and addresses"
+msgstr ""
+
 #: screens/Setting/AzureAD/AzureADDetail/AzureADDetail.tsx:61
 #: screens/Setting/GitHub/GitHubDetail/GitHubDetail.tsx:76
 #: screens/Setting/GoogleOAuth2/GoogleOAuth2Detail/GoogleOAuth2Detail.tsx:44
@@ -8088,7 +8143,7 @@ msgstr "{0, plural, one {यह इंस्टेंस वर्तमान �
 #: screens/Setting/LDAP/LDAPDetail/LDAPDetail.tsx:105
 #: screens/Setting/Logging/LoggingDetail/LoggingDetail.tsx:70
 #: screens/Setting/MiscAuthentication/MiscAuthenticationDetail/MiscAuthenticationDetail.tsx:44
-#: screens/Setting/MiscSystem/MiscSystemDetail/MiscSystemDetail.tsx:84
+#: screens/Setting/MiscSystem/MiscSystemDetail/MiscSystemDetail.tsx:86
 #: screens/Setting/OIDC/OIDCDetail/OIDCDetail.tsx:44
 #: screens/Setting/RADIUS/RADIUSDetail/RADIUSDetail.tsx:45
 #: screens/Setting/SAML/SAMLDetail/SAMLDetail.tsx:54
@@ -8172,6 +8227,12 @@ msgstr "पहले नोड से पुनः लॉन्च करें"
 #: screens/Template/WorkflowJobTemplate.tsx:123
 msgid "Back to Templates"
 msgstr "टेम्पलेट पर वापस"
+
+#: screens/Inventory/shared/Inventory.helptext.tsx:206
+msgid "incremental_max_skips: force a full fetch after this many skipped runs in a\n"
+"        row, 24 by default. This bounds how stale the inventory can get from a change\n"
+"        the changelog never recorded, such as a direct database write or a restore."
+msgstr ""
 
 #: screens/Project/shared/Project.helptext.tsx:81
 msgid "The first fetches all references. The second fetches the Github pull request number 62, in this example the branch needs to be \"pull/62/head\"."
@@ -8384,7 +8445,7 @@ msgstr "प्रोजेक्ट सिंक विफलताएं"
 msgid "Run on"
 msgstr "इस पर चलाएं"
 
-#: components/LaunchPrompt/LaunchPrompt.tsx:157
+#: components/LaunchPrompt/LaunchPrompt.tsx:158
 #: components/Schedule/shared/SchedulePromptableFields.tsx:129
 msgid "Show description"
 msgstr "विवरण दिखाएं"
@@ -8510,7 +8571,7 @@ msgstr "कोई होस्ट शेष नहीं"
 msgid "ID of the dashboard (optional)"
 msgstr "डैशबोर्ड की ID (वैकल्पिक)"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:135
+#: screens/Inventory/shared/Inventory.helptext.tsx:139
 msgid "Retrieve the enabled state from the given dict of host variables. The enabled variable may be specified using dot notation, e.g: 'foo.bar'"
 msgstr "होस्ट वेरिएबल्स के दिए गए dict से सक्षम स्थिति प्राप्त करें। सक्षम वेरिएबल को डॉट नोटेशन का उपयोग करके निर्दिष्ट किया जा सकता है, उदा: 'foo.bar'"
 
@@ -8709,7 +8770,7 @@ msgstr "LDAP 2"
 msgid "Examples include:"
 msgstr "उदाहरणों में शामिल हैं:"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:91
+#: screens/Inventory/shared/Inventory.helptext.tsx:95
 msgid "Inventory variables this source added on an earlier sync are removed once the source no longer provides them, unless they were edited since or another source of this inventory still provides them."
 msgstr "इस स्रोत द्वारा पिछले सिंक में जोड़े गए इन्वेंटरी वेरिएबल तब हटा दिए जाते हैं जब स्रोत उन्हें प्रदान करना बंद कर देता है, जब तक कि उन्हें तब से संपादित न किया गया हो या इस इन्वेंटरी का कोई अन्य स्रोत अभी भी उन्हें प्रदान न करता हो।"
 
@@ -8867,7 +8928,7 @@ msgstr "उत्तर वेरिएबल नाम"
 
 #: components/JobList/JobListItem.tsx:114
 #: components/Lookup/HostFilterLookup.tsx:399
-#: components/Lookup/Lookup.tsx:251
+#: components/Lookup/Lookup.tsx:284
 #: components/Pagination/Pagination.tsx:36
 msgid "Select"
 msgstr "चुनें"
@@ -8902,7 +8963,7 @@ msgstr "IRC निक"
 #~ msgid "Expires on"
 #~ msgstr "इस पर समाप्त होता है"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:102
+#: screens/Inventory/shared/Inventory.helptext.tsx:106
 msgid "Each time a job runs using this inventory, refresh the inventory from the selected source before executing job tasks."
 msgstr "हर बार जब इस इन्वेंटरी का उपयोग करके कोई जॉब चलती है, तो जॉब कार्य निष्पादित करने से पहले चयनित स्रोत से इन्वेंटरी रीफ़्रेश करें।"
 
@@ -9048,7 +9109,7 @@ msgstr "विविध प्रमाणीकरण"
 msgid "Download bundle"
 msgstr "बंडल डाउनलोड करें"
 
-#: components/LaunchPrompt/LaunchPrompt.tsx:175
+#: components/LaunchPrompt/LaunchPrompt.tsx:176
 #: components/Schedule/shared/SchedulePromptableFields.tsx:147
 msgid "Content Loading"
 msgstr "सामग्री लोड हो रही है"
@@ -9186,7 +9247,7 @@ msgstr "एक या अधिक उपयोगकर्ता हटान�
 msgid "On Success"
 msgstr "सफलता पर"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:201
+#: screens/Inventory/shared/Inventory.helptext.tsx:285
 msgid "The inventory file to be synced by this source. You can select from the dropdown or enter a file within the input."
 msgstr "इस स्रोत द्वारा सिंक की जाने वाली इन्वेंटरी फ़ाइल। आप ड्रॉपडाउन से चुन सकते हैं या इनपुट के भीतर एक फ़ाइल दर्ज कर सकते हैं।"
 
@@ -9338,6 +9399,12 @@ msgstr "दस्तावेज़ीकरण।"
 msgid "Credential Name"
 msgstr "क्रेडेंशियल नाम"
 
+#: screens/Inventory/shared/Inventory.helptext.tsx:202
+msgid "changelog_watch_all: fetch on any change at all rather than trusting the\n"
+"        watch list. Skips far less often, and cannot miss anything the changelog\n"
+"        recorded."
+msgstr ""
+
 #: components/JobList/JobList.tsx:225
 #: components/JobList/JobListItem.tsx:75
 #: screens/Job/JobOutput/HostEventModal.tsx:177
@@ -9429,6 +9496,12 @@ msgstr "बहिष्कृत"
 msgid "Update revision on job launch"
 msgstr "जॉब लॉन्च पर रिवीज़न अपडेट करें"
 
+#: screens/Inventory/shared/Inventory.helptext.tsx:169
+msgid "ansible_host is resolved in this order: a value merged from config context,\n"
+"        then the out-of-band address when oob_ip_as_primary_ip is set, then primary\n"
+"        IPv4, any primary IP, and IPv6."
+msgstr ""
+
 #: screens/WorkflowApproval/WorkflowApprovalList/WorkflowApprovalListDenyButton.tsx:27
 msgid "Select a row to deny"
 msgstr "अस्वीकार करने के लिए एक पंक्ति चुनें"
@@ -9490,7 +9563,7 @@ msgstr "वर्कफ़्लो अस्वीकृत संदेश म
 msgid "Generic OIDC settings"
 msgstr "जेनेरिक OIDC सेटिंग्स"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:211
+#: screens/Inventory/shared/Inventory.helptext.tsx:295
 msgid "Allow Deletes While In Use: If enabled, hosts can be deleted from this inventory while jobs are running against it."
 msgstr "उपयोग में रहते हुए हटाने की अनुमति दें: यदि सक्षम है, तो इस इन्वेंटरी पर जॉब चलते समय इससे होस्ट हटाए जा सकते हैं।"
 
@@ -9587,7 +9660,7 @@ msgstr "निष्पादन"
 msgid "The"
 msgstr "The"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:70
+#: screens/Inventory/shared/Inventory.helptext.tsx:74
 msgid "docs.ansible.com"
 msgstr "docs.ansible.com"
 
@@ -9691,7 +9764,7 @@ msgstr "सहेजें"
 msgid "Click to create a new link to this node."
 msgstr "इस नोड से नया लिंक बनाने के लिए क्लिक करें।"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:76
+#: screens/Inventory/shared/Inventory.helptext.tsx:80
 msgid "Select the Ansible collection providing the inventory plugin used to sync from vCenter. The community.vmware collection is deprecated in favor of the newer vmware.vmware collection. The selection is applied via the \"plugin\" key in the source variables; when the key is absent, the default collection is used."
 msgstr "vCenter से समन्वयित करने के लिए उपयोग किए जाने वाले इन्वेंटरी प्लगइन प्रदान करने वाले Ansible कलेक्शन का चयन करें। community.vmware कलेक्शन नए vmware.vmware कलेक्शन के पक्ष में बहिष्कृत है। चयन स्रोत वेरिएबल्स में \"plugin\" कुंजी के माध्यम से लागू किया जाता है; कुंजी अनुपस्थित होने पर, डिफ़ॉल्ट कलेक्शन का उपयोग किया जाता है।"
 
@@ -9850,6 +9923,14 @@ msgstr "उपयोगकर्ता प्रकार"
 msgid "{0, plural, one {This template is currently being used by some workflow nodes. Are you sure you want to delete it?} other {Deleting these templates could impact some workflow nodes that rely on them. Are you sure you want to delete anyway?}}"
 msgstr "{0, plural, one {यह टेम्पलेट वर्तमान में कुछ वर्कफ़्लो नोड्स द्वारा उपयोग किया जा रहा है। क्या आप वाकई इसे हटाना चाहते हैं?} other {इन टेम्पलेट्स को हटाने से उन पर निर्भर कुछ वर्कफ़्लो नोड्स प्रभावित हो सकते हैं। क्या आप फिर भी हटाना चाहते हैं?}}"
 
+#: screens/Inventory/shared/Inventory.helptext.tsx:152
+msgid "filters: NetBox query filters applied to both devices and virtual machines.\n"
+"        device_filters and vm_filters add to it for one object type only, which is\n"
+"        needed because the two endpoints do not accept the same filters. Filter\n"
+"        names are checked against the NetBox API schema before anything is fetched,\n"
+"        and the sync fails on one NetBox would ignore."
+msgstr ""
+
 #: screens/Credential/CredentialDetail/CredentialDetail.tsx:309
 msgid "Failed to delete credential."
 msgstr "क्रेडेंशियल हटाने में विफल।"
@@ -9960,7 +10041,7 @@ msgstr "प्लेबुक निष्पादित करते समय
 msgid "View all Workflow Approvals."
 msgstr "सभी वर्कफ़्लो अनुमोदन देखें।"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:94
+#: screens/Inventory/shared/Inventory.helptext.tsx:98
 msgid "When not checked, a merge will be performed, combining local variables with those found on the external source."
 msgstr "जब चेक नहीं किया जाता है, तो एक मर्ज किया जाएगा, स्थानीय वेरिएबल्स को बाहरी स्रोत पर पाए गए वेरिएबल्स के साथ संयोजित किया जाएगा।"
 
@@ -9973,7 +10054,7 @@ msgstr "जब चेक नहीं किया जाता है, तो �
 msgid "Job Cancel Error"
 msgstr "जॉब रद्द करने में त्रुटि"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:61
+#: screens/Inventory/shared/Inventory.helptext.tsx:65
 msgid "www.json.org"
 msgstr "www.json.org"
 
@@ -10079,7 +10160,7 @@ msgstr "टूल टॉगल करें"
 msgid "Organization"
 msgstr "संगठन"
 
-#: screens/Login/Login.tsx:311
+#: screens/Login/Login.tsx:315
 msgid "Your session has expired. Please log in to continue where you left off."
 msgstr "आपका सत्र समाप्त हो गया है। जहां आपने छोड़ा था वहां से जारी रखने के लिए कृपया लॉग इन करें।"
 
@@ -10142,7 +10223,7 @@ msgstr "Azure AD Tenant से साइन इन करें"
 msgid "Case-insensitive version of endswith."
 msgstr "endswith का केस-असंवेदनशील संस्करण।"
 
-#: components/Lookup/Lookup.tsx:258
+#: components/Lookup/Lookup.tsx:291
 msgid "Cancel lookup"
 msgstr "लुकअप रद्द करें"
 
@@ -10151,7 +10232,7 @@ msgstr "लुकअप रद्द करें"
 #: components/Schedule/Schedule.tsx:93
 #: screens/Application/Application/Application.tsx:85
 #: screens/Application/Applications.tsx:38
-#: screens/Credential/Credential.tsx:88
+#: screens/Credential/Credential.tsx:90
 #: screens/Credential/Credentials.tsx:31
 #: screens/CredentialType/CredentialType.tsx:70
 #: screens/CredentialType/CredentialTypes.tsx:29
@@ -10190,7 +10271,7 @@ msgstr "लुकअप रद्द करें"
 #: screens/Setting/Jobs/JobsDetail/JobsDetail.tsx:65
 #: screens/Setting/Logging/LoggingDetail/LoggingDetail.tsx:77
 #: screens/Setting/MiscAuthentication/MiscAuthenticationDetail/MiscAuthenticationDetail.tsx:51
-#: screens/Setting/MiscSystem/MiscSystemDetail/MiscSystemDetail.tsx:91
+#: screens/Setting/MiscSystem/MiscSystemDetail/MiscSystemDetail.tsx:93
 #: screens/Setting/OIDC/OIDCDetail/OIDCDetail.tsx:51
 #: screens/Setting/RADIUS/RADIUSDetail/RADIUSDetail.tsx:52
 #: screens/Setting/SAML/SAMLDetail/SAMLDetail.tsx:61
@@ -10299,7 +10380,7 @@ msgstr "नेविगेशन"
 msgid "If enabled, control nodes will peer to this instance automatically. If disabled, instance will be connected only to associated peers."
 msgstr "यदि सक्षम है, तो नियंत्रण नोड्स स्वचालित रूप से इस इंस्टेंस से पीयर करेंगे। यदि अक्षम है, तो इंस्टेंस केवल संबद्ध पीयर से कनेक्ट होगा।"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:128
+#: screens/Inventory/shared/Inventory.helptext.tsx:132
 msgid "and click on Update Revision on Launch"
 msgstr "और लॉन्च पर रिवीज़न अपडेट करें पर क्लिक करें"
 
@@ -10511,7 +10592,7 @@ msgstr "विवरण संपादित करें"
 msgid "Deleted"
 msgstr "हटाया गया"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:137
+#: screens/Inventory/shared/Inventory.helptext.tsx:141
 msgid "This field is ignored unless an Enabled Variable is set. If the enabled variable matches this value, the host will be enabled on import."
 msgstr "यह फ़ील्ड तब तक अनदेखा किया जाता है जब तक कि एक सक्षम वेरिएबल सेट न हो। यदि सक्षम वेरिएबल इस मान से मेल खाता है, तो आयात पर होस्ट सक्षम हो जाएगा।"
 
@@ -10622,7 +10703,7 @@ msgstr "मॉड्यूल"
 msgid "Confirm revert all"
 msgstr "सभी वापस लौटाने की पुष्टि करें"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:88
+#: screens/Inventory/shared/Inventory.helptext.tsx:92
 msgid "If checked, all variables for child groups and hosts will be removed and replaced by those found on the external source."
 msgstr "यदि चेक किया गया है, तो चाइल्ड समूहों और होस्ट्स के सभी वेरिएबल्स हटा दिए जाएंगे और बाहरी स्रोत पर पाए गए वेरिएबल्स से बदल दिए जाएंगे।"
 
@@ -10799,7 +10880,7 @@ msgstr "इस फ़ील्ड में कम से कम {0} वर्�
 #: components/JobList/JobListItem.tsx:224
 #: components/PromptDetail/PromptInventorySourceDetail.tsx:81
 #: screens/Inventory/InventorySourceDetail/InventorySourceDetail.tsx:233
-#: screens/Inventory/shared/InventorySourceForm.tsx:180
+#: screens/Inventory/shared/InventorySourceForm.tsx:181
 #: screens/Job/JobDetail/JobDetail.tsx:183
 #: screens/Job/JobDetail/JobDetail.tsx:335
 #: screens/Template/WorkflowJobTemplateVisualizer/Modals/NodeModals/NodeTypeStep/InventorySourcesList.tsx:99
@@ -10814,7 +10895,7 @@ msgstr "इन्वेंटरी जोड़ें"
 msgid "Inventory ID"
 msgstr "इन्वेंटरी ID"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:204
+#: screens/Inventory/shared/Inventory.helptext.tsx:288
 msgid "If enabled, jobs and ad hoc commands against this inventory start while it is being synced, using the hosts it had before the sync. By default they wait for the sync to finish. With update on launch, a job still waits for a sync started for it, and for a running one when that source has never synced successfully."
 msgstr ""
 
@@ -10877,6 +10958,12 @@ msgstr "स्थिति"
 msgid "LDAP2"
 msgstr "LDAP2"
 
+#: screens/Inventory/shared/Inventory.helptext.tsx:176
+msgid "config_context: fetch NetBox config context at all. On by default. Turning it\n"
+"        off makes the fetch noticeably cheaper on a large NetBox, because rendering\n"
+"        config context is the expensive part of listing devices."
+msgstr ""
+
 #: components/Search/LookupTypeInput.tsx:50
 msgid "Field contains value."
 msgstr "फ़ील्ड में मान शामिल है।"
@@ -10889,7 +10976,7 @@ msgstr "कुंजी चयन"
 msgid "Pass extra command line changes. There are two ansible command line parameters: "
 msgstr "अतिरिक्त कमांड लाइन परिवर्तन पास करें। दो ansible कमांड लाइन पैरामीटर हैं: "
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:83
+#: screens/Inventory/shared/Inventory.helptext.tsx:87
 msgid "When not checked, local child hosts and groups not found on the external source will remain untouched by the inventory update process."
 msgstr "जब चेक नहीं किया जाता है, तो बाहरी स्रोत पर न मिलने वाले स्थानीय चाइल्ड होस्ट्स और समूह इन्वेंटरी अपडेट प्रक्रिया द्वारा अछूते रहेंगे।"
 
@@ -11005,6 +11092,12 @@ msgstr "संगठन हटाने में विफल।"
 #: screens/Setting/Subscription/SubscriptionDetail/SubscriptionDetail.tsx:154
 #~ msgid "Hosts available"
 #~ msgstr "उपलब्ध होस्ट्स"
+
+#: screens/Inventory/shared/Inventory.helptext.tsx:145
+msgid "Variables that configure what this source pulls from NetBox and how it\n"
+"        is shaped. NetBox is a native integration, so these are Ascender's own\n"
+"        options rather than an Ansible inventory plugin's."
+msgstr ""
 
 #: screens/Setting/Settings.tsx:105
 msgid "Logging"
@@ -11330,7 +11423,7 @@ msgstr "हर जॉब को उसके लिए हस्ताक्ष�
 msgid "Preconditions for running this node when there are multiple parents. Refer to the"
 msgstr "एकाधिक मूल होने पर इस नोड को चलाने के लिए पूर्व शर्तें। देखें"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:149
+#: screens/Inventory/shared/Inventory.helptext.tsx:233
 msgid "Variables used to configure the inventory source. For a detailed description of how to configure this plugin, see"
 msgstr "इन्वेंटरी स्रोत को कॉन्फ़िगर करने के लिए उपयोग किए जाने वाले वेरिएबल्स। इस प्लगइन को कॉन्फ़िगर करने के तरीके के विस्तृत विवरण के लिए, देखें"
 
@@ -11352,6 +11445,11 @@ msgstr "समाप्त:"
 msgid "Prompt | {0}"
 msgstr "संकेत | {0}"
 
+#: screens/Inventory/shared/Inventory.helptext.tsx:185
+msgid "flatten_custom_fields: place custom fields at the top level as well as in\n"
+"        netbox_custom_fields."
+msgstr ""
+
 #: screens/Dashboard/DashboardGraph.tsx:39
 #: screens/Dashboard/DashboardGraph.tsx:154
 msgid "All job types"
@@ -11362,7 +11460,7 @@ msgstr "सभी जॉब प्रकार"
 msgid "GitHub Enterprise Organization"
 msgstr "GitHub Enterprise Organization"
 
-#: screens/Inventory/shared/InventorySourceForm.tsx:188
+#: screens/Inventory/shared/InventorySourceForm.tsx:189
 msgid "Choose a source"
 msgstr "एक स्रोत चुनें"
 
@@ -11396,7 +11494,7 @@ msgstr "सरल कुंजी चयन"
 #~ msgid "You have automated against more hosts than your subscription allows."
 #~ msgstr "आपने अपनी सदस्यता की अनुमति से अधिक होस्ट्स के विरुद्ध स्वचालन किया है।"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:138
+#: screens/Inventory/shared/Inventory.helptext.tsx:142
 msgid "Regular expression where only matching host names will be imported. The filter is applied as a post-processing step after any inventory plugin filters are applied."
 msgstr "नियमित एक्सप्रेशन जहां केवल मेल खाते होस्ट नाम आयात किए जाएंगे। फ़िल्टर किसी भी इन्वेंटरी प्लगइन फ़िल्टर लागू होने के बाद पोस्ट-प्रोसेसिंग चरण के रूप में लागू किया जाता है।"
 
@@ -11433,6 +11531,11 @@ msgstr "{0, plural, one {क्या आप वाकई नीचे दिए
 #: components/AssociateModal/AssociateModal.tsx:70
 msgid "Select Items"
 msgstr "आइटम चुनें"
+
+#: screens/Inventory/shared/Inventory.helptext.tsx:210
+msgid "A full fetch also happens whenever the position is missing or has been\n"
+"        pruned, the NetBox URL changed, or the previous run did not succeed."
+msgstr ""
 
 #: components/JobList/JobListCancelButton.tsx:100
 msgid "{numJobsToCancel, plural, one {Cancel selected job} other {Cancel selected jobs}}"
@@ -11496,7 +11599,7 @@ msgstr "सफलतापूर्वक अस्वीकृत"
 msgid "Not configured for inventory sync."
 msgstr "इन्वेंटरी सिंक के लिए कॉन्फ़िगर नहीं किया गया।"
 
-#: components/Lookup/JobTemplateLookup.tsx:124
+#: components/Lookup/JobTemplateLookup.tsx:133
 #: components/RelatedTemplateList/RelatedTemplateList.tsx:201
 #: components/TemplateList/TemplateList.tsx:234
 #: components/UserAndTeamAccessAdd/UserAndTeamAccessAdd.tsx:96
@@ -11696,7 +11799,7 @@ msgstr "प्रोविज़निंग विफल"
 msgid "Whether the approval node is automatically approved or denied when the timeout expires."
 msgstr "टाइमआउट समाप्त होने पर अनुमोदन नोड स्वचालित रूप से अनुमोदित या अस्वीकृत होता है या नहीं।"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:133
+#: screens/Inventory/shared/Inventory.helptext.tsx:137
 msgid "Time in seconds to consider an inventory sync to be current. During job runs and callbacks the task system will evaluate the timestamp of the latest sync. If it is older than Cache Timeout, it is not considered current, and a new inventory sync will be performed."
 msgstr "किसी इन्वेंटरी सिंक को वर्तमान मानने के लिए सेकंड में समय। जॉब रन और कॉलबैक के दौरान कार्य सिस्टम नवीनतम सिंक के टाइमस्टैम्प का मूल्यांकन करेगा। यदि यह कैश टाइमआउट से पुराना है, तो इसे वर्तमान नहीं माना जाता है, और एक नया इन्वेंटरी सिंक किया जाएगा।"
 
@@ -11704,7 +11807,7 @@ msgstr "किसी इन्वेंटरी सिंक को वर्�
 #~ msgid "Automation controller version"
 #~ msgstr "Automation controller संस्करण"
 
-#: screens/Setting/MiscAuthentication/MiscAuthenticationEdit/MiscAuthenticationEdit.tsx:90
+#: screens/Setting/MiscAuthentication/MiscAuthenticationEdit/MiscAuthenticationEdit.tsx:91
 msgid "Access Token Expiration"
 msgstr "एक्सेस टोकन समाप्ति"
 
@@ -11858,7 +11961,7 @@ msgstr "रद्द किया गया नोड, नए वेरिएब
 #~ msgid "Insights system ID"
 #~ msgstr "Insights सिस्टम ID"
 
-#: screens/Setting/MiscAuthentication/MiscAuthenticationEdit/MiscAuthenticationEdit.tsx:103
+#: screens/Setting/MiscAuthentication/MiscAuthenticationEdit/MiscAuthenticationEdit.tsx:104
 msgid "Authorization Code Expiration"
 msgstr "प्राधिकरण कोड समाप्ति"
 
@@ -12093,6 +12196,7 @@ msgstr "संबद्ध करने में विफल।"
 #: screens/Inventory/InventoryHostGroups/InventoryHostGroupsList.tsx:245
 #: screens/Inventory/InventoryList/InventoryListItem.tsx:147
 #: screens/Inventory/InventoryRelatedGroups/InventoryRelatedGroupList.tsx:265
+#: screens/Inventory/shared/Inventory.helptext.tsx:214
 #: util/getRelatedResourceDeleteDetails.ts:150
 msgid "Groups"
 msgstr "समूह"
@@ -12142,7 +12246,7 @@ msgstr "होस्ट हटाने में विफल।"
 #: components/Lookup/CredentialLookup.tsx:225
 #: components/Lookup/InventoryLookup.tsx:191
 #: components/Lookup/InventoryLookup.tsx:254
-#: components/Lookup/JobTemplateLookup.tsx:128
+#: components/Lookup/JobTemplateLookup.tsx:137
 #: components/Lookup/MultiCredentialsLookup.tsx:226
 #: components/Lookup/OrganizationLookup.tsx:156
 #: components/Lookup/ProjectLookup.tsx:177
@@ -12227,6 +12331,11 @@ msgstr "खाता SID"
 #: screens/Setting/Subscription/SubscriptionEdit/AnalyticsStep.tsx:85
 #~ msgid "Provide your Red Hat or Red Hat Satellite credentials to enable Automation Analytics."
 #~ msgstr "Automation Analytics सक्षम करने के लिए अपने Red Hat या Red Hat Satellite क्रेडेंशियल्स प्रदान करें।"
+
+#: screens/Inventory/shared/Inventory.helptext.tsx:158
+msgid "exclude_offline: fetch only objects whose status is active. Off by default,\n"
+"        because non-active objects are imported disabled rather than dropped."
+msgstr ""
 
 #: screens/Template/shared/PlaybookSelect.tsx:134
 #: screens/Template/shared/PlaybookSelect.tsx:135

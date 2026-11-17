@@ -412,6 +412,10 @@ class AscenderSettings(Protocol):
     NAMED_URL_GRAPH: dict[Any, Any]
     NAMED_URL_GRAPH_NODES: dict[str, Any]
     NAMED_URL_MAPPINGS: dict[str, Any]
+    NETBOX_ENABLED_VALUE: str
+    NETBOX_ENABLED_VAR: str
+    NETBOX_EXCLUDE_EMPTY_GROUPS: bool
+    NETBOX_INSTANCE_ID_VAR: str
     NUMBER_GROUPING: int
     OAUTH2_PROVIDER: dict[str, Any]
     OAUTH2_PROVIDER_ACCESS_TOKEN_MODEL: str

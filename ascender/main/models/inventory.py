@@ -1577,7 +1577,9 @@ class PluginFileInjector(object):
     def build_env(self, inventory_update, env, private_data_dir, private_data_files):
         injector_env = self.get_plugin_env(inventory_update, private_data_dir, private_data_files)
         env.update(injector_env)
-        # All CLOUD_PROVIDERS sources implement as inventory plugin from collection
+        # Every source with an injector implements as an inventory plugin from a
+        # collection. Sources in NATIVE_INVENTORY_SOURCES have no injector and
+        # never reach this.
         env['ANSIBLE_INVENTORY_ENABLED'] = 'auto'
         return env
 

@@ -192,18 +192,44 @@ export type AnyUnifiedJobTemplate = Omit<
   'status'
 > &
   Partial<
-    Omit<JobTemplate, 'id' | 'type' | 'summary_fields' | 'related' | 'status'> &
+    Omit<
+      JobTemplate,
+      | 'id'
+      | 'type'
+      | 'summary_fields'
+      | 'related'
+      | 'status'
+      | 'webhook_service'
+    > &
       Omit<
         WorkflowJobTemplate,
-        'id' | 'type' | 'summary_fields' | 'related' | 'status'
+        | 'id'
+        | 'type'
+        | 'summary_fields'
+        | 'related'
+        | 'status'
+        | 'webhook_service'
       > &
-      Omit<Project, 'id' | 'type' | 'summary_fields' | 'related' | 'status'>
+      Omit<
+        Project,
+        | 'id'
+        | 'type'
+        | 'summary_fields'
+        | 'related'
+        | 'status'
+        | 'webhook_service'
+      >
   > & {
     /**
      * The status is wider than a job template's: a project or an inventory
      * source reports never updated, none, ok, missing or updating as well.
      */
     status?: string;
+    /**
+     * Wider than a job template's: each kind accepts webhooks from a different
+     * set of services, and an inventory source's set is NetBox alone.
+     */
+    webhook_service?: string | null;
     /** Approval nodes carry a timeout rather than a template to run. */
     timeout?: number;
   };

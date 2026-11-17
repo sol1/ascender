@@ -418,12 +418,8 @@ class InventorySourceSerializer(UnifiedJobTemplateSerializer, InventorySourceOpt
                 notification_templates_started=self.reverse('api:inventory_source_notification_templates_started_list', kwargs={'pk': obj.pk}),
                 notification_templates_success=self.reverse('api:inventory_source_notification_templates_success_list', kwargs={'pk': obj.pk}),
                 notification_templates_error=self.reverse('api:inventory_source_notification_templates_error_list', kwargs={'pk': obj.pk}),
-                webhook_key=self.reverse('api:webhook_key', kwargs={'model_kwarg': 'inventory_sources', 'pk': obj.pk}),
-                webhook_receiver=(
-                    self.reverse('api:webhook_receiver_{}'.format(obj.webhook_service), kwargs={'model_kwarg': 'inventory_sources', 'pk': obj.pk})
-                    if obj.webhook_service
-                    else ''
-                ),
+                webhook_key=self.reverse('api:inventory_source_webhook_key', kwargs={'pk': obj.pk}),
+                webhook_receiver=(self.reverse('api:webhook_receiver_netbox', kwargs={'pk': obj.pk}) if obj.webhook_service else ''),
             )
         )
         if obj.inventory:

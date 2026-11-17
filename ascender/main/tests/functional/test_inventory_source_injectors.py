@@ -7,7 +7,7 @@ from collections import namedtuple
 
 from ascender.main.tasks.jobs import RunInventoryUpdate
 from ascender.main.models import InventorySource, Credential, CredentialType, UnifiedJob, ExecutionEnvironment
-from ascender.main.constants import CLOUD_PROVIDERS, STANDARD_INVENTORY_UPDATE_ENV
+from ascender.main.constants import CLOUD_PROVIDERS, NATIVE_INVENTORY_SOURCES, STANDARD_INVENTORY_UPDATE_ENV
 from ascender.main.tests import data
 from ascender.main.utils.execution_environments import to_container_path
 
@@ -196,7 +196,9 @@ def create_reference_data(source_dir, env, content):
 
 
 @pytest.mark.django_db
-@pytest.mark.parametrize('this_kind', CLOUD_PROVIDERS)
+# Native sources have no injector and no execution environment, so there is no
+# injected content for them to produce.
+@pytest.mark.parametrize('this_kind', [kind for kind in CLOUD_PROVIDERS if kind not in NATIVE_INVENTORY_SOURCES])
 def test_inventory_update_injected_content(this_kind, inventory, fake_credential_factory, mock_me):
     ExecutionEnvironment.objects.create(name='Control Plane EE', managed=True)
     ExecutionEnvironment.objects.create(name='Default Job EE', managed=False)

@@ -261,7 +261,7 @@ msgstr "滚动到前一个"
 msgid "Failed to copy project."
 msgstr "复制项目失败。"
 
-#: components/LaunchPrompt/LaunchPrompt.tsx:157
+#: components/LaunchPrompt/LaunchPrompt.tsx:158
 #: components/Schedule/shared/SchedulePromptableFields.tsx:129
 msgid "Hide description"
 msgstr "隐藏描述"
@@ -422,7 +422,7 @@ msgid "Timed out"
 msgstr "超时"
 
 #. placeholder {0}: header || t`Items`
-#: components/Lookup/Lookup.tsx:237
+#: components/Lookup/Lookup.tsx:270
 msgid "Select {0}"
 msgstr "选择 {0}"
 
@@ -530,7 +530,7 @@ msgstr "事件"
 msgid "Repeat Frequency"
 msgstr "重复频率"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:180
+#: screens/Inventory/shared/Inventory.helptext.tsx:264
 msgid "Variables used to configure the constructed inventory plugin. For a detailed description of how to configure this plugin, see"
 msgstr "用于配置构建的清单插件的变量。有关如何配置此插件的详细说明，请参阅"
 
@@ -711,7 +711,7 @@ msgstr "切换实例失败。"
 msgid "Failed to delete one or more instance groups."
 msgstr "删除一个或多个实例组失败。"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:49
+#: screens/Inventory/shared/Inventory.helptext.tsx:53
 msgid "JSON:"
 msgstr "JSON："
 
@@ -731,8 +731,8 @@ msgstr "指标"
 msgid "Create new credential Type"
 msgstr "创建新凭证类型"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:107
-#: screens/Inventory/shared/Inventory.helptext.tsx:126
+#: screens/Inventory/shared/Inventory.helptext.tsx:111
+#: screens/Inventory/shared/Inventory.helptext.tsx:130
 msgid "If you want the Inventory Source to update on launch, click on Update on Launch, and also go to "
 msgstr "如果您希望清单源在启动时更新，请点击「启动时更新」，并转到 "
 
@@ -749,8 +749,8 @@ msgstr "JSON 标签页"
 msgid "Start Time"
 msgstr "开始时间"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:46
-#: screens/Inventory/shared/Inventory.helptext.tsx:193
+#: screens/Inventory/shared/Inventory.helptext.tsx:50
+#: screens/Inventory/shared/Inventory.helptext.tsx:277
 msgid "Variables must be in JSON or YAML syntax. Use the radio button to toggle between the two."
 msgstr "变量需要是 JSON 或 YAML 语法格式。使用单选按钮在两者之间切换。"
 
@@ -883,7 +883,7 @@ msgid "LDAP 5"
 msgstr "LDAP 5"
 
 #: components/Lookup/HostFilterLookup.tsx:386
-#: components/Lookup/Lookup.tsx:238
+#: components/Lookup/Lookup.tsx:271
 msgid "Lookup modal"
 msgstr "查找模式"
 
@@ -962,6 +962,10 @@ msgstr "未找到执行环境。"
 msgid "Create New Organization"
 msgstr "创建新机构"
 
+#: screens/Inventory/shared/Inventory.helptext.tsx:164
+msgid "use_fqdn: name each host after its primary IP's DNS name when NetBox has one."
+msgstr ""
+
 #: screens/Setting/SettingList.tsx:108
 msgid "View and edit debug options"
 msgstr "查看和编辑调试选项"
@@ -992,7 +996,7 @@ msgstr "{interval, plural, one {# 年} other {# 年}}"
 msgid "Inventory Source Sync"
 msgstr "清单源同步"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:155
+#: screens/Inventory/shared/Inventory.helptext.tsx:239
 msgid "Inventory Plugins"
 msgstr "清单插件."
 
@@ -1066,7 +1070,7 @@ msgstr "1（信息）"
 msgid "Set the instance enabled or disabled. If disabled, jobs will not be assigned to this instance."
 msgstr "设置实例被启用或禁用。如果禁用，则不会将作业分配给此实例。"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:109
+#: screens/Inventory/shared/Inventory.helptext.tsx:113
 msgid "and click on Update Revision on Launch."
 msgstr "然后单击启动时更新修订版本。"
 
@@ -1082,7 +1086,7 @@ msgstr "在执行更新之前完全删除本地存储库。根据存储库的大
 msgid "Setting category"
 msgstr "设置类别"
 
-#: screens/Credential/Credential.tsx:81
+#: screens/Credential/Credential.tsx:83
 msgid "Back to Credentials"
 msgstr "返回到凭证"
 
@@ -1427,6 +1431,11 @@ msgstr "电子邮件"
 msgid "Job Type"
 msgstr "作业类型"
 
+#: screens/Inventory/shared/Inventory.helptext.tsx:166
+msgid "oob_ip_as_primary_ip: connect to the out-of-band address, the iDRAC, iLO or\n"
+"        BMC, instead of the primary IP."
+msgstr ""
+
 #: screens/Job/JobOutput/JobOutputSearch.tsx:131
 msgid "No Hosts Matched"
 msgstr "未匹配主机"
@@ -1569,8 +1578,8 @@ msgstr "删除一个或多个作业失败。"
 msgid "Run Command"
 msgstr "运行命令"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:165
-#: screens/Inventory/shared/Inventory.helptext.tsx:188
+#: screens/Inventory/shared/Inventory.helptext.tsx:249
+#: screens/Inventory/shared/Inventory.helptext.tsx:272
 msgid "plugin configuration guide."
 msgstr "插件配置指南。"
 
@@ -1681,8 +1690,8 @@ msgstr "创建新联邦库存"
 #: components/Lookup/InventoryLookup.tsx:201
 #: components/Lookup/InventoryLookup.tsx:249
 #: components/Lookup/InventoryLookup.tsx:264
-#: components/Lookup/JobTemplateLookup.tsx:122
-#: components/Lookup/JobTemplateLookup.tsx:132
+#: components/Lookup/JobTemplateLookup.tsx:131
+#: components/Lookup/JobTemplateLookup.tsx:141
 #: components/Lookup/MultiCredentialsLookup.tsx:221
 #: components/Lookup/MultiCredentialsLookup.tsx:236
 #: components/Lookup/OrganizationLookup.tsx:151
@@ -1812,7 +1821,7 @@ msgstr "创建新联邦库存"
 #: screens/Inventory/shared/FederatedInventoryForm.tsx:65
 #: screens/Inventory/shared/InventoryForm.tsx:56
 #: screens/Inventory/shared/InventoryGroupForm.tsx:54
-#: screens/Inventory/shared/InventorySourceForm.tsx:151
+#: screens/Inventory/shared/InventorySourceForm.tsx:152
 #: screens/Inventory/shared/SmartInventoryForm.tsx:55
 #: screens/Inventory/SmartInventoryDetail/SmartInventoryDetail.tsx:104
 #: screens/ManagementJob/ManagementJobList/ManagementJobList.tsx:97
@@ -2045,7 +2054,7 @@ msgstr "密钥"
 #: components/AddRole/AddResourceRole.tsx:65
 #: components/ResourceAccessList/ResourceAccessList.tsx:178
 #: components/ResourceAccessList/ResourceAccessList.tsx:231
-#: screens/Login/Login.tsx:350
+#: screens/Login/Login.tsx:363
 #: screens/NotificationTemplate/NotificationTemplateDetail/NotificationTemplateDetail.tsx:200
 #: screens/NotificationTemplate/NotificationTemplateDetail/NotificationTemplateDetail.tsx:336
 #: screens/NotificationTemplate/NotificationTemplateDetail/NotificationTemplateDetail.tsx:386
@@ -2158,9 +2167,9 @@ msgid "Parent node outcome required before the condition is evaluated."
 msgstr "在评估条件之前需要父节点的结果。"
 
 #: components/JobList/JobListItem.tsx:248
-#: components/Lookup/JobTemplateLookup.tsx:103
-#: components/Lookup/JobTemplateLookup.tsx:108
-#: components/Lookup/JobTemplateLookup.tsx:138
+#: components/Lookup/JobTemplateLookup.tsx:111
+#: components/Lookup/JobTemplateLookup.tsx:116
+#: components/Lookup/JobTemplateLookup.tsx:147
 #: components/TemplateList/TemplateList.tsx:229
 #: components/TemplateList/TemplateListItem.tsx:170
 #: components/Workflow/WorkflowLegend.tsx:30
@@ -2226,7 +2235,7 @@ msgstr "字段与给出的正则表达式匹配。"
 msgid "{0, plural, one {This credential type is currently being used by some credentials and cannot be deleted.} other {Credential types that are being used by credentials cannot be deleted. Are you sure you want to delete anyway?}}"
 msgstr "{0, plural, one {This credential type is currently being used by some credentials and cannot be deleted.} other {Credential types that are being used by credentials cannot be deleted. Are you sure you want to delete anyway?}}"
 
-#: screens/Login/Login.tsx:348
+#: screens/Login/Login.tsx:361
 #: screens/NotificationTemplate/shared/TypeInputsSubForm.tsx:156
 #: screens/Template/Survey/SurveyQuestionForm.tsx:82
 #: screens/User/shared/UserForm.tsx:127
@@ -2426,7 +2435,7 @@ msgstr "此构建的库存输入 \n"
 "            限制（主机模式）仅返回位于这两个组 \n"
 "            交集中的主机。"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:203
+#: screens/Inventory/shared/Inventory.helptext.tsx:287
 msgid "If enabled, hosts can be deleted from this inventory while jobs are running against it. By default those deletions are rejected until the running jobs finish."
 msgstr "如果启用，则可以在有作业针对此清单运行时从中删除主机。默认情况下，这些删除会被拒绝，直到正在运行的作业完成。"
 
@@ -2461,7 +2470,7 @@ msgid "Management job launch error"
 msgstr "管理作业启动错误"
 
 #: components/Lookup/HostFilterLookup.tsx:309
-#: components/Lookup/Lookup.tsx:183
+#: components/Lookup/Lookup.tsx:209
 msgid "Search"
 msgstr "搜索"
 
@@ -2519,6 +2528,7 @@ msgid "Cancel Constructed Inventory Source Sync"
 msgstr "取消构建的库存源同步"
 
 #: screens/Application/ApplicationTokens/ApplicationTokenListItem.tsx:43
+#: screens/Inventory/shared/Inventory.helptext.tsx:150
 #: screens/User/shared/UserTokenForm.tsx:76
 #: screens/User/UserTokenDetail/UserTokenDetail.tsx:56
 #: screens/User/UserTokenList/UserTokenList.tsx:147
@@ -2536,7 +2546,7 @@ msgstr "{0}（已删除）"
 msgid "The inventory that this host belongs to."
 msgstr "此主机要属于的清单。"
 
-#: screens/Login/Login.tsx:333
+#: screens/Login/Login.tsx:346
 msgid "Log In"
 msgstr "登录"
 
@@ -2555,6 +2565,11 @@ msgstr "您没有权限删除 {pluralizedItemName}：{itemsUnableToDelete}"
 #: screens/NotificationTemplate/shared/TypeInputsSubForm.tsx:556
 msgid "Notification color"
 msgstr "通知颜色"
+
+#: screens/Inventory/shared/Inventory.helptext.tsx:188
+msgid "include_raw: attach the whole NetBox object as netbox_raw. Useful for working\n"
+"        out what is available, expensive for a routine sync."
+msgstr ""
 
 #: screens/Instances/InstanceDetail/InstanceDetail.tsx:212
 #: screens/Job/JobOutput/HostEventModal.tsx:161
@@ -2613,7 +2628,7 @@ msgstr "单独启用日志系统跟踪事实"
 msgid "Job Templates with credentials that prompt for passwords cannot be selected when creating or editing nodes"
 msgstr "在创建或编辑节点时无法选择具有提示密码凭证的作业模板"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:202
+#: screens/Inventory/shared/Inventory.helptext.tsx:286
 msgid "If enabled, the inventory will prevent adding any organization instance groups to the list of preferred instances groups to run associated job templates on. Note: If this setting is enabled and you provided an empty list, the global instance groups will be applied."
 msgstr "如果启用，则该清单将阻止将任何机构实例组添加到运行相关作业模板的首选实例组列表中。注：如果启用了此设置，且提供了空列表，则会应用全局实例组。"
 
@@ -2724,11 +2739,12 @@ msgstr "复制输出"
 msgid "No results found"
 msgstr "没有找到结果"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:214
+#: screens/Inventory/shared/Inventory.helptext.tsx:298
 msgid "Allow Jobs While Syncing: If enabled, jobs against this inventory do not wait for a sync of it to finish."
 msgstr ""
 
 #: components/LaunchPrompt/steps/OtherPromptsStep.tsx:218
+#: components/LaunchPrompt/steps/OtherPromptsStep.tsx:220
 #: components/PromptDetail/PromptDetail.tsx:432
 #: components/PromptDetail/PromptJobTemplateDetail.tsx:164
 #: components/Schedule/ScheduleDetail/ScheduleDetail.tsx:523
@@ -2739,6 +2755,13 @@ msgstr ""
 #: screens/Template/shared/JobTemplateForm.tsx:606
 msgid "Off"
 msgstr "关"
+
+#: screens/Inventory/shared/Inventory.helptext.tsx:197
+msgid "The inventory importer performs a full reconcile, so this skips whole runs\n"
+"        rather than applying deltas. The watch list covers every NetBox object type\n"
+"        that can change this inventory, including config contexts, tags, sites and\n"
+"        IP addresses, none of which record a change against the device they affect."
+msgstr ""
 
 #: screens/Inventory/Inventories.tsx:57
 msgid "Create new smart inventory"
@@ -2841,7 +2864,7 @@ msgstr "项正常"
 msgid "Icon URL"
 msgstr "图标 URL"
 
-#: screens/Inventory/shared/InventorySourceForm.tsx:177
+#: screens/Inventory/shared/InventorySourceForm.tsx:178
 msgid "Select the Instance Groups this inventory source sync should run on. If unset, the sync runs on the instance groups of the inventory or its organization."
 msgstr "选择此清单源同步应在其上运行的实例组。如果未设置，同步将在清单或其机构的实例组上运行。"
 
@@ -3041,12 +3064,12 @@ msgstr "{0, plural, one {请输入有效的电话号码。} other {请输入有�
 msgid "Facts"
 msgstr "事实"
 
-#: screens/Login/Login.tsx:357
+#: screens/Login/Login.tsx:370
 msgid "or"
 msgstr "或"
 
 #: components/AssociateModal/AssociateModal.tsx:69
-#: components/Lookup/Lookup.tsx:237
+#: components/Lookup/Lookup.tsx:270
 #: components/PaginatedTable/PaginatedTable.tsx:77
 #: components/PaginatedTable/ToolbarDeleteButton.tsx:59
 #: screens/HostMetrics/HostMetricsDeleteButton.tsx:36
@@ -3226,7 +3249,7 @@ msgstr "变量名称的建议格式为小写并\n"
 msgid "This job template is currently being used by other resources. Are you sure you want to delete it?"
 msgstr "其他资源目前正在使用此任务模板。确定要删除它吗？"
 
-#: screens/Credential/Credential.tsx:120
+#: screens/Credential/Credential.tsx:122
 msgid "View all Credentials."
 msgstr "查看所有凭证。"
 
@@ -3519,7 +3542,7 @@ msgstr "编辑顺序"
 msgid "Minimum"
 msgstr "最小值"
 
-#: screens/Setting/MiscAuthentication/MiscAuthenticationEdit/MiscAuthenticationEdit.tsx:96
+#: screens/Setting/MiscAuthentication/MiscAuthenticationEdit/MiscAuthenticationEdit.tsx:97
 msgid "Refresh Token Expiration"
 msgstr "刷新令牌过期"
 
@@ -3699,9 +3722,9 @@ msgstr "此操作将从所选团队中解除该用户的所有角色。"
 #: components/LaunchButton/WorkflowRelaunchForceSuccessModal.tsx:155
 #: components/LaunchButton/WorkflowRelaunchVariablesModal.tsx:133
 #: components/LaunchButton/WorkflowRelaunchVariablesModal.tsx:137
-#: components/LaunchPrompt/LaunchPrompt.tsx:181
+#: components/LaunchPrompt/LaunchPrompt.tsx:182
 #: components/Lookup/HostFilterLookup.tsx:407
-#: components/Lookup/Lookup.tsx:260
+#: components/Lookup/Lookup.tsx:293
 #: components/PaginatedTable/ToolbarDeleteButton.tsx:248
 #: components/ResourceAccessList/DeleteRoleConfirmationModal.tsx:47
 #: components/Schedule/shared/ScheduleForm.tsx:624
@@ -4081,7 +4104,7 @@ msgstr "拓扑视图"
 msgid "Syncing"
 msgstr "同步"
 
-#: screens/Inventory/shared/InventorySourceForm.tsx:210
+#: screens/Inventory/shared/InventorySourceForm.tsx:211
 msgid "Source details"
 msgstr "源详情"
 
@@ -4092,6 +4115,10 @@ msgstr "来自项目的源"
 #: screens/NotificationTemplate/NotificationTemplateDetail/NotificationTemplateDetail.tsx:408
 msgid "Destination Channels"
 msgstr "目标频道"
+
+#: screens/Inventory/shared/Inventory.helptext.tsx:192
+msgid "Incremental sync"
+msgstr ""
 
 #: screens/Template/WorkflowJobTemplateDetail/WorkflowJobTemplateDetail.tsx:298
 msgid "Failed to delete workflow job template."
@@ -4197,8 +4224,8 @@ msgstr "删除凭证"
 #: screens/Setting/Logging/LoggingDetail/LoggingDetail.tsx:112
 #: screens/Setting/MiscAuthentication/MiscAuthenticationDetail/MiscAuthenticationDetail.tsx:85
 #: screens/Setting/MiscAuthentication/MiscAuthenticationDetail/MiscAuthenticationDetail.tsx:89
-#: screens/Setting/MiscSystem/MiscSystemDetail/MiscSystemDetail.tsx:122
-#: screens/Setting/MiscSystem/MiscSystemDetail/MiscSystemDetail.tsx:126
+#: screens/Setting/MiscSystem/MiscSystemDetail/MiscSystemDetail.tsx:124
+#: screens/Setting/MiscSystem/MiscSystemDetail/MiscSystemDetail.tsx:128
 #: screens/Setting/OIDC/OIDCDetail/OIDCDetail.tsx:85
 #: screens/Setting/OIDC/OIDCDetail/OIDCDetail.tsx:89
 #: screens/Setting/RADIUS/RADIUSDetail/RADIUSDetail.tsx:96
@@ -4239,7 +4266,7 @@ msgstr "设置此实例在网格拓扑中扮演的角色。默认为 \"execution
 msgid "Installed"
 msgstr "已安装"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:55
+#: screens/Inventory/shared/Inventory.helptext.tsx:59
 msgid "View JSON examples at"
 msgstr "在查看JSON示例"
 
@@ -4255,7 +4282,7 @@ msgstr "未指定超时"
 msgid "On Timeout"
 msgstr "超时时"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:208
+#: screens/Inventory/shared/Inventory.helptext.tsx:292
 msgid "Prevent Instance Group Fallback: If enabled, the inventory will prevent adding any organization instance groups to the list of preferred instances groups to run associated job templates on."
 msgstr "防止实例组 Fallback：如果启用，则该清单将阻止将任何机构实例组添加到运行相关作业模板的首选实例组列表中。"
 
@@ -4587,7 +4614,7 @@ msgstr "删除同行？"
 msgid "Search text input"
 msgstr "搜索文本输入"
 
-#: components/Lookup/Lookup.tsx:100
+#: components/Lookup/Lookup.tsx:118
 msgid "That value was not found. Please enter or select a valid value."
 msgstr "未找到该值。请输入或选择一个有效值。"
 
@@ -4595,7 +4622,7 @@ msgstr "未找到该值。请输入或选择一个有效值。"
 msgid "Weekend day"
 msgstr "周末日"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:28
+#: screens/Inventory/shared/Inventory.helptext.tsx:32
 msgid "Optional labels that describe this inventory,\n"
 "          such as 'dev' or 'test'. Labels can be used to group and filter\n"
 "          inventories and completed jobs."
@@ -4623,7 +4650,7 @@ msgstr "查看机构详情"
 #: components/JobList/JobList.tsx:335
 #: components/JobList/JobList.tsx:346
 #: components/LaunchButton/LaunchButton.tsx:305
-#: components/LaunchPrompt/LaunchPrompt.tsx:118
+#: components/LaunchPrompt/LaunchPrompt.tsx:119
 #: components/NotificationList/NotificationList.tsx:293
 #: components/PaginatedTable/ToolbarDeleteButton.tsx:172
 #: components/RelatedTemplateList/RelatedTemplateList.tsx:268
@@ -4830,7 +4857,7 @@ msgstr "通知模板"
 msgid "Start message body"
 msgstr "开始消息正文"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:136
+#: screens/Inventory/shared/Inventory.helptext.tsx:140
 msgid "Branch to use on inventory sync. Project default used if blank. Only allowed if project allow_override field is set to true."
 msgstr "用于库存同步的分支。如果为空，则使用项目默认值。仅当项目allow_override字段设置为true时才允许。"
 
@@ -5035,6 +5062,11 @@ msgstr "添加团队角色"
 msgid "Jobs settings"
 msgstr "作业设置"
 
+#: screens/Inventory/shared/Inventory.helptext.tsx:194
+msgid "incremental: ask NetBox's changelog whether anything relevant has changed\n"
+"        before fetching, and skip the fetch when nothing has. Off by default."
+msgstr ""
+
 #: screens/Credential/shared/CredentialPlugins/CredentialPluginSelected.tsx:33
 #: screens/Credential/shared/CredentialPlugins/CredentialPluginSelected.tsx:39
 msgid "Edit Credential Plugin Configuration"
@@ -5132,7 +5164,7 @@ msgstr "创建新团队"
 msgid "Sign in with Microsoft Entra ID"
 msgstr "使用 Microsoft Entra ID 登陆"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:157
+#: screens/Inventory/shared/Inventory.helptext.tsx:241
 msgid "in the documentation and the"
 msgstr "在文档和"
 
@@ -5217,7 +5249,7 @@ msgstr "折叠"
 
 #: components/JobList/JobListItem.tsx:341
 #: components/LabelLists/LabelLists.tsx:56
-#: components/LaunchPrompt/steps/OtherPromptsStep.tsx:258
+#: components/LaunchPrompt/steps/OtherPromptsStep.tsx:257
 #: components/PromptDetail/PromptDetail.tsx:393
 #: components/PromptDetail/PromptJobTemplateDetail.tsx:217
 #: components/PromptDetail/PromptWFJobTemplateDetail.tsx:129
@@ -5477,7 +5509,7 @@ msgid "Preferred Theme"
 msgstr "首选主题"
 
 #: screens/Instances/Shared/InstanceForm.tsx:38
-#: screens/Inventory/shared/InventorySourceForm.tsx:110
+#: screens/Inventory/shared/InventorySourceForm.tsx:111
 #: screens/Project/shared/ProjectForm.tsx:168
 msgid "Set a value for this field"
 msgstr "为这个字段设置值"
@@ -5567,7 +5599,7 @@ msgstr "频率详情"
 #: components/AdHocCommands/useAdHocDetailsStep.tsx:47
 #: components/AdHocCommands/useAdHocExecutionEnvironmentStep.tsx:26
 #: components/AdHocCommands/useAdHocInstanceGroupsStep.tsx:27
-#: components/LaunchPrompt/LaunchPrompt.tsx:182
+#: components/LaunchPrompt/LaunchPrompt.tsx:183
 #: components/Schedule/shared/SchedulePromptableFields.tsx:154
 #: screens/Credential/shared/CredentialPlugins/CredentialPluginPrompt/CredentialPluginPrompt.tsx:73
 #: screens/Template/WorkflowJobTemplateVisualizer/Modals/NodeModals/NodeModal.tsx:234
@@ -5575,7 +5607,7 @@ msgid "Next"
 msgstr "下一"
 
 #: components/LabelSelect/LabelSelect.tsx:204
-#: components/LaunchPrompt/steps/OtherPromptsStep.tsx:264
+#: components/LaunchPrompt/steps/OtherPromptsStep.tsx:263
 #: components/MultiSelect/TagMultiSelect.tsx:134
 #: screens/Credential/shared/CredentialFormFields/BecomeMethodField.tsx:149
 #: screens/Inventory/shared/InventoryForm.tsx:97
@@ -5668,7 +5700,7 @@ msgstr "自动化"
 msgid "Node Type"
 msgstr "节点类型"
 
-#: screens/Credential/Credential.tsx:171
+#: screens/Credential/Credential.tsx:173
 msgid "View Credential Details"
 msgstr "查看凭证详情"
 
@@ -5732,7 +5764,7 @@ msgstr "过去两周"
 
 #: components/AddRole/AddResourceRole.tsx:300
 #: components/AdHocCommands/AdHocCommandsWizard.tsx:68
-#: components/LaunchPrompt/LaunchPrompt.tsx:180
+#: components/LaunchPrompt/LaunchPrompt.tsx:181
 #: components/Schedule/shared/SchedulePromptableFields.tsx:152
 #: screens/Credential/shared/CredentialPlugins/CredentialPluginPrompt/CredentialPluginPrompt.tsx:97
 #: screens/Template/WorkflowJobTemplateVisualizer/Modals/NodeModals/NodeModal.tsx:91
@@ -5930,6 +5962,13 @@ msgstr "这一步包含错误"
 #: screens/Template/shared/WorkflowJobTemplateForm.tsx:239
 msgid "source control branch"
 msgstr "源控制分支"
+
+#: screens/Inventory/shared/Inventory.helptext.tsx:180
+msgid "merge_config_context: also place each config context key at the top level as a\n"
+"        host variable. On by default. The raw mapping is always available as\n"
+"        netbox_config_context, and anything set on the object itself as\n"
+"        netbox_local_context_data."
+msgstr ""
 
 #: components/AdHocCommands/AdHocPreviewStep.tsx:68
 #: components/AdHocCommands/useAdHocInstanceGroupsStep.tsx:22
@@ -6290,7 +6329,7 @@ msgstr "启动此任务模板时将使用的执行环境。可以通过为此任
 msgid "Label Name"
 msgstr "标签名称"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:64
+#: screens/Inventory/shared/Inventory.helptext.tsx:68
 msgid "View YAML examples at"
 msgstr "在以下位置查看YAML示例："
 
@@ -6307,8 +6346,8 @@ msgstr "此处勾选的节点不会重新运行：工作流会将其视为已成
 msgid "Resource deleted"
 msgstr "资源已删除"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:52
-#: screens/Inventory/shared/Inventory.helptext.tsx:196
+#: screens/Inventory/shared/Inventory.helptext.tsx:56
+#: screens/Inventory/shared/Inventory.helptext.tsx:280
 msgid "YAML:"
 msgstr "YAML："
 
@@ -6376,7 +6415,7 @@ msgstr "为您的 {brandName} 应用启用简化的登录"
 msgid "Thursday"
 msgstr "周四"
 
-#: screens/Credential/Credential.tsx:100
+#: screens/Credential/Credential.tsx:102
 #: screens/Credential/Credentials.tsx:33
 #: screens/Inventory/ConstructedInventory.tsx:85
 #: screens/Inventory/FederatedInventory.tsx:81
@@ -6394,6 +6433,12 @@ msgstr "作业模板"
 #: screens/HostMetrics/HostMetricsListItem.tsx:30
 msgid "First automation"
 msgstr "第一次自动化"
+
+#: screens/Inventory/shared/Inventory.helptext.tsx:216
+msgid "group_by_status and group_by_tag: both on by default. Groups for site, region,\n"
+"        site group, location, rack, tenant, platform, cluster, device type, role and\n"
+"        manufacturer are always built."
+msgstr ""
 
 #: screens/ActivityStream/ActivityStreamListItem.tsx:51
 msgid "Initiated By"
@@ -6468,7 +6513,7 @@ msgstr "切换实例"
 msgid "Back to Inventories"
 msgstr "返回到清单"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:121
+#: screens/Inventory/shared/Inventory.helptext.tsx:125
 msgid "After every project update where the SCM revision changes, refresh the inventory from the selected source before executing job tasks. This is intended for static content, like the Ansible inventory .ini file format."
 msgstr "在每个 SCM 修订版更改带来的工程项目更新后, 在执行作业任务之前, 请刷新所选源的资源清单。这适用于静态内容, 例如使用 .ini 文件格式的 Ansible 资源清单。"
 
@@ -6575,7 +6620,7 @@ msgstr "实例"
 msgid "Including File"
 msgstr "包含文件"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:80
+#: screens/Inventory/shared/Inventory.helptext.tsx:84
 msgid "If checked, any hosts and groups that were previously present on the external source but are now removed will be removed from the inventory. Hosts and groups that were not managed by the inventory source will be promoted to the next manually created group or if there is no manually created group to promote them into, they will be left in the \"all\" default group for the inventory."
 msgstr "如果选中，则以前存在于外部源但现在已删除的任何主机和组都将从清单中删除。不受清单源管理的主机和组将被提升到下一个手动创建的组，或者如果没有手动创建的组可将其提升到其中，它们将保留在清单的默认「all」组中。"
 
@@ -6621,6 +6666,7 @@ msgstr "重新排序 {label}"
 #: screens/Inventory/shared/InventorySourceSubForms/ControllerSubForm.tsx:47
 #: screens/Inventory/shared/InventorySourceSubForms/EC2SubForm.tsx:40
 #: screens/Inventory/shared/InventorySourceSubForms/GCESubForm.tsx:45
+#: screens/Inventory/shared/InventorySourceSubForms/NetBoxSubForm.tsx:41
 #: screens/Inventory/shared/InventorySourceSubForms/OpenStackSubForm.tsx:47
 #: screens/Inventory/shared/InventorySourceSubForms/SatelliteSubForm.tsx:49
 #: screens/Inventory/shared/InventorySourceSubForms/SCMSubForm.tsx:124
@@ -6686,6 +6732,10 @@ msgstr "日期搜索输入"
 #: screens/NotificationTemplate/NotificationTemplateDetail/NotificationTemplateDetail.tsx:309
 msgid "Destination Rooms"
 msgstr "目标房间"
+
+#: screens/Inventory/shared/Inventory.helptext.tsx:174
+msgid "Host variables"
+msgstr ""
 
 #: screens/Host/HostDetail/HostDetail.tsx:123
 #: screens/Inventory/InventoryHostDetail/InventoryHostDetail.tsx:116
@@ -6818,7 +6868,7 @@ msgid "Minimum number of instances that will be automatically assigned to this g
 msgstr "新实例上线时将自动分配给此组的最小实例数。"
 
 #. placeholder {0}: resource.name
-#: components/LaunchPrompt/LaunchPrompt.tsx:152
+#: components/LaunchPrompt/LaunchPrompt.tsx:153
 msgid "Launch | {0}"
 msgstr "启动 | {0}"
 
@@ -6854,7 +6904,7 @@ msgstr "{label} 的更多信息"
 
 #: routeConfig.tsx:128
 #: screens/ActivityStream/ActivityStream.tsx:190
-#: screens/Credential/Credential.tsx:90
+#: screens/Credential/Credential.tsx:92
 #: screens/Credential/Credentials.tsx:32
 #: screens/Inventory/ConstructedInventory.tsx:76
 #: screens/Inventory/FederatedInventory.tsx:76
@@ -6999,7 +7049,7 @@ msgstr "请使用上面的过滤器尝试另一个搜索"
 msgid "Are you sure you want to edit login redirect override URL?  Doing so could impact users' ability to log in to the system once local authentication is also disabled."
 msgstr "您确定要编辑登录重定向覆盖 URL? 这样做可能会影响用户在同时禁用本地身份验证后登录系统的能力。"
 
-#: screens/Credential/Credential.tsx:119
+#: screens/Credential/Credential.tsx:121
 msgid "Credential not found."
 msgstr "未找到凭证。"
 
@@ -7019,7 +7069,7 @@ msgstr "IRC 服务器密码"
 msgid "API Token"
 msgstr "API 令牌"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:75
+#: screens/Inventory/shared/Inventory.helptext.tsx:79
 msgid "Control the level of output Ansible will produce for inventory source update jobs."
 msgstr "控制Ansible将为库存源更新作业生成的输出级别。"
 
@@ -7289,7 +7339,7 @@ msgstr "要与工件进行比较的值。尽可能解释为 JSON（例如 true�
 msgid "Failed to delete one or more groups."
 msgstr "删除一个或多个组失败。"
 
-#: screens/Setting/MiscAuthentication/MiscAuthenticationEdit/MiscAuthenticationEdit.tsx:211
+#: screens/Setting/MiscAuthentication/MiscAuthenticationEdit/MiscAuthenticationEdit.tsx:212
 msgid "Confirm Disable Local Authorization"
 msgstr "确认禁用本地授权"
 
@@ -7325,7 +7375,7 @@ msgstr "此字段必须是数字，且值大于 {min}"
 msgid "All"
 msgstr "所有"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:186
+#: screens/Inventory/shared/Inventory.helptext.tsx:270
 msgid "constructed inventory"
 msgstr "已建库存"
 
@@ -7648,7 +7698,7 @@ msgstr "同步"
 #: screens/Inventory/shared/FederatedInventoryForm.tsx:73
 #: screens/Inventory/shared/InventoryForm.tsx:64
 #: screens/Inventory/shared/InventoryGroupForm.tsx:62
-#: screens/Inventory/shared/InventorySourceForm.tsx:159
+#: screens/Inventory/shared/InventorySourceForm.tsx:160
 #: screens/Inventory/shared/SmartInventoryForm.tsx:63
 #: screens/Inventory/SmartInventoryDetail/SmartInventoryDetail.tsx:110
 #: screens/Job/JobOutput/HostEventModal.tsx:163
@@ -7786,6 +7836,7 @@ msgstr "使用 GitHub Enterprise 登录"
 #: screens/Inventory/shared/InventorySourceSubForms/AzureSubForm.tsx:54
 #: screens/Inventory/shared/InventorySourceSubForms/ControllerSubForm.tsx:55
 #: screens/Inventory/shared/InventorySourceSubForms/GCESubForm.tsx:53
+#: screens/Inventory/shared/InventorySourceSubForms/NetBoxSubForm.tsx:49
 #: screens/Inventory/shared/InventorySourceSubForms/OpenStackSubForm.tsx:55
 #: screens/Inventory/shared/InventorySourceSubForms/SatelliteSubForm.tsx:57
 #: screens/Inventory/shared/InventorySourceSubForms/SCMSubForm.tsx:56
@@ -8078,6 +8129,10 @@ msgstr "清除所有过滤器"
 msgid "{0, plural, one {This instance is currently being used by other resources. Are you sure you want to delete it?} other {Deprovisioning these instances could impact other resources that rely on them. Are you sure you want to delete anyway?}}"
 msgstr "{0, plural, one {此实例当前正被其他资源使用。确定要删除它吗?} other {取消置备这些实例可能会影响依赖它们的其他资源。确定仍要删除吗?}}"
 
+#: screens/Inventory/shared/Inventory.helptext.tsx:162
+msgid "Host names and addresses"
+msgstr ""
+
 #: screens/Setting/AzureAD/AzureADDetail/AzureADDetail.tsx:61
 #: screens/Setting/GitHub/GitHubDetail/GitHubDetail.tsx:76
 #: screens/Setting/GoogleOAuth2/GoogleOAuth2Detail/GoogleOAuth2Detail.tsx:44
@@ -8085,7 +8140,7 @@ msgstr "{0, plural, one {此实例当前正被其他资源使用。确定要删�
 #: screens/Setting/LDAP/LDAPDetail/LDAPDetail.tsx:105
 #: screens/Setting/Logging/LoggingDetail/LoggingDetail.tsx:70
 #: screens/Setting/MiscAuthentication/MiscAuthenticationDetail/MiscAuthenticationDetail.tsx:44
-#: screens/Setting/MiscSystem/MiscSystemDetail/MiscSystemDetail.tsx:84
+#: screens/Setting/MiscSystem/MiscSystemDetail/MiscSystemDetail.tsx:86
 #: screens/Setting/OIDC/OIDCDetail/OIDCDetail.tsx:44
 #: screens/Setting/RADIUS/RADIUSDetail/RADIUSDetail.tsx:45
 #: screens/Setting/SAML/SAMLDetail/SAMLDetail.tsx:54
@@ -8169,6 +8224,12 @@ msgstr "从第一个节点重新启动"
 #: screens/Template/WorkflowJobTemplate.tsx:123
 msgid "Back to Templates"
 msgstr "返回到模板"
+
+#: screens/Inventory/shared/Inventory.helptext.tsx:206
+msgid "incremental_max_skips: force a full fetch after this many skipped runs in a\n"
+"        row, 24 by default. This bounds how stale the inventory can get from a change\n"
+"        the changelog never recorded, such as a direct database write or a restore."
+msgstr ""
 
 #: screens/Project/shared/Project.helptext.tsx:81
 msgid "The first fetches all references. The second fetches the Github pull request number 62, in this example the branch needs to be \"pull/62/head\"."
@@ -8380,7 +8441,7 @@ msgstr "项目同步失败"
 msgid "Run on"
 msgstr "运行于"
 
-#: components/LaunchPrompt/LaunchPrompt.tsx:157
+#: components/LaunchPrompt/LaunchPrompt.tsx:158
 #: components/Schedule/shared/SchedulePromptableFields.tsx:129
 msgid "Show description"
 msgstr "显示描述"
@@ -8506,7 +8567,7 @@ msgstr "没有剩余主机"
 msgid "ID of the dashboard (optional)"
 msgstr "仪表盘 ID（可选）"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:135
+#: screens/Inventory/shared/Inventory.helptext.tsx:139
 msgid "Retrieve the enabled state from the given dict of host variables. The enabled variable may be specified using dot notation, e.g: 'foo.bar'"
 msgstr "从给定的主机变量字典中检索启用状态。启用的变量可以使用点符号指定，例如： 'foo.bar'"
 
@@ -8705,7 +8766,7 @@ msgstr "LDAP 2"
 msgid "Examples include:"
 msgstr "示例包括："
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:91
+#: screens/Inventory/shared/Inventory.helptext.tsx:95
 msgid "Inventory variables this source added on an earlier sync are removed once the source no longer provides them, unless they were edited since or another source of this inventory still provides them."
 msgstr "此源在之前同步中添加的清单变量，会在源不再提供它们时被删除，除非它们此后已被编辑，或者此清单的另一个源仍提供它们。"
 
@@ -8863,7 +8924,7 @@ msgstr "回答变量名称"
 
 #: components/JobList/JobListItem.tsx:114
 #: components/Lookup/HostFilterLookup.tsx:399
-#: components/Lookup/Lookup.tsx:251
+#: components/Lookup/Lookup.tsx:284
 #: components/Pagination/Pagination.tsx:36
 msgid "Select"
 msgstr "选择"
@@ -8898,7 +8959,7 @@ msgstr "IRC Nick"
 #~ msgid "Expires on"
 #~ msgstr "过期于"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:102
+#: screens/Inventory/shared/Inventory.helptext.tsx:106
 msgid "Each time a job runs using this inventory, refresh the inventory from the selected source before executing job tasks."
 msgstr "每次使用此清单运行作业时，请在执行作业任务之前刷新选定来源的清单。"
 
@@ -9044,7 +9105,7 @@ msgstr "其它身份验证"
 msgid "Download bundle"
 msgstr "下载捆绑包"
 
-#: components/LaunchPrompt/LaunchPrompt.tsx:175
+#: components/LaunchPrompt/LaunchPrompt.tsx:176
 #: components/Schedule/shared/SchedulePromptableFields.tsx:147
 msgid "Content Loading"
 msgstr "内容加载"
@@ -9182,7 +9243,7 @@ msgstr "删除一个或多个用户失败。"
 msgid "On Success"
 msgstr "成功时"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:201
+#: screens/Inventory/shared/Inventory.helptext.tsx:285
 msgid "The inventory file to be synced by this source. You can select from the dropdown or enter a file within the input."
 msgstr "要由此源同步的库存文件。您可以从下拉列表中进行选择，也可以在输入内容中输入文件。"
 
@@ -9334,6 +9395,12 @@ msgstr "文档。"
 msgid "Credential Name"
 msgstr "凭证名称"
 
+#: screens/Inventory/shared/Inventory.helptext.tsx:202
+msgid "changelog_watch_all: fetch on any change at all rather than trusting the\n"
+"        watch list. Skips far less often, and cannot miss anything the changelog\n"
+"        recorded."
+msgstr ""
+
 #: components/JobList/JobList.tsx:225
 #: components/JobList/JobListItem.tsx:75
 #: screens/Job/JobOutput/HostEventModal.tsx:177
@@ -9425,6 +9492,12 @@ msgstr "已弃用"
 msgid "Update revision on job launch"
 msgstr "启动作业时更新修订"
 
+#: screens/Inventory/shared/Inventory.helptext.tsx:169
+msgid "ansible_host is resolved in this order: a value merged from config context,\n"
+"        then the out-of-band address when oob_ip_as_primary_ip is set, then primary\n"
+"        IPv4, any primary IP, and IPv6."
+msgstr ""
+
 #: screens/WorkflowApproval/WorkflowApprovalList/WorkflowApprovalListDenyButton.tsx:27
 msgid "Select a row to deny"
 msgstr "选择要拒绝的行"
@@ -9486,7 +9559,7 @@ msgstr "工作流拒绝的消息正文"
 msgid "Generic OIDC settings"
 msgstr "通用 OIDC 设置"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:211
+#: screens/Inventory/shared/Inventory.helptext.tsx:295
 msgid "Allow Deletes While In Use: If enabled, hosts can be deleted from this inventory while jobs are running against it."
 msgstr "允许在使用中删除：如果启用，则可以在有作业针对此清单运行时从中删除主机。"
 
@@ -9583,7 +9656,7 @@ msgstr "执行"
 msgid "The"
 msgstr "这个"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:70
+#: screens/Inventory/shared/Inventory.helptext.tsx:74
 msgid "docs.ansible.com"
 msgstr "docs.ansible.com"
 
@@ -9687,7 +9760,7 @@ msgstr "保存"
 msgid "Click to create a new link to this node."
 msgstr "点击以创建到此节点的新链接。"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:76
+#: screens/Inventory/shared/Inventory.helptext.tsx:80
 msgid "Select the Ansible collection providing the inventory plugin used to sync from vCenter. The community.vmware collection is deprecated in favor of the newer vmware.vmware collection. The selection is applied via the \"plugin\" key in the source variables; when the key is absent, the default collection is used."
 msgstr "选择提供用于从 vCenter 同步的清单插件的 Ansible 集合。community.vmware 集合已弃用，由更新的 vmware.vmware 集合取代。所选内容通过源变量中的 \"plugin\" 键应用；如果没有该键，则使用默认集合。"
 
@@ -9846,6 +9919,14 @@ msgstr "用户类型"
 msgid "{0, plural, one {This template is currently being used by some workflow nodes. Are you sure you want to delete it?} other {Deleting these templates could impact some workflow nodes that rely on them. Are you sure you want to delete anyway?}}"
 msgstr "{0, plural, one {This template is currently being used by some workflow nodes. Are you sure you want to delete it?} other {Deleting these templates could impact some workflow nodes that rely on them. Are you sure you want to delete anyway?}}"
 
+#: screens/Inventory/shared/Inventory.helptext.tsx:152
+msgid "filters: NetBox query filters applied to both devices and virtual machines.\n"
+"        device_filters and vm_filters add to it for one object type only, which is\n"
+"        needed because the two endpoints do not accept the same filters. Filter\n"
+"        names are checked against the NetBox API schema before anything is fetched,\n"
+"        and the sync fails on one NetBox would ignore."
+msgstr ""
+
 #: screens/Credential/CredentialDetail/CredentialDetail.tsx:309
 msgid "Failed to delete credential."
 msgstr "删除凭证失败。"
@@ -9956,7 +10037,7 @@ msgstr "执行 playbook 时使用的并行或同步进程数量。如果不输�
 msgid "View all Workflow Approvals."
 msgstr "查看所有工作流批准。"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:94
+#: screens/Inventory/shared/Inventory.helptext.tsx:98
 msgid "When not checked, a merge will be performed, combining local variables with those found on the external source."
 msgstr "未选中时，将执行合并，将局部变量与外部源上的局部变量相结合。"
 
@@ -9969,7 +10050,7 @@ msgstr "未选中时，将执行合并，将局部变量与外部源上的局部
 msgid "Job Cancel Error"
 msgstr "作业取消错误"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:61
+#: screens/Inventory/shared/Inventory.helptext.tsx:65
 msgid "www.json.org"
 msgstr "www.json.org"
 
@@ -10075,7 +10156,7 @@ msgstr "切换工具"
 msgid "Organization"
 msgstr "机构（Organization）"
 
-#: screens/Login/Login.tsx:311
+#: screens/Login/Login.tsx:315
 msgid "Your session has expired. Please log in to continue where you left off."
 msgstr "您的会话已过期。请登录以继续使用会话过期前所在的位置。"
 
@@ -10138,7 +10219,7 @@ msgstr "使用 Azure AD Tenant 登录"
 msgid "Case-insensitive version of endswith."
 msgstr "结尾不区分大小写的版本。"
 
-#: components/Lookup/Lookup.tsx:258
+#: components/Lookup/Lookup.tsx:291
 msgid "Cancel lookup"
 msgstr "取消查找"
 
@@ -10147,7 +10228,7 @@ msgstr "取消查找"
 #: components/Schedule/Schedule.tsx:93
 #: screens/Application/Application/Application.tsx:85
 #: screens/Application/Applications.tsx:38
-#: screens/Credential/Credential.tsx:88
+#: screens/Credential/Credential.tsx:90
 #: screens/Credential/Credentials.tsx:31
 #: screens/CredentialType/CredentialType.tsx:70
 #: screens/CredentialType/CredentialTypes.tsx:29
@@ -10186,7 +10267,7 @@ msgstr "取消查找"
 #: screens/Setting/Jobs/JobsDetail/JobsDetail.tsx:65
 #: screens/Setting/Logging/LoggingDetail/LoggingDetail.tsx:77
 #: screens/Setting/MiscAuthentication/MiscAuthenticationDetail/MiscAuthenticationDetail.tsx:51
-#: screens/Setting/MiscSystem/MiscSystemDetail/MiscSystemDetail.tsx:91
+#: screens/Setting/MiscSystem/MiscSystemDetail/MiscSystemDetail.tsx:93
 #: screens/Setting/OIDC/OIDCDetail/OIDCDetail.tsx:51
 #: screens/Setting/RADIUS/RADIUSDetail/RADIUSDetail.tsx:52
 #: screens/Setting/SAML/SAMLDetail/SAMLDetail.tsx:61
@@ -10295,7 +10376,7 @@ msgstr "导航"
 msgid "If enabled, control nodes will peer to this instance automatically. If disabled, instance will be connected only to associated peers."
 msgstr "如果启用，控制节点将自动对等到此实例。如果禁用，实例将仅连接到关联的对等点。"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:128
+#: screens/Inventory/shared/Inventory.helptext.tsx:132
 msgid "and click on Update Revision on Launch"
 msgstr "点 Update Revision on Launch"
 
@@ -10507,7 +10588,7 @@ msgstr "编辑详情"
 msgid "Deleted"
 msgstr "已删除"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:137
+#: screens/Inventory/shared/Inventory.helptext.tsx:141
 msgid "This field is ignored unless an Enabled Variable is set. If the enabled variable matches this value, the host will be enabled on import."
 msgstr "除非设置了启用的变量，否则此字段会被忽略。如果启用的变量与这个值匹配，则会在导入时启用主机。"
 
@@ -10618,7 +10699,7 @@ msgstr "模块"
 msgid "Confirm revert all"
 msgstr "确认全部恢复"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:88
+#: screens/Inventory/shared/Inventory.helptext.tsx:92
 msgid "If checked, all variables for child groups and hosts will be removed and replaced by those found on the external source."
 msgstr "如果选中，子组和主机的所有变量将被删除并替换为在外部源上找到的变量。"
 
@@ -10795,7 +10876,7 @@ msgstr "此字段必须至少包含 {0} 个字符"
 #: components/JobList/JobListItem.tsx:224
 #: components/PromptDetail/PromptInventorySourceDetail.tsx:81
 #: screens/Inventory/InventorySourceDetail/InventorySourceDetail.tsx:233
-#: screens/Inventory/shared/InventorySourceForm.tsx:180
+#: screens/Inventory/shared/InventorySourceForm.tsx:181
 #: screens/Job/JobDetail/JobDetail.tsx:183
 #: screens/Job/JobDetail/JobDetail.tsx:335
 #: screens/Template/WorkflowJobTemplateVisualizer/Modals/NodeModals/NodeTypeStep/InventorySourcesList.tsx:99
@@ -10810,7 +10891,7 @@ msgstr "添加清单"
 msgid "Inventory ID"
 msgstr "清单 ID"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:204
+#: screens/Inventory/shared/Inventory.helptext.tsx:288
 msgid "If enabled, jobs and ad hoc commands against this inventory start while it is being synced, using the hosts it had before the sync. By default they wait for the sync to finish. With update on launch, a job still waits for a sync started for it, and for a running one when that source has never synced successfully."
 msgstr ""
 
@@ -10873,6 +10954,12 @@ msgstr "条件"
 msgid "LDAP2"
 msgstr "LDAP2"
 
+#: screens/Inventory/shared/Inventory.helptext.tsx:176
+msgid "config_context: fetch NetBox config context at all. On by default. Turning it\n"
+"        off makes the fetch noticeably cheaper on a large NetBox, because rendering\n"
+"        config context is the expensive part of listing devices."
+msgstr ""
+
 #: components/Search/LookupTypeInput.tsx:50
 msgid "Field contains value."
 msgstr "字段包含值。"
@@ -10885,7 +10972,7 @@ msgstr "键选择"
 msgid "Pass extra command line changes. There are two ansible command line parameters: "
 msgstr "传递额外的命令行更改。有两个 ansible 命令行参数： "
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:83
+#: screens/Inventory/shared/Inventory.helptext.tsx:87
 msgid "When not checked, local child hosts and groups not found on the external source will remain untouched by the inventory update process."
 msgstr "如果未选中，在外部源上未找到的本地子主机和组将保持不受库存更新过程的影响。"
 
@@ -11001,6 +11088,12 @@ msgstr "删除机构失败。"
 #: screens/Setting/Subscription/SubscriptionDetail/SubscriptionDetail.tsx:154
 #~ msgid "Hosts available"
 #~ msgstr "可用主机"
+
+#: screens/Inventory/shared/Inventory.helptext.tsx:145
+msgid "Variables that configure what this source pulls from NetBox and how it\n"
+"        is shaped. NetBox is a native integration, so these are Ascender's own\n"
+"        options rather than an Ansible inventory plugin's."
+msgstr ""
 
 #: screens/Setting/Settings.tsx:105
 msgid "Logging"
@@ -11326,7 +11419,7 @@ msgstr "每个作业都会获得一个为其签名的短期令牌，此处不存
 msgid "Preconditions for running this node when there are multiple parents. Refer to the"
 msgstr "在有多个父对象时运行此节点的先决条件。请参阅"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:149
+#: screens/Inventory/shared/Inventory.helptext.tsx:233
 msgid "Variables used to configure the inventory source. For a detailed description of how to configure this plugin, see"
 msgstr "用于配置库存源的变量。有关如何配置此插件的详细说明，请参阅"
 
@@ -11348,6 +11441,11 @@ msgstr "完成："
 msgid "Prompt | {0}"
 msgstr "提示 | {0}"
 
+#: screens/Inventory/shared/Inventory.helptext.tsx:185
+msgid "flatten_custom_fields: place custom fields at the top level as well as in\n"
+"        netbox_custom_fields."
+msgstr ""
+
 #: screens/Dashboard/DashboardGraph.tsx:39
 #: screens/Dashboard/DashboardGraph.tsx:154
 msgid "All job types"
@@ -11358,7 +11456,7 @@ msgstr "作业作业类型"
 msgid "GitHub Enterprise Organization"
 msgstr "GitHub Enterprise Organization"
 
-#: screens/Inventory/shared/InventorySourceForm.tsx:188
+#: screens/Inventory/shared/InventorySourceForm.tsx:189
 msgid "Choose a source"
 msgstr "选择一个源"
 
@@ -11392,7 +11490,7 @@ msgstr "简单键选择"
 #~ msgid "You have automated against more hosts than your subscription allows."
 #~ msgstr "您已自动针对的主机数量大于订阅所允许的数量。"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:138
+#: screens/Inventory/shared/Inventory.helptext.tsx:142
 msgid "Regular expression where only matching host names will be imported. The filter is applied as a post-processing step after any inventory plugin filters are applied."
 msgstr "仅导入主机名与这个正则表达式匹配的主机。该过滤器在应用任何清单插件过滤器后作为后步骤使用。"
 
@@ -11429,6 +11527,11 @@ msgstr "{0, plural, one {您确定要删除下面的组吗?} other {您确定要
 #: components/AssociateModal/AssociateModal.tsx:70
 msgid "Select Items"
 msgstr "选择项"
+
+#: screens/Inventory/shared/Inventory.helptext.tsx:210
+msgid "A full fetch also happens whenever the position is missing or has been\n"
+"        pruned, the NetBox URL changed, or the previous run did not succeed."
+msgstr ""
 
 #: components/JobList/JobListCancelButton.tsx:100
 msgid "{numJobsToCancel, plural, one {Cancel selected job} other {Cancel selected jobs}}"
@@ -11492,7 +11595,7 @@ msgstr "成功拒绝"
 msgid "Not configured for inventory sync."
 msgstr "没有为清单同步配置。"
 
-#: components/Lookup/JobTemplateLookup.tsx:124
+#: components/Lookup/JobTemplateLookup.tsx:133
 #: components/RelatedTemplateList/RelatedTemplateList.tsx:201
 #: components/TemplateList/TemplateList.tsx:234
 #: components/UserAndTeamAccessAdd/UserAndTeamAccessAdd.tsx:96
@@ -11692,7 +11795,7 @@ msgstr "置备失败"
 msgid "Whether the approval node is automatically approved or denied when the timeout expires."
 msgstr "超时到期时是否自动批准或拒绝批准节点。"
 
-#: screens/Inventory/shared/Inventory.helptext.tsx:133
+#: screens/Inventory/shared/Inventory.helptext.tsx:137
 msgid "Time in seconds to consider an inventory sync to be current. During job runs and callbacks the task system will evaluate the timestamp of the latest sync. If it is older than Cache Timeout, it is not considered current, and a new inventory sync will be performed."
 msgstr "将库存同步视为最新的时间（以秒为单位）。在作业运行和回调期间，任务系统将评估最新同步的时间戳。如果它早于缓存超时，则不视为当前，并将执行新的库存同步。"
 
@@ -11700,7 +11803,7 @@ msgstr "将库存同步视为最新的时间（以秒为单位）。在作业运
 #~ msgid "Automation controller version"
 #~ msgstr "Automation Controller 版本"
 
-#: screens/Setting/MiscAuthentication/MiscAuthenticationEdit/MiscAuthenticationEdit.tsx:90
+#: screens/Setting/MiscAuthentication/MiscAuthenticationEdit/MiscAuthenticationEdit.tsx:91
 msgid "Access Token Expiration"
 msgstr "访问令牌过期"
 
@@ -11854,7 +11957,7 @@ msgstr "已取消的节点，新变量"
 #~ msgid "Insights system ID"
 #~ msgstr "Insights 系统 ID"
 
-#: screens/Setting/MiscAuthentication/MiscAuthenticationEdit/MiscAuthenticationEdit.tsx:103
+#: screens/Setting/MiscAuthentication/MiscAuthenticationEdit/MiscAuthenticationEdit.tsx:104
 msgid "Authorization Code Expiration"
 msgstr "授权代码过期"
 
@@ -12089,6 +12192,7 @@ msgstr "关联失败。"
 #: screens/Inventory/InventoryHostGroups/InventoryHostGroupsList.tsx:245
 #: screens/Inventory/InventoryList/InventoryListItem.tsx:147
 #: screens/Inventory/InventoryRelatedGroups/InventoryRelatedGroupList.tsx:265
+#: screens/Inventory/shared/Inventory.helptext.tsx:214
 #: util/getRelatedResourceDeleteDetails.ts:150
 msgid "Groups"
 msgstr "组"
@@ -12138,7 +12242,7 @@ msgstr "删除主机失败。"
 #: components/Lookup/CredentialLookup.tsx:225
 #: components/Lookup/InventoryLookup.tsx:191
 #: components/Lookup/InventoryLookup.tsx:254
-#: components/Lookup/JobTemplateLookup.tsx:128
+#: components/Lookup/JobTemplateLookup.tsx:137
 #: components/Lookup/MultiCredentialsLookup.tsx:226
 #: components/Lookup/OrganizationLookup.tsx:156
 #: components/Lookup/ProjectLookup.tsx:177
@@ -12223,6 +12327,11 @@ msgstr "帐户 SID"
 #: screens/Setting/Subscription/SubscriptionEdit/AnalyticsStep.tsx:85
 #~ msgid "Provide your Red Hat or Red Hat Satellite credentials to enable Automation Analytics."
 #~ msgstr "提供您的 Red Hat 或 Red Hat Satellite 凭证以启用 Automation Analytics。"
+
+#: screens/Inventory/shared/Inventory.helptext.tsx:158
+msgid "exclude_offline: fetch only objects whose status is active. Off by default,\n"
+"        because non-active objects are imported disabled rather than dropped."
+msgstr ""
 
 #: screens/Template/shared/PlaybookSelect.tsx:134
 #: screens/Template/shared/PlaybookSelect.tsx:135
