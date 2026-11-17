@@ -130,6 +130,14 @@ def ansible_host_for(obj):
 def build_hostvars(obj, kind, config):
     """Flatten one NetBox device or VM into Ansible host variables."""
     hv = {'netbox_object_type': kind}
+
+    # Devices and virtual machines are separate tables with separate primary
+    # key sequences, so their ids overlap: device 5 and VM 5 both exist. The
+    # id alone is therefore unusable as the inventory instance id, and this
+    # qualified form is what NETBOX_INSTANCE_ID_VAR points at. It is stable
+    # across renames, which is the point of an instance id.
+    if obj.get('id') is not None:
+        hv['netbox_instance_id'] = '{}:{}'.format(kind, obj['id'])
     for field in BASE_FIELDS:
         if field in obj:
             value = obj[field]

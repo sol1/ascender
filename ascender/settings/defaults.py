@@ -955,6 +955,19 @@ SATELLITE6_INSTANCE_ID_VAR = 'foreman_id,foreman.id'
 TERRAFORM_INSTANCE_ID_VAR = 'id'
 TERRAFORM_EXCLUDE_EMPTY_GROUPS = True
 
+# ----------------
+# ----- NetBox -----
+# ----------------
+# Ascender fetches this one itself rather than running an inventory plugin,
+# but the import settings still apply, and post_run_hook reads
+# NETBOX_EXCLUDE_EMPTY_GROUPS without a default, so it has to exist.
+NETBOX_ENABLED_VAR = 'netbox_status'
+NETBOX_ENABLED_VALUE = 'active'
+NETBOX_EXCLUDE_EMPTY_GROUPS = True
+# Not netbox_id: devices and virtual machines have separate id sequences, so
+# the bare id collides between the two. netbox_instance_id qualifies it.
+NETBOX_INSTANCE_ID_VAR = 'netbox_instance_id'
+
 # ---------------------
 # ----- Custom -----
 # ---------------------
