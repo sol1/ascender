@@ -20,6 +20,12 @@ logger = logging.getLogger('ascender.main.netbox')
 #: NetBox object fields copied onto every host as-is.
 BASE_FIELDS = ('id', 'name', 'display', 'status', 'description', 'comments', 'url')
 
+#: Hardware identifiers, present on devices only.
+HARDWARE_FIELDS = ('serial', 'asset_tag', 'position')
+
+#: Virtual machine sizing, present on VMs only.
+VM_FIELDS = ('vcpus', 'memory', 'disk')
+
 #: Related objects turned into both a hostvar and a group. The value is the
 #: hostvar prefix; the group name is built from it too.
 GROUPABLE = (
@@ -163,6 +169,22 @@ def build_hostvars(obj, kind, config):
         if config.get('merge_config_context', True):
             for key, value in context.items():
                 hv.setdefault(key, value)
+
+    for field in HARDWARE_FIELDS + VM_FIELDS:
+        if obj.get(field) not in (None, ''):
+            hv['netbox_{}'.format(field)] = obj[field]
+
+    # Out-of-band address: the iDRAC, iLO or BMC. NetBox models it as a
+    # first-class field on the device, and it is what a Redfish or racadm play
+    # needs to target, so it is worth surfacing rather than leaving the caller
+    # to dig through interfaces.
+    oob = _ip_only((obj.get('oob_ip') or {}).get('address') if isinstance(obj.get('oob_ip'), dict) else None)
+    if oob:
+        hv['netbox_oob_ip'] = oob
+
+    v6 = obj.get('primary_ip6')
+    if isinstance(v6, dict) and v6.get('address'):
+        hv['netbox_primary_ip6'] = _ip_only(v6['address'])
 
     addr = ansible_host_for(obj)
     if addr:
