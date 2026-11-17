@@ -14,8 +14,10 @@ const ansibleDocUrls = {
     'https://docs.ansible.com/ansible/latest/collections/openstack/cloud/openstack_inventory.html',
   satellite6:
     'https://docs.ansible.com/ansible/latest/collections/theforeman/foreman/foreman_inventory.html',
-  netbox:
-    'https://docs.ansible.com/ansible/latest/collections/netbox/netbox/nb_inventory_inventory.html',
+  // NetBox is a native integration rather than an Ansible inventory plugin, so
+  // this points at NetBox's own API reference. Its source variables are
+  // documented by netboxSourceVars below, not by any collection.
+  netbox: 'https://netboxlabs.com/docs/netbox/integrations/rest-api/',
   vmware:
     'https://docs.ansible.com/ansible/latest/collections/community/vmware/vmware_vm_inventory_inventory.html',
   constructed:
@@ -138,6 +140,64 @@ function useInventoryHelpTextStrings() {
     sourceControlBranch: t`Branch to use on inventory sync. Project default used if blank. Only allowed if project allow_override field is set to true.`,
     enabledValue: t`This field is ignored unless an Enabled Variable is set. If the enabled variable matches this value, the host will be enabled on import.`,
     hostFilter: t`Regular expression where only matching host names will be imported. The filter is applied as a post-processing step after any inventory plugin filters are applied.`,
+    netboxSourceVars: () => (
+      <>
+        {t`Variables that configure what this source pulls from NetBox and how it
+        is shaped. NetBox is a native integration, so these are Ascender's own
+        options rather than an Ansible inventory plugin's.`}
+        <br />
+        <br />
+        <strong>{t`Scope`}</strong>
+        <br />
+        {t`filters: NetBox query filters applied to both devices and virtual machines.
+        device_filters and vm_filters add to it for one object type only, which is
+        needed because the two endpoints do not accept the same filters. Filter
+        names are checked against the NetBox API schema before anything is fetched,
+        and the sync fails on one NetBox would ignore.`}
+        <br />
+        {t`exclude_offline: fetch only objects whose status is active. Off by default,
+        because non-active objects are imported disabled rather than dropped.`}
+        <br />
+        <br />
+        <strong>{t`Host names and addresses`}</strong>
+        <br />
+        {t`use_fqdn: name each host after its primary IP's DNS name when NetBox has one.`}
+        <br />
+        {t`oob_ip_as_primary_ip: connect to the out-of-band address, the iDRAC, iLO or
+        BMC, instead of the primary IP.`}
+        <br />
+        {t`ansible_host is resolved in this order: a value merged from config context,
+        then the out-of-band address when oob_ip_as_primary_ip is set, then primary
+        IPv4, any primary IP, and IPv6.`}
+        <br />
+        <br />
+        <strong>{t`Host variables`}</strong>
+        <br />
+        {t`config_context: fetch NetBox config context at all. On by default. Turning it
+        off makes the fetch noticeably cheaper on a large NetBox, because rendering
+        config context is the expensive part of listing devices.`}
+        <br />
+        {t`merge_config_context: also place each config context key at the top level as a
+        host variable. On by default. The raw mapping is always available as
+        netbox_config_context, and anything set on the object itself as
+        netbox_local_context_data.`}
+        <br />
+        {t`flatten_custom_fields: place custom fields at the top level as well as in
+        netbox_custom_fields.`}
+        <br />
+        {t`include_raw: attach the whole NetBox object as netbox_raw. Useful for working
+        out what is available, expensive for a routine sync.`}
+        <br />
+        <br />
+        <strong>{t`Groups`}</strong>
+        <br />
+        {t`group_by_status and group_by_tag: both on by default. Groups for site, region,
+        site group, location, rack, tenant, platform, cluster, device type, role and
+        manufacturer are always built.`}
+        <br />
+        <br />
+      </>
+    ),
     sourceVars: (docsBaseUrl: string, source: string) => {
       const docsUrl = `${docsBaseUrl}/userguide/inventories.html#inventory-plugins`;
       let sourceType = '';

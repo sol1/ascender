@@ -2,8 +2,6 @@ import type { SummaryFieldRef } from 'types/api';
 import React, { useCallback } from 'react';
 import { useField, useFormContext } from 'components/Form';
 import { useLingui } from '@lingui/react/macro';
-import { useConfig } from 'contexts/Config';
-import getDocsBaseUrl from 'util/getDocsBaseUrl';
 import CredentialLookup from 'components/Lookup/CredentialLookup';
 import { required } from 'util/validators';
 import {
@@ -24,8 +22,6 @@ export interface NetBoxSubFormProps {
 const NetBoxSubForm = ({ autoPopulateCredential }: NetBoxSubFormProps) => {
   const { t } = useLingui();
   const helpText = getHelpText();
-  const config = useConfig();
-  const docsBaseUrl = getDocsBaseUrl(config);
   const { setFieldValue, setFieldTouched } =
     useFormContext<Record<string, unknown>>();
   const [credentialField, credentialMeta, credentialHelpers] =
@@ -57,9 +53,7 @@ const NetBoxSubForm = ({ autoPopulateCredential }: NetBoxSubFormProps) => {
       <EnabledVarField />
       <EnabledValueField />
       <OptionsField />
-      <SourceVarsField
-        popoverContent={helpText.sourceVars(docsBaseUrl, 'netbox')}
-      />
+      <SourceVarsField popoverContent={helpText.netboxSourceVars()} />
     </>
   );
 };
