@@ -1,7 +1,7 @@
 # Copyright (c) 2017 Ansible, Inc.
 # All Rights Reserved.
 
-from django.urls import path
+from django.urls import include, path
 
 from ascender.api.views.inventory_source import (
     InventorySourceList,
@@ -23,6 +23,7 @@ urls = [
     path('', InventorySourceList.as_view(), name='inventory_source_list'),
     path('<int:pk>/', InventorySourceDetail.as_view(), name='inventory_source_detail'),
     path('<int:pk>/update/', InventorySourceUpdateView.as_view(), name='inventory_source_update_view'),
+    path('<int:pk>/', include('ascender.api.urls.webhooks'), {'model_kwarg': 'inventory_sources'}),
     path('<int:pk>/inventory_updates/', InventorySourceUpdatesList.as_view(), name='inventory_source_updates_list'),
     path('<int:pk>/activity_stream/', InventorySourceActivityStreamList.as_view(), name='inventory_source_activity_stream_list'),
     path('<int:pk>/schedules/', InventorySourceSchedulesList.as_view(), name='inventory_source_schedules_list'),

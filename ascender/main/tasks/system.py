@@ -57,6 +57,7 @@ from ascender.main.utils.reload import stop_local_services
 from ascender.main.utils.pglock import advisory_lock
 from ascender.main.tasks.receptor import get_receptor_ctl, worker_info, worker_cleanup, administrative_workunit_reaper, write_receptor_config
 from ascender.main.consumers import emit_channel_notification
+from ascender.main.netbox import webhook as netbox_webhook
 from ascender.conf import settings_registry
 from ascender.main.analytics.subsystem_metrics import DispatcherMetrics
 
@@ -731,6 +732,22 @@ def awx_periodic_scheduler():
         logger.debug("Last scheduler run was: %s", last_run)
         state.schedule_last_run = run_now
         state.save()
+
+        # Inventory sources whose NetBox webhooks have stopped arriving. This
+        # borrows the scheduler's tick because it is the same decision, that it
+        # is time to launch something, and it launches at most one sync per
+        # source however many webhooks arrived.
+        #
+        # Above the DISABLE_ALL_SCHEDULES check on purpose: a webhook is not a
+        # schedule. Job template and project webhooks launch straight from
+        # their endpoints and that setting does not reach them, so stopping
+        # these here would make NetBox the odd one out, and silently: the
+        # receiver would carry on answering 202 and marking sources dirty with
+        # nothing ever running.
+        try:
+            netbox_webhook.launch_settled_syncs()
+        except Exception:
+            logger.exception('Error starting webhook triggered NetBox syncs.')
 
         if getattr(settings, 'DISABLE_ALL_SCHEDULES', False):
             logger.debug("Skipping periodic scheduler because DISABLE_ALL_SCHEDULES is enabled")

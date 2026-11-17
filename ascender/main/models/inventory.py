@@ -47,6 +47,7 @@ from ascender.main.models.mixins import (
     ResourceMixin,
     TaskManagerInventoryUpdateMixin,
     RelatedJobsMixin,
+    WebhookKeyTemplateMixin,
 )
 from ascender.main.models.notifications import (
     NotificationTemplate,
@@ -1141,7 +1142,7 @@ class InventorySourceOptions(BaseModel):
     source_vars_dict = VarsDictProperty('source_vars')
 
 
-class InventorySource(UnifiedJobTemplate, InventorySourceOptions, RelatedJobsMixin):
+class InventorySource(UnifiedJobTemplate, InventorySourceOptions, RelatedJobsMixin, WebhookKeyTemplateMixin):
     SOFT_UNIQUE_TOGETHER = [('polymorphic_ctype', 'name', 'inventory')]
 
     class Meta:
@@ -1172,6 +1173,20 @@ class InventorySource(UnifiedJobTemplate, InventorySourceOptions, RelatedJobsMix
 
     update_cache_timeout = models.PositiveIntegerField(
         default=0,
+    )
+
+    #: NetBox is the only service that posts to an inventory source, so the
+    #: inherited field is narrowed rather than widening the shared list, which
+    #: would offer NetBox as a webhook service on job templates and projects.
+    WEBHOOK_SERVICES = [
+        ('netbox', "NetBox"),
+    ]
+
+    webhook_service = models.CharField(
+        max_length=16,
+        choices=WEBHOOK_SERVICES,
+        blank=True,
+        help_text=_('Service that webhook requests will be accepted from'),
     )
 
     managed_inventory_variables = models.JSONField(

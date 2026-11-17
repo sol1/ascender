@@ -386,12 +386,19 @@ class InventorySourceSerializer(UnifiedJobTemplateSerializer, InventorySourceOpt
     status = serializers.ChoiceField(choices=InventorySource.INVENTORY_SOURCE_STATUS_CHOICES, read_only=True)
     last_update_failed = serializers.BooleanField(read_only=True)
     last_updated = serializers.DateTimeField(read_only=True)
+    webhook_key = serializers.CharField(
+        write_only=True,
+        required=False,
+        allow_blank=True,
+        max_length=64,
+        help_text=_('Shared secret the webhook service signs its requests with. Leave blank to generate one when the webhook service is set.'),
+    )
     show_capabilities = ['start', 'schedule', 'edit', 'delete']
     capabilities_prefetch = [{'admin': 'inventory.admin'}, {'start': 'inventory.update'}]
 
     class Meta:
         model = InventorySource
-        fields = ('*', 'name', 'inventory', 'update_on_launch', 'update_cache_timeout', 'source_project') + (
+        fields = ('*', 'name', 'inventory', 'update_on_launch', 'update_cache_timeout', 'source_project', 'webhook_service', 'webhook_key') + (
             'last_update_failed',
             'last_updated',
         )  # Backwards compatibility.
@@ -411,6 +418,12 @@ class InventorySourceSerializer(UnifiedJobTemplateSerializer, InventorySourceOpt
                 notification_templates_started=self.reverse('api:inventory_source_notification_templates_started_list', kwargs={'pk': obj.pk}),
                 notification_templates_success=self.reverse('api:inventory_source_notification_templates_success_list', kwargs={'pk': obj.pk}),
                 notification_templates_error=self.reverse('api:inventory_source_notification_templates_error_list', kwargs={'pk': obj.pk}),
+                webhook_key=self.reverse('api:webhook_key', kwargs={'model_kwarg': 'inventory_sources', 'pk': obj.pk}),
+                webhook_receiver=(
+                    self.reverse('api:webhook_receiver_{}'.format(obj.webhook_service), kwargs={'model_kwarg': 'inventory_sources', 'pk': obj.pk})
+                    if obj.webhook_service
+                    else ''
+                ),
             )
         )
         if obj.inventory:
@@ -519,6 +532,18 @@ class InventorySourceSerializer(UnifiedJobTemplateSerializer, InventorySourceOpt
         project = get_field_from_model_or_attrs('source_project')
         if get_field_from_model_or_attrs('scm_branch') and not project.allow_override:
             raise serializers.ValidationError({'scm_branch': _('Project does not allow overriding branch.')})
+
+        # A webhook service only means something on a source that knows how to
+        # act on one. The receiver is selected by webhook_service alone, so
+        # without this an ec2 or scm source accepts every delivery, answers
+        # 202 and records a burst that nothing will ever launch or clear.
+        webhook_service = get_field_from_model_or_attrs('webhook_service')
+        if webhook_service and get_field_from_model_or_attrs('source') != webhook_service:
+            raise serializers.ValidationError(
+                {'webhook_service': _('Webhooks are only supported on a %(service)s inventory source.') % {'service': webhook_service}}
+            )
+        if attrs.get('webhook_key') and not webhook_service:
+            raise serializers.ValidationError({'webhook_key': _('Cannot set a webhook key without a webhook service.')})
 
         attrs = super(InventorySourceSerializer, self).validate(attrs)
 

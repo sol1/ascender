@@ -1,5 +1,5 @@
 from fnmatch import fnmatchcase
-from hashlib import sha1, sha256
+from hashlib import sha1, sha256, sha512
 import hmac
 import logging
 import urllib.parse
@@ -16,7 +16,8 @@ from rest_framework.response import Response
 from ascender.api import serializers
 from ascender.api.generics import APIView, GenericAPIView
 from ascender.api.permissions import WebhookKeyPermission
-from ascender.main.models import Job, JobTemplate, Project, ProjectUpdate, WorkflowJob, WorkflowJobTemplate
+from ascender.main.models import InventorySource, Job, JobTemplate, Project, ProjectUpdate, WorkflowJob, WorkflowJobTemplate
+from ascender.main.netbox import webhook as netbox_webhook
 from ascender.main.constants import JOB_VARIABLE_PREFIXES
 
 logger = logging.getLogger('ascender.api.views.webhooks')
@@ -27,7 +28,12 @@ class WebhookKeyView(GenericAPIView):
     permission_classes = (WebhookKeyPermission,)
 
     def get_queryset(self):
-        qs_models = {'job_templates': JobTemplate, 'workflow_job_templates': WorkflowJobTemplate, 'projects': Project}
+        qs_models = {
+            'job_templates': JobTemplate,
+            'workflow_job_templates': WorkflowJobTemplate,
+            'projects': Project,
+            'inventory_sources': InventorySource,
+        }
         self.model = qs_models.get(self.kwargs['model_kwarg'])
 
         return super().get_queryset()
@@ -57,7 +63,12 @@ class WebhookReceiverBase(APIView):
     project_sync_events = []
 
     def get_queryset(self):
-        qs_models = {'job_templates': JobTemplate, 'workflow_job_templates': WorkflowJobTemplate, 'projects': Project}
+        qs_models = {
+            'job_templates': JobTemplate,
+            'workflow_job_templates': WorkflowJobTemplate,
+            'projects': Project,
+            'inventory_sources': InventorySource,
+        }
         model = qs_models.get(self.kwargs['model_kwarg'])
         if model is None:
             raise PermissionDenied
@@ -128,8 +139,10 @@ class WebhookReceiverBase(APIView):
             mac = hmac.new(force_bytes(obj.webhook_key), msg=force_bytes(self.request.body), digestmod=sha1)
         elif hash_alg == 'sha256':
             mac = hmac.new(force_bytes(obj.webhook_key), msg=force_bytes(self.request.body), digestmod=sha256)
+        elif hash_alg == 'sha512':
+            mac = hmac.new(force_bytes(obj.webhook_key), msg=force_bytes(self.request.body), digestmod=sha512)
         else:
-            logger.debug("Unsupported signature type, supported: sha1, sha256, received: {}".format(hash_alg))
+            logger.debug("Unsupported signature type, supported: sha1, sha256, sha512, received: {}".format(hash_alg))
             raise PermissionDenied
 
         logger.debug("header signature: %s", expected_digest)
@@ -149,6 +162,9 @@ class WebhookReceiverBase(APIView):
         if self.is_ignored_request():
             # This was an ignored request type (e.g. ping), don't act on it
             return Response({'message': _("Webhook ignored")}, status=status.HTTP_200_OK)
+
+        if isinstance(obj, InventorySource):
+            return self.handle_inventory_sync(obj)
 
         if isinstance(obj, Project):
             return self.handle_project_sync(obj)
@@ -185,6 +201,38 @@ class WebhookReceiverBase(APIView):
         new_job.signal_start()
 
         return Response({'message': "Job queued."}, status=status.HTTP_202_ACCEPTED)
+
+    def handle_inventory_sync(self, obj):
+        """Mark the source dirty and return. No sync is launched here.
+
+        NetBox fires one webhook per changed object, so a bulk edit arrives as
+        a burst of hundreds. Launching per webhook would queue an inventory
+        update for each, so the burst is folded into the source's state and a
+        periodic pass starts one sync once it has settled.
+
+        The payload is not applied. A single changed object fed to the importer
+        would delete every host it did not mention.
+        """
+        config = obj.source_vars_dict or {}
+        object_type = self.get_object_type()
+        if not netbox_webhook.is_watched(object_type, config):
+            logger.debug("NetBox object type '{}' does not affect an inventory, ignoring.".format(object_type))
+            return Response({'message': _("Webhook ignored, that object type does not affect this inventory.")}, status=status.HTTP_200_OK)
+
+        pending = netbox_webhook.record_event(obj, object_type, self.get_change_ids())
+        if pending is None:
+            raise PermissionDenied
+
+        return Response(
+            {'message': _("Webhook accepted, a sync will run once the changes settle."), 'pending_events': pending.get('events')},
+            status=status.HTTP_202_ACCEPTED,
+        )
+
+    def get_object_type(self):
+        raise NotImplementedError
+
+    def get_change_ids(self):
+        return []
 
     def handle_project_sync(self, obj):
         # For projects the webhook does not carry any variables into a playbook,
@@ -356,3 +404,44 @@ class BitbucketDcWebhookReceiver(WebhookReceiverBase):
             raise PermissionDenied
         hash_alg, signature = header_sig.split('=')
         return hash_alg, force_bytes(signature)
+
+
+class NetBoxWebhookReceiver(WebhookReceiverBase):
+    """Receive a NetBox event rule's webhook for one inventory source.
+
+    NetBox signs the raw body with HMAC-SHA512 and sends the hex digest in
+    X-Hook-Signature. The secret is optional on NetBox's side, so a request
+    without one is refused rather than trusted: this endpoint is unauthenticated
+    apart from that signature.
+    """
+
+    service = 'netbox'
+
+    def get_event_type(self):
+        return self.request.data.get('event')
+
+    def get_event_guid(self):
+        # NetBox sends no delivery id. The change ids it did send identify the
+        # event well enough for logging, and nothing here deduplicates on it
+        # because the debounce already collapses repeats.
+        change_ids = self.get_change_ids()
+        return ','.join(str(i) for i in change_ids) if change_ids else ''
+
+    def get_event_status_api(self):
+        return None
+
+    def get_object_type(self):
+        return self.request.data.get('object_type')
+
+    def get_change_ids(self):
+        value = self.request.data.get('object_change_ids') or []
+        if not isinstance(value, list):
+            return []
+        return [i for i in value if isinstance(i, int)]
+
+    def get_signature(self):
+        header = self.request.headers.get('X-Hook-Signature')
+        if not header:
+            logger.debug('NetBox webhook arrived with no X-Hook-Signature; the event rule needs a secret set.')
+            raise PermissionDenied
+        return 'sha512', force_bytes(header)

@@ -12,6 +12,7 @@ import json
 import os
 import time
 
+from django.db import transaction
 from django.core.management.base import BaseCommand, CommandError
 
 from ascender.main.constants import NATIVE_INVENTORY_UNCHANGED_MARKER
@@ -148,9 +149,19 @@ class Command(BaseCommand):
         A direct update keeps this out of the activity stream and away from the
         name and organization handling in InventorySource.save(), matching how
         the importer writes managed_inventory_variables.
+
+        Merged into whatever is in the column rather than written over it, and
+        under the same row lock the webhook receiver takes. A webhook that
+        lands while this run is fetching records a pending burst in this same
+        column; replacing it wholesale would drop that burst, and the change
+        behind it would then wait for a schedule or the next changelog poll
+        instead of syncing once this run finishes.
         """
-        state = netbox_changelog.next_state(client, decision, (source.source_sync_state or {}).get('skips'))
-        InventorySource.objects.filter(pk=source.pk).update(source_sync_state=state)
+        with transaction.atomic():
+            locked = InventorySource.objects.select_for_update(of=('self',)).filter(pk=source.pk).first()
+            state = dict((locked.source_sync_state if locked is not None else source.source_sync_state) or {})
+            state.update(netbox_changelog.next_state(client, decision, state.get('skips')))
+            InventorySource.objects.filter(pk=source.pk).update(source_sync_state=state)
         return state
 
     def _filters_for(self, config, key):
