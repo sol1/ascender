@@ -18992,6 +18992,7 @@ export interface components {
      *     * `satellite6` - Red Hat Satellite 6
      *     * `openstack` - OpenStack
      *     * `terraform` - Terraform State
+     *     * `netbox` - NetBox
      *     * `ascender` - CIQ Ascender Automation Platform
      * @enum {string}
      */
@@ -19006,6 +19007,7 @@ export interface components {
       | 'satellite6'
       | 'openstack'
       | 'terraform'
+      | 'netbox'
       | 'ascender';
     /**
      * @description * `new` - New

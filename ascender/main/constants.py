@@ -8,6 +8,7 @@ from django.utils.translation import gettext_lazy as _
 __all__ = [
     'ASCENDER_URL_BASE_PLACEHOLDER',
     'CLOUD_PROVIDERS',
+    'NATIVE_INVENTORY_SOURCES',
     'PRIVILEGE_ESCALATION_METHODS',
     'ANSI_SGR_PATTERN',
     'CAN_CANCEL',
@@ -17,7 +18,12 @@ __all__ = [
 
 #: What ASCENDER_URL_BASE says until someone sets it.
 ASCENDER_URL_BASE_PLACEHOLDER = 'https://ascenderhost'
-CLOUD_PROVIDERS = ('azure_rm', 'ec2', 'gce', 'vmware', 'openstack', 'satellite6', 'ascender', 'terraform')
+CLOUD_PROVIDERS = ('azure_rm', 'ec2', 'gce', 'vmware', 'openstack', 'satellite6', 'ascender', 'terraform', 'netbox')
+
+#: Inventory sources Ascender fetches itself, from the control plane, instead
+#: of running ansible-inventory inside an execution environment. They talk to
+#: their upstream API directly, so they need no collection and no EE.
+NATIVE_INVENTORY_SOURCES = ('netbox',)
 PRIVILEGE_ESCALATION_METHODS = [
     ('sudo', _('Sudo')),
     ('su', _('Su')),

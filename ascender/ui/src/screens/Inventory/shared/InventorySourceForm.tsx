@@ -35,6 +35,7 @@ import {
   OpenStackSubForm,
   SCMSubForm,
   SatelliteSubForm,
+  NetBoxSubForm,
   ControllerSubForm,
   TerraformSubForm,
   VMwareSubForm,
@@ -241,6 +242,13 @@ const InventorySourceFormFields = ({
                     }
                   />
                 ),
+                netbox: (
+                  <NetBoxSubForm
+                    autoPopulateCredential={
+                      !source?.id || source?.source !== 'netbox'
+                    }
+                  />
+                ),
                 scm: (
                   <SCMSubForm
                     autoPopulateProject={
@@ -276,6 +284,7 @@ const InventorySourceFormFields = ({
                   | 'gce'
                   | 'openstack'
                   | 'satellite6'
+                  | 'netbox'
                   | 'scm'
                   | 'ascender'
                   | 'terraform'

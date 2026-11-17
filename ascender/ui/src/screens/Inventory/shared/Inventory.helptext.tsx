@@ -14,6 +14,8 @@ const ansibleDocUrls = {
     'https://docs.ansible.com/ansible/latest/collections/openstack/cloud/openstack_inventory.html',
   satellite6:
     'https://docs.ansible.com/ansible/latest/collections/theforeman/foreman/foreman_inventory.html',
+  netbox:
+    'https://docs.ansible.com/ansible/latest/collections/netbox/netbox/nb_inventory_inventory.html',
   vmware:
     'https://docs.ansible.com/ansible/latest/collections/community/vmware/vmware_vm_inventory_inventory.html',
   constructed:

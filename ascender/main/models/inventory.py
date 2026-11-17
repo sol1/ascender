@@ -973,6 +973,7 @@ class InventorySourceOptions(BaseModel):
         ('satellite6', _('Red Hat Satellite 6')),
         ('openstack', _('OpenStack')),
         ('terraform', _('Terraform State')),
+        ('netbox', _('NetBox')),
         # ('rhv', _('Red Hat Virtualization')),
         ('ascender', _('CIQ Ascender Automation Platform')),
         # ('insights', _('Red Hat Insights')),

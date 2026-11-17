@@ -99,6 +99,7 @@ def test_default_cred_types():
             'hashivault_ssh_oidc',
             'kubernetes_bearer_token',
             'net',
+            'netbox',
             'oidc_workload_identity',
             'openstack',
             'registry',

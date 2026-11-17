@@ -38,6 +38,7 @@ from ascender.main.dispatch.publish import task
 from ascender.main.dispatch import get_task_queuename
 from ascender.main.constants import (
     PRIVILEGE_ESCALATION_METHODS,
+    NATIVE_INVENTORY_SOURCES,
     STANDARD_INVENTORY_UPDATE_ENV,
     JOB_FOLDER_PREFIX,
     MAX_ISOLATED_PATH_COLON_DELIMITER,
@@ -473,6 +474,16 @@ class BaseTask(object):
             logger.info(f'Job {unified_job_id} waited {waiting_time} to acquire lock for local source tree for path {lock_path}.')
         return True
 
+    @property
+    def runs_on_control_plane(self):
+        """Run here rather than handing the work to receptor and an execution environment.
+
+        System jobs have always run locally. Inventory sources that talk to
+        their upstream API directly have no reason to ship out to an EE
+        either, and RunInventoryUpdate widens this for them.
+        """
+        return isinstance(self.instance, SystemJob)
+
     def pre_run_hook(self, instance, private_data_dir):
         """
         Hook for any steps to run before the job/task starts
@@ -663,7 +674,7 @@ class BaseTask(object):
             self.write_private_data_file(private_data_dir, 'settings', json.dumps(runner_settings), sub_dir='env')
 
             self.instance.log_lifecycle("running_playbook")
-            if isinstance(self.instance, SystemJob):
+            if self.runs_on_control_plane:
                 res = ansible_runner.interface.run(
                     project_dir=settings.BASE_DIR,
                     event_handler=self.runner_callback.event_handler,
@@ -2146,6 +2157,16 @@ class RunInventoryUpdate(SourceControlMixin, BaseTask):
     event_model = InventoryUpdateEvent
     callback_class = RunnerCallbackForInventoryUpdate
 
+    @property
+    def runs_on_control_plane(self):
+        # Two-arg super(), matching the rest of this class: the @task decorator
+        # replaces the class object, so a zero-arg super() resolves against the
+        # undecorated class and raises at runtime.
+        source = getattr(self.instance, 'source', None)
+        if source in NATIVE_INVENTORY_SOURCES:
+            return True
+        return super(RunInventoryUpdate, self).runs_on_control_plane
+
     def build_private_data(self, inventory_update, private_data_dir):
         """
         Return private data needed for inventory update.
@@ -2237,6 +2258,18 @@ class RunInventoryUpdate(SourceControlMixin, BaseTask):
 
         if inventory is None:
             raise RuntimeError('Inventory Source is not associated with an Inventory.')
+
+        if inventory_update.source in NATIVE_INVENTORY_SOURCES:
+            # Fetched from the control plane, so these are host paths rather
+            # than paths inside a container. The command writes the same
+            # output.json that ansible-inventory would, which is what lets
+            # post_run_hook stay identical for both paths.
+            output_path = os.path.join(private_data_dir, 'artifacts', str(inventory_update.id), 'output.json')
+            os.makedirs(os.path.dirname(output_path), exist_ok=True)
+            args = ['ascender-manage', 'netbox_inventory_sync', '--inventory-update-id', str(inventory_update.id), '--output', output_path]
+            if inventory_update.verbosity:
+                args.extend(['--verbosity', str(min(3, inventory_update.verbosity))])
+            return args
 
         args = ['ansible-inventory', '--list', '--export']
 

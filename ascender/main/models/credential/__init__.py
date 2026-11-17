@@ -1061,6 +1061,50 @@ ManagedCredentialType(
 )
 
 ManagedCredentialType(
+    namespace='netbox',
+    kind='cloud',
+    name=gettext_noop('NetBox'),
+    managed=True,
+    inputs={
+        'fields': [
+            {
+                'id': 'host',
+                'label': gettext_noop('NetBox URL'),
+                'type': 'string',
+                'help_text': gettext_noop('Base URL of the NetBox instance, for example https://netbox.example.org'),
+            },
+            {
+                'id': 'token',
+                'label': gettext_noop('API Token'),
+                'type': 'string',
+                'secret': True,
+                'help_text': gettext_noop(
+                    'NetBox API token with read access to the objects you want in the inventory. '
+                    'Leave blank only if the NetBox instance allows anonymous reads.'
+                ),
+            },
+            {
+                'id': 'verify_ssl',
+                'label': gettext_noop('Verify SSL'),
+                'type': 'boolean',
+                'secret': False,
+                'default': True,
+            },
+        ],
+        'required': ['host'],
+    },
+    injectors={
+        # NETBOX_API and NETBOX_TOKEN are the names nb_inventory reads. There is
+        # no env var for validate_certs, so the netbox injector writes that into
+        # the inventory file instead.
+        'env': {
+            'NETBOX_API': '{{host}}',
+            'NETBOX_TOKEN': '{{token}}',
+        }
+    },
+)
+
+ManagedCredentialType(
     namespace='ascender',
     kind='cloud',
     name=gettext_noop('CIQ Ascender Automation Platform'),

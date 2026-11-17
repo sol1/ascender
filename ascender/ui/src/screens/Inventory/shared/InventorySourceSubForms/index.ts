@@ -4,6 +4,7 @@ export { default as GCESubForm } from './GCESubForm';
 export { default as OpenStackSubForm } from './OpenStackSubForm';
 export { default as SCMSubForm } from './SCMSubForm';
 export { default as SatelliteSubForm } from './SatelliteSubForm';
+export { default as NetBoxSubForm } from './NetBoxSubForm';
 export { default as ControllerSubForm } from './ControllerSubForm';
 export { default as TerraformSubForm } from './TerraformSubForm';
 export { default as VMwareSubForm } from './VMwareSubForm';
