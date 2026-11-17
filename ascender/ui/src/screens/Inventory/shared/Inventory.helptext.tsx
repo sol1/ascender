@@ -189,6 +189,28 @@ function useInventoryHelpTextStrings() {
         out what is available, expensive for a routine sync.`}
         <br />
         <br />
+        <strong>{t`Incremental sync`}</strong>
+        <br />
+        {t`incremental: ask NetBox's changelog whether anything relevant has changed
+        before fetching, and skip the fetch when nothing has. Off by default.`}
+        <br />
+        {t`The inventory importer performs a full reconcile, so this skips whole runs
+        rather than applying deltas. The watch list covers every NetBox object type
+        that can change this inventory, including config contexts, tags, sites and
+        IP addresses, none of which record a change against the device they affect.`}
+        <br />
+        {t`changelog_watch_all: fetch on any change at all rather than trusting the
+        watch list. Skips far less often, and cannot miss anything the changelog
+        recorded.`}
+        <br />
+        {t`incremental_max_skips: force a full fetch after this many skipped runs in a
+        row, 24 by default. This bounds how stale the inventory can get from a change
+        the changelog never recorded, such as a direct database write or a restore.`}
+        <br />
+        {t`A full fetch also happens whenever the position is missing or has been
+        pruned, the NetBox URL changed, or the previous run did not succeed.`}
+        <br />
+        <br />
         <strong>{t`Groups`}</strong>
         <br />
         {t`group_by_status and group_by_tag: both on by default. Groups for site, region,

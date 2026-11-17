@@ -9,6 +9,7 @@ __all__ = [
     'ASCENDER_URL_BASE_PLACEHOLDER',
     'CLOUD_PROVIDERS',
     'NATIVE_INVENTORY_SOURCES',
+    'NATIVE_INVENTORY_UNCHANGED_MARKER',
     'PRIVILEGE_ESCALATION_METHODS',
     'ANSI_SGR_PATTERN',
     'CAN_CANCEL',
@@ -24,6 +25,11 @@ CLOUD_PROVIDERS = ('azure_rm', 'ec2', 'gce', 'vmware', 'openstack', 'satellite6'
 #: of running ansible-inventory inside an execution environment. They talk to
 #: their upstream API directly, so they need no collection and no EE.
 NATIVE_INVENTORY_SOURCES = ('netbox',)
+
+#: Written beside output.json by a native fetch that found nothing changed
+#: upstream. Its presence tells the post-run hook to leave the inventory alone,
+#: so a skip cannot be mistaken for a run that produced no hosts.
+NATIVE_INVENTORY_UNCHANGED_MARKER = 'inventory-unchanged.json'
 PRIVILEGE_ESCALATION_METHODS = [
     ('sudo', _('Sudo')),
     ('su', _('Su')),

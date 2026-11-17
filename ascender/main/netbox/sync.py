@@ -51,6 +51,61 @@ GROUPABLE = (
 #: hostvar prefix).
 SITE_HIERARCHIES = (('regions', 'region'), ('site_groups', 'site_group'))
 
+#: The NetBox object type behind each GROUPABLE key, for the changelog watch
+#: list. It lives beside GROUPABLE because an incremental sync that does not
+#: watch an object type will never notice a change to it, and the inventory
+#: goes stale with every job still reporting success. A test asserts these
+#: keys match GROUPABLE exactly, so adding a grouping without naming its
+#: object type fails the build rather than the inventory.
+GROUPABLE_OBJECT_TYPES = {
+    'site': 'dcim.site',
+    'location': 'dcim.location',
+    'rack': 'dcim.rack',
+    'tenant': 'tenancy.tenant',
+    'platform': 'dcim.platform',
+    'cluster': 'virtualization.cluster',
+    'device_type': 'dcim.devicetype',
+}
+
+#: Likewise for the trees the site lookup resolves.
+SITE_HIERARCHY_OBJECT_TYPES = {
+    'regions': 'dcim.region',
+    'site_groups': 'dcim.sitegroup',
+}
+
+#: Every NetBox object type whose change can alter this inventory.
+#:
+#: Most of these never appear in a device's own changelog entries, which is the
+#: trap. Renaming a site, editing a config context or changing an IP's DNS name
+#: each record one entry against that object and nothing against the hundreds of
+#: devices whose host vars or groups just moved. A watch list that covers only
+#: devices and virtual machines would report "nothing changed" and stay stale.
+WATCHED_OBJECT_TYPES = tuple(
+    sorted(
+        set(GROUPABLE_OBJECT_TYPES.values())
+        | set(SITE_HIERARCHY_OBJECT_TYPES.values())
+        | {
+            'dcim.device',
+            'virtualization.virtualmachine',
+            # role and manufacturer are grouped on but are not GROUPABLE keys,
+            # because the transform digs them out rather than reading them off
+            # the object.
+            'dcim.devicerole',
+            'dcim.manufacturer',
+            # Config context and tags change host vars and groups from outside
+            # the object entirely.
+            'extras.configcontext',
+            'extras.tag',
+            # Adding or removing a custom field changes every host's vars even
+            # though no device record is touched.
+            'extras.customfield',
+            # ansible_host, the out-of-band address and, under use_fqdn, the
+            # host name itself all come from an IP address record.
+            'ipam.ipaddress',
+        }
+    )
+)
+
 #: Every field this transform reads, for the API's `fields=` parameter. NetBox
 #: silently drops a name an endpoint does not have, so one superset serves both
 #: devices and virtual machines. Asking for these by name is worth doing: the

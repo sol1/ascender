@@ -1181,6 +1181,13 @@ class InventorySource(UnifiedJobTemplate, InventorySourceOptions, RelatedJobsMix
         help_text=_('Inventory variable names written by the last sync of this source, mapped to a hash of the value written.'),
     )
 
+    source_sync_state = models.JSONField(
+        default=dict,
+        blank=True,
+        editable=False,
+        help_text=_('Bookkeeping the last sync of this source left for the next one, such as a NetBox changelog position.'),
+    )
+
     @classmethod
     def _get_unified_job_class(cls):
         return InventoryUpdate

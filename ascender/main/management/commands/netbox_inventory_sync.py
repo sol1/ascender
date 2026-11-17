@@ -14,8 +14,10 @@ import time
 
 from django.core.management.base import BaseCommand, CommandError
 
-from ascender.main.models.inventory import InventoryUpdate
+from ascender.main.constants import NATIVE_INVENTORY_UNCHANGED_MARKER
+from ascender.main.models.inventory import InventorySource, InventoryUpdate
 from ascender.main.netbox.client import NetBoxClient, NetBoxError
+from ascender.main.netbox import changelog as netbox_changelog
 from ascender.main.netbox import filters as netbox_filters
 from ascender.main.netbox import sync as netbox_sync
 
@@ -59,14 +61,28 @@ class Command(BaseCommand):
         self.stdout.write('Connecting to NetBox at {}'.format(url))
         client = NetBoxClient(url, token=token, verify_ssl=bool(verify_ssl))
 
+        incremental = bool(config.get('incremental', False))
+        decision = None
+
         try:
             version = client.require_supported_version()
             self.stdout.write('NetBox version {}'.format(version or 'unknown'))
 
+            # Filters are checked before the incremental gate, not after. A
+            # source whose filters are wrong would otherwise keep skipping and
+            # reporting success, and only reveal the mistake whenever something
+            # in NetBox happens to change. The schema behind the check is
+            # cached per NetBox version, so this costs a set lookup.
             device_filters = self._filters_for(config, 'device_filters')
             vm_filters = self._filters_for(config, 'vm_filters')
             netbox_filters.validate(client, netbox_filters.DEVICE_PATH, device_filters, 'device')
             netbox_filters.validate(client, netbox_filters.VM_PATH, vm_filters, 'virtual machine')
+
+            if incremental:
+                decision = self._decide(client, source, config)
+                if not decision.fetch:
+                    self._skip(source, client, decision, output, started)
+                    return
 
             sites = self._site_lookup(client)
             devices = self._fetch(client, netbox_filters.DEVICE_PATH, 'devices', config, device_filters)
@@ -85,7 +101,57 @@ class Command(BaseCommand):
         with open(output, 'w') as handle:
             json.dump(inventory, handle)
 
+        if incremental:
+            self._record(source, client, decision)
+
         self.stdout.write('Wrote inventory to {} in {:.1f}s'.format(output, time.time() - started))
+
+    def _decide(self, client, source, config):
+        """Ask the changelog whether this run has anything to fetch.
+
+        A previous run that did not succeed forces a fetch: its position was
+        recorded before its import ran, so trusting it would skip past work
+        that never landed.
+        """
+        decision = netbox_changelog.decide(
+            client,
+            dict(source.source_sync_state or {}),
+            config,
+            previous_failed=bool(source.last_job_failed),
+        )
+        self.stdout.write('Incremental check: {}'.format(decision.reason))
+        return decision
+
+    def _skip(self, source, client, decision, output, started):
+        """Record the skip and leave a marker where the importer looks.
+
+        Writing nothing at all would reach the post-run hook as a missing
+        inventory, which is indistinguishable from a fetch that failed to
+        produce one, so the skip is stated rather than implied.
+        """
+        state = self._store(source, client, decision)
+        directory = os.path.dirname(output)
+        os.makedirs(directory, exist_ok=True)
+        with open(os.path.join(directory, NATIVE_INVENTORY_UNCHANGED_MARKER), 'w') as handle:
+            json.dump({'reason': decision.reason, 'changelog_id': decision.watermark, 'skips': state['skips']}, handle)
+
+        self.stdout.write('Skipped the fetch, the inventory already matches NetBox ({} skipped run(s) in a row).'.format(state['skips']))
+        self.stdout.write('Checked in {:.1f}s'.format(time.time() - started))
+
+    def _record(self, source, client, decision):
+        state = self._store(source, client, decision)
+        self.stdout.write('Recorded changelog position {}'.format(state['changelog_id']))
+
+    def _store(self, source, client, decision):
+        """Persist the bookkeeping without going through the model's save().
+
+        A direct update keeps this out of the activity stream and away from the
+        name and organization handling in InventorySource.save(), matching how
+        the importer writes managed_inventory_variables.
+        """
+        state = netbox_changelog.next_state(client, decision, (source.source_sync_state or {}).get('skips'))
+        InventorySource.objects.filter(pk=source.pk).update(source_sync_state=state)
+        return state
 
     def _filters_for(self, config, key):
         """Shared `filters`, then the per-endpoint overrides on top.

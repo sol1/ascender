@@ -39,6 +39,7 @@ from ascender.main.dispatch import get_task_queuename
 from ascender.main.constants import (
     PRIVILEGE_ESCALATION_METHODS,
     NATIVE_INVENTORY_SOURCES,
+    NATIVE_INVENTORY_UNCHANGED_MARKER,
     STANDARD_INVENTORY_UPDATE_ENV,
     JOB_FOLDER_PREFIX,
     MAX_ISOLATED_PATH_COLON_DELIMITER,
@@ -2384,7 +2385,22 @@ class RunInventoryUpdate(SourceControlMixin, BaseTask):
         if not private_data_dir:
             logger.warning('AWX_PRIVATE_DATA_DIR not found in job_env, skipping inventory save')
             return
-        expected_output = os.path.join(private_data_dir, 'artifacts', str(inventory_update.id), 'output.json')
+        artifacts_dir = os.path.join(private_data_dir, 'artifacts', str(inventory_update.id))
+        expected_output = os.path.join(artifacts_dir, 'output.json')
+
+        # A native source that found nothing changed upstream writes this
+        # instead of an inventory, and the existing hosts and groups stand.
+        unchanged_marker = os.path.join(artifacts_dir, NATIVE_INVENTORY_UNCHANGED_MARKER)
+        if os.path.exists(unchanged_marker):
+            logger.info('%s found no upstream changes, leaving the inventory as it is', inventory_update.log_format)
+            return
+
+        # Anything else that reaches here without an inventory is a failure. It
+        # used to raise FileNotFoundError into finish_run's blanket except,
+        # which logged it and left the job successful having imported nothing.
+        if not os.path.exists(expected_output):
+            raise PostRunError('The inventory fetch reported success but wrote no inventory to import.', status='error')
+
         with open(expected_output) as f:
             data = json.load(f)
 
