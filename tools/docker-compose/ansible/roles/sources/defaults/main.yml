@@ -25,3 +25,16 @@ scrape_interval: '5s'
 # editable_dependencies
 install_editable_dependencies: false
 editable_dependencies: []
+
+# NetBox, for developing against the netbox inventory source. Off unless
+# `make docker-compose NETBOX=true`. Every value here is a development
+# default and none of it is a secret.
+netbox: false
+netbox_image: docker.io/netboxcommunity/netbox
+netbox_image_tag: v4.7-5.1.2
+netbox_superuser: admin
+netbox_superuser_password: admin
+netbox_secret_key: 'dev-only-netbox-secret-key-not-for-any-real-deployment'
+netbox_token_pepper: 'dev-only-netbox-token-pepper-not-for-any-real-deploy'
+netbox_api_key: 'abcdefghijkl'
+netbox_api_token: '0123456789abcdef0123456789abcdef01234567'

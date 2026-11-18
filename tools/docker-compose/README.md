@@ -237,6 +237,38 @@ $ docker exec tools_ascender_1 ascender-manage create_preload_data
 > This information will persist in the database running in the `tools_postgres_1` container, until the container is removed. You may periodically need to recreate
 > this container, and thus the database, if the database schema changes in an upstream commit.
 
+##### Start NetBox
+
+The `netbox` inventory source talks to a real NetBox, so there is one in the
+development environment for it.
+
+```bash
+$ make docker-compose NETBOX=true
+```
+
+That brings up NetBox, its database, a Redis and an RQ worker alongside the
+usual containers. It answers on <http://localhost:8000>, and on
+`http://netbox:8080` from inside the compose network, which is the URL to put
+in the credential. Set `NETBOX_PORT` if 8000 is taken. First boot runs NetBox's
+migrations and takes a few minutes.
+
+Fill it with something worth syncing:
+
+```bash
+$ tools/docker-compose/netbox-seed.py
+```
+
+That creates two region trees, three sites, racks, tenants, clusters, twelve
+devices and eleven virtual machines, with config contexts, custom fields,
+out-of-band addresses and three objects left offline. It is safe to re-run, and
+`--scale N` adds N more devices for timing a sync against a large estate.
+
+The login is `admin` / `admin` and the API token is in
+`ansible/roles/sources/defaults/main.yml`. Both are development values.
+
+See [docs/inventory/netbox_inventory.md](../../docs/inventory/netbox_inventory.md)
+for what the source does with all of it.
+
 ## Migrating Data from Local Docker
 
 If you are migrating data from a Local Docker installation (17.0.1 and prior), you can
@@ -258,6 +290,7 @@ $ make docker-compose
 - [Start Ascender from the container shell](#start-ascender-from-the-container-shell)
 - [Start a Cluster](#start-a-cluster)
 - [Start with Minikube](#start-with-minikube)
+- [Start NetBox](#start-netbox)
 
 ### Start a Shell
 

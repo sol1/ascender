@@ -483,6 +483,7 @@ COMPOSE_OPTS ?=
 CONTROL_PLANE_NODE_COUNT ?= 1
 EXECUTION_NODE_COUNT ?= 0
 MINIKUBE_CONTAINER_GROUP ?= false
+NETBOX ?= false # bring up a NetBox for the netbox inventory source
 MINIKUBE_SETUP ?= false # if false, run minikube separately
 EXTRA_SOURCES_ANSIBLE_OPTS ?=
 
@@ -502,6 +503,7 @@ docker-compose-sources: .git/hooks/pre-commit
 	    -e control_plane_node_count=$(CONTROL_PLANE_NODE_COUNT) \
 	    -e execution_node_count=$(EXECUTION_NODE_COUNT) \
 	    -e minikube_container_group=$(MINIKUBE_CONTAINER_GROUP) \
+	    -e netbox=$(NETBOX) \
 		-e install_editable_dependencies=$(EDITABLE_DEPENDENCIES) \
 	    $(EXTRA_SOURCES_ANSIBLE_OPTS)
 

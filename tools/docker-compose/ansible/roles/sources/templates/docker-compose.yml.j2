@@ -149,6 +149,69 @@ services:
       - awx
     ports:
        - "${AWX_PG_PORT:-5441}:5432"
+{% if netbox|bool %}
+  netbox:
+    image: {{ netbox_image }}:{{ netbox_image_tag }}
+    container_name: tools_netbox_1
+    hostname: netbox
+    depends_on:
+      - netbox-postgres
+      - netbox-redis
+    environment: &netbox_env
+      DB_HOST: netbox-postgres
+      DB_NAME: netbox
+      DB_USER: netbox
+      DB_PASSWORD: netbox
+      REDIS_HOST: netbox-redis
+      REDIS_PORT: 6379
+      REDIS_DATABASE: 0
+      REDIS_CACHE_HOST: netbox-redis
+      REDIS_CACHE_PORT: 6379
+      REDIS_CACHE_DATABASE: 1
+      # Development values. NetBox refuses to start without them, and this
+      # instance holds nothing worth protecting.
+      SECRET_KEY: "{{ netbox_secret_key }}"
+      API_TOKEN_PEPPER_1: "{{ netbox_token_pepper }}"
+      ALLOWED_HOSTS: "*"
+      SKIP_SUPERUSER: "false"
+      SUPERUSER_NAME: "{{ netbox_superuser }}"
+      SUPERUSER_EMAIL: admin@example.com
+      SUPERUSER_PASSWORD: "{{ netbox_superuser_password }}"
+      SUPERUSER_API_KEY: "{{ netbox_api_key }}"
+      SUPERUSER_API_TOKEN: "{{ netbox_api_token }}"
+      WEBHOOKS_ENABLED: "true"
+    networks:
+      - awx
+    ports:
+      - "${NETBOX_PORT:-8000}:8080"
+  netbox-worker:
+    image: {{ netbox_image }}:{{ netbox_image_tag }}
+    container_name: tools_netbox_worker_1
+    depends_on:
+      - netbox
+    # Event rules deliver webhooks through this worker. Without it a NetBox
+    # change never reaches the inventory source.
+    command: /opt/netbox/venv/bin/python /opt/netbox/netbox/manage.py rqworker
+    environment: *netbox_env
+    networks:
+      - awx
+  netbox-postgres:
+    image: quay.io/sclorg/postgresql-15-c9s
+    container_name: tools_netbox_postgres_1
+    environment:
+      POSTGRESQL_USER: netbox
+      POSTGRESQL_DATABASE: netbox
+      POSTGRESQL_PASSWORD: netbox
+    volumes:
+      - "netbox_db:/var/lib/pgsql/data"
+    networks:
+      - awx
+  netbox-redis:
+    image: ghcr.io/valkey-io/valkey:9-alpine
+    container_name: tools_netbox_redis_1
+    networks:
+      - awx
+{% endif %}
 {% if execution_node_count|int > 0 %}
   receptor-hop:
     image: {{ receptor_image }}
@@ -190,6 +253,10 @@ volumes:
 {# For the postgres 15 db upgrade we changed the mount name because 15 can't load a 12 DB #}
   awx_db_15:
     name: tools_awx_db_15
+{% if netbox|bool %}
+  netbox_db:
+    name: tools_netbox_db
+{% endif %}
 {% for i in range(control_plane_node_count|int) -%}
   {% set container_postfix = loop.index %}
   valkey_socket_{{ container_postfix }}:
